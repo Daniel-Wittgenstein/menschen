@@ -205,7 +205,7 @@ img {
 */
 
 body.dark {
-    background: black;
+    background: #222;
     color: white;
 }
 
@@ -214,11 +214,11 @@ body.dark {
 }
 
 .dark .container {
-    background: black;
+    background: #222;
 }
 
 .dark .written-in-ink {
-    background: black;
+    background: #222;
 }
 
 .dark a {
@@ -243,5 +243,5 @@ body.dark {
 }
 
 .dark #controls {
-    background: black;
+    background: #222;
 }
