@@ -249,3 +249,29 @@ body.dark {
 .dark p {
     color: #ccc;
 }
+
+
+.title-box {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 9000;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.title-box-inner {
+    position: absolute;
+    z-index: 2;
+    transform-origin: 1315px 500px;
+    transform: translate(-1030px, -500px) rotate(-32deg);
+    transition-property: transform, transform-origin;
+    transition-duration: 1s;
+}
+
