@@ -330,10 +330,15 @@
         // Check whether the OS/browser is configured for dark mode
         var browserDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+        //override: set dark theme by default. user can still click on light theme
+        browserDark = true 
+
         if (savedTheme === "dark"
             || (savedTheme == undefined && globalTagTheme === "dark")
             || (savedTheme == undefined && globalTagTheme == undefined && browserDark))
             document.body.classList.add("dark");
+
+        
     }
 
     // Used to hook up the functionality for global functionality buttons
