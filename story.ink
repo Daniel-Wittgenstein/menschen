@@ -9,7 +9,7 @@ Du stehst am Hauptbahnhof.
 
 - 
 
-Du steigst in den Zug.
+Du steigst in den Zug!
 
 Warte! Du hast etwas vergessen!
 
