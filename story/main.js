@@ -143,6 +143,10 @@
             // Create paragraph element (initially hidden)
             var paragraphElement = document.createElement('p');
             paragraphElement.innerHTML = paragraphText;
+
+            paragraphElement.classList.add('animate__animated')
+            paragraphElement.classList.add('animate__slideInUp')
+
             storyContainer.appendChild(paragraphElement);
 
             // Add any custom classes derived from ink tags
@@ -160,8 +164,10 @@
             // Create paragraph with anchor element
             var choiceParagraphElement = document.createElement('p');
             choiceParagraphElement.classList.add("choice");
+
             choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`
             storyContainer.appendChild(choiceParagraphElement);
+
 
             // Fade choice in after a short delay
             showAfter(delay, choiceParagraphElement);
