@@ -391,3 +391,16 @@
     }
 
 })(storyContent);
+
+
+
+
+
+function start_up() {
+    $("#title-box1").fadeOut(500)
+}
+
+
+function start_up2() {
+    $("#title-box2").fadeOut(500)
+}

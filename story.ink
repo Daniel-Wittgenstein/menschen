@@ -1,11 +1,8 @@
 
+Geschichte
 
 
-Du stehst am Hauptbahnhof.
-
-
- * Steige in den Zug
- * Geh nach Hause
+ * Start 
 
 - 
 
