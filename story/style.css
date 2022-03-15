@@ -380,6 +380,10 @@ body.dark {
     border-radius: 0px 0px 8px 8px;
 }
 
+.first-ch, .last-ch {
+    border-radius: 8px 8px 8px 8px;
+}
+
 
 .__inline_link {
     cursor: pointer;
