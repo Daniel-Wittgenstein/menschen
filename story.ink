@@ -28,5 +28,20 @@ Marek grinst. Er hat spitze Eckzähne, wie ein Wolf.
 -
 
 
+Du siehst hier eine ((antike Vase .. vase)) und eine ((Statue .. statue)).
+
+* @vase Nimm sie mit
+
+* @vase Schmeiß sie auf den Boden
+
+* @statue Berühre sie
+
+
 
 -> END
+
+
+
+
+
+

@@ -63,6 +63,8 @@ let very_first_para_done = false
 
         let para_count = 0
 
+        $("#story").html("") //flush screen after every turn
+
         while(story.canContinue) {
 
             // Get ink to generate the next paragraph
@@ -458,6 +460,7 @@ function post_process_paragraph_text(text, index) {
         return `<span class="was-choice">${text}</span>`
     }
     very_first_para_done = true
+
     return text
 }
 
