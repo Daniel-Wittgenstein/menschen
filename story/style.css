@@ -339,3 +339,9 @@ body.dark {
     background: #444 !important;
     color: #DDD !important;
 }
+
+.was-choice {
+    /* old choice text in output */
+    opacity: 0.35;
+    font-style: italic;
+}

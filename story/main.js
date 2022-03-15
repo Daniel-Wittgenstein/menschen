@@ -1,4 +1,8 @@
-(function(storyContent) {
+
+let very_first_para_done = false
+
+
+;(function(storyContent) {
 
     // Create ink story from the content using inkjs
     var story = new inkjs.Story(storyContent);
@@ -56,6 +60,9 @@
         var previousBottomEdge = firstTime ? 0 : contentBottomEdgeY();
 
         // Generate story text - loop through available content
+
+        let para_count = 0
+
         while(story.canContinue) {
 
             // Get ink to generate the next paragraph
@@ -142,7 +149,11 @@
 
             // Create paragraph element (initially hidden)
             var paragraphElement = document.createElement('p');
-            paragraphElement.innerHTML = paragraphText;
+
+            text = post_process_paragraph_text(paragraphText, para_count)
+            para_count++
+
+            paragraphElement.innerHTML = text;
 
             paragraphElement.classList.add('animate__animated')
             paragraphElement.classList.add('animate__slideInUp')
@@ -165,9 +176,12 @@
             var choiceParagraphElement = document.createElement('p');
             choiceParagraphElement.classList.add("choice");
 
-            choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`
-            storyContainer.appendChild(choiceParagraphElement);
+            let text = choice.text
 
+            text = post_process_choice_text(text)
+
+            choiceParagraphElement.innerHTML = `<a href='#'>${text}</a>`
+            storyContainer.appendChild(choiceParagraphElement);
 
             // Fade choice in after a short delay
             showAfter(delay, choiceParagraphElement);
@@ -205,6 +219,8 @@
     }
 
     function restart() {
+        very_first_para_done = false
+
         story.ResetState();
 
         setVisible(".header", true);
@@ -393,7 +409,15 @@
 })(storyContent);
 
 
+let debug = {
+    quick_start: 0,
+}
 
+window.onload = () => {
+    if (debug.quick_start) {
+        $(".title-box").hide()
+    }
+}
 
 
 function start_up() {
@@ -404,3 +428,31 @@ function start_up() {
 function start_up2() {
     $("#title-box2").fadeOut(500)
 }
+
+
+function post_process_choice_text(text) {
+    return text
+}
+
+
+function post_process_paragraph_text(text, index) {
+    //text: text of paragraph
+    //index: 0 = first paragraph after last clicked choice
+    // 1 = second paragraph ...
+
+    if (very_first_para_done && index === 0) {
+        /* text of selected choice gets wrapped into special class,
+        so we can give it special style:
+        (when reloading game these classes get removed unfortunately,
+            but it's not that bad)
+        */
+        return `<span class="was-choice">${text}</span>`
+    }
+    very_first_para_done = true
+    return text
+}
+
+function on_restart() {
+    very_first_para_done = false
+}
+
