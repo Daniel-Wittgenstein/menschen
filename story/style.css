@@ -379,3 +379,67 @@ body.dark {
 .last-ch {
     border-radius: 0px 0px 8px 8px;
 }
+
+
+.__inline_link {
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 13pt;
+    background: none;
+    color: rgb(2, 132, 165);
+    border: none;
+}
+
+.__inline_link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+#selection-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 8000;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    user-select: none;
+}
+
+
+#selection-overlay-inner {
+    background: #222;
+    color: #FFF;
+    max-height: 90vh;
+    overflow: auto;
+    font-size: 14pt;
+    padding: 14pt;
+    width: 400px;
+    max-width: 100vw;
+    border-radius: 8px;
+}
+
+.selection-overlay-entry {
+    text-align: center;
+    padding-top: 14pt;
+    padding-bottom: 14pt;
+    border-bottom: 1px solid #3b3b3b;
+}
+
+.selection-overlay-entry:hover {
+    background: #DDD;
+    color: #222;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.selection-overlay-entry:last-of-type {
+    border-bottom: 0px;
+}

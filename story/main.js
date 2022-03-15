@@ -2,10 +2,23 @@
 let very_first_para_done = false
 
 
+function split_into_first_word_and_rest(str) {
+    //this returns a trimmed! version of both first_word and rest
+    str = str.trim()
+    let ix = str.search(/[\s]/)
+    if (ix === -1) return [str, ""]
+    return [str.substr(0, ix), str.substr(ix).trim()]
+}
+
+
+
+
 ;(function(storyContent) {
 
     // Create ink story from the content using inkjs
     var story = new inkjs.Story(storyContent);
+
+    window.global_story = story
 
     var savePoint = "";
 
@@ -64,6 +77,7 @@ let very_first_para_done = false
         let para_count = 0
 
         $("#story").html("") //flush screen after every turn
+
 
         while(story.canContinue) {
 
@@ -174,6 +188,8 @@ let very_first_para_done = false
         // Create HTML choices from ink choices
         let ch_index = 0
 
+        let inline_link_info = {}
+
         story.currentChoices.forEach(function(choice) {
 
             // Create paragraph with anchor element
@@ -183,7 +199,11 @@ let very_first_para_done = false
             let text = choice.text
 
             text = post_process_choice_text(text, ch_index,
-                ch_index === story.currentChoices.length - 1)
+                ch_index === story.currentChoices.length - 1, choice,
+                inline_link_info)
+            
+            if (text.dont_print) return
+            
             ch_index ++
 
             choiceParagraphElement.innerHTML = text
@@ -200,19 +220,31 @@ let very_first_para_done = false
                 // Don't follow <a> link
                 event.preventDefault();
 
-                // Remove all existing choices
-                removeAll(".choice");
+                window.do_select_choice(choice.index)
 
-                // Tell the story where to go next
-                story.ChooseChoiceIndex(choice.index);
-
-                // This is where the save button will save from
-                savePoint = story.state.toJson();
-
-                // Aaand loop
-                continueStory();
             });
         });
+
+        //now mark the inline links as usable, unless
+        //there are no entries for them:
+
+        let els = $(".__unfinished_inline_link")
+
+        for ( let el of els ) {
+            let id = $(el).prop("id")
+            id = id.replace("__inline-link-", "")
+            $(el).removeClass("__unfinished_inline_link")
+            let entry = inline_link_info[id]
+            if (!entry || entry.length === 0) {
+                //no choices: just print as normal text:
+                let nu_el = $(`<span>${$(el).html()}</span>`)
+                $(el).replaceWith(nu_el)
+            } else {
+                $(el).addClass("__inline_link")
+            }
+        }
+
+        update_inline_link_handler(inline_link_info)
 
         // Extend height to fit
         // We do this manually so that removing elements and creating new ones doesn't
@@ -323,6 +355,20 @@ let very_first_para_done = false
         return null;
     }
 
+    window.do_select_choice = (index) => {
+        // Remove all existing choices
+        removeAll(".choice");
+    
+        // Tell the story where to go next
+        story.ChooseChoiceIndex(index);
+    
+        // This is where the save button will save from
+        savePoint = story.state.toJson();
+    
+        // Aaand loop
+        continueStory();
+    }
+
     // Loads save state if exists in the browser memory
     function loadSavePoint() {
 
@@ -358,9 +404,7 @@ let very_first_para_done = false
         if (savedTheme === "dark"
             || (savedTheme == undefined && globalTagTheme === "dark")
             || (savedTheme == undefined && globalTagTheme == undefined && browserDark))
-            document.body.classList.add("dark");
-
-        
+            document.body.classList.add("dark");   
     }
 
     // Used to hook up the functionality for global functionality buttons
@@ -423,6 +467,12 @@ window.onload = () => {
     if (debug.quick_start) {
         $(".title-box").hide()
     }
+
+    $("body").on("keydown", (e) => {
+        console.log(e.key)
+        if (e.key === "Escape") hide_sub_choice_selection()
+    })
+
 }
 
 
@@ -436,7 +486,27 @@ function start_up2() {
 }
 
 
-function post_process_choice_text(text, index, is_last) {
+function post_process_choice_text(text, index, is_last,
+    choice, inline_link_info ) {
+    //has side-effect: MODIFIES inline_link_info!
+
+    if ( text.trim().startsWith("@") ) {
+        let p = split_into_first_word_and_rest(text)
+        let first_word = p[0]
+        let rest = p[1]
+        if (!first_word || !rest) throw `Wrong @ choice`
+        first_word = first_word.replace("@", "")
+        if (!first_word) throw `Wrong @ choice. single @?`
+        
+        if (!inline_link_info[first_word]) inline_link_info[first_word] = []
+        inline_link_info[first_word].push({
+            text: rest,
+            choice: choice,
+        })
+
+        return { dont_print: true }
+    }
+
     if (index === 0) {
         return `<button class="first-ch story-choice">${text}</button>`
     } else if (is_last) {
@@ -450,6 +520,13 @@ function post_process_paragraph_text(text, index) {
     //text: text of paragraph
     //index: 0 = first paragraph after last clicked choice
     // 1 = second paragraph ...
+
+    text = linkify_text(text)
+
+    if (text.trim().startsWith("@")) {
+        //strip initial @word
+        text = text.trim().replace(/\@.*?(\s|$)/g, "")
+    }
 
     if (very_first_para_done && index === 0) {
         /* text of selected choice gets wrapped into special class,
@@ -467,4 +544,65 @@ function post_process_paragraph_text(text, index) {
 function on_restart() {
     very_first_para_done = false
 }
+
+
+function update_inline_link_handler(info) {
+
+    $(".__inline_link").off("click")
+
+    $(".__inline_link").on("click", function() {
+        let id = $(this).prop("id")
+        id = id.replace("__inline-link-", "")
+        let entry = info[id]
+        if (!entry || entry.length === 0) {
+            return
+        } else {
+            show_sub_choice_selection(entry)
+        }
+    })
+}
+
+function show_sub_choice_selection(entry) {
+    let el = $("#selection-overlay-inner")
+    let html = ""
+    let index = -1
+    for (let item of entry) {
+        index++
+        html += `<div class="selection-overlay-entry"
+            onclick="click_overlay(${index})"
+            >${item.text}</div>`
+    }
+    el.html(html)
+    $("#selection-overlay").css("display", "flex")
+    $("#selection-overlay").on("click", hide_sub_choice_selection)
+}
+
+window.click_overlay = (index) => {
+    hide_sub_choice_selection()
+    window.do_select_choice(index)
+}
+
+function hide_sub_choice_selection() {
+    $("#selection-overlay").hide()
+}
+
+function linkify_text(text) {
+    text = text.replace(/\(\(.*?\)\)/g, (n) => {
+        n = n.trim().replace("((", "").replace("))", "").trim()
+        let p = split_into_first_word_and_rest(n)
+        let first_word = p[0]
+        let rest = p[1]
+        if (!first_word || !rest) throw `Wrong inline link`
+        first_word = first_word.replace("@", "")
+        rest = rest.trim()
+        return `<button class='__unfinished_inline_link'
+            id='__inline-link-${first_word}'>
+            ${rest}</button>`
+    })
+    return text
+}
+
+
+
+
 

@@ -27,16 +27,24 @@ Marek grinst. Er hat spitze Eckzähne, wie ein Wolf.
     
 -
 
+-> foyer
 
-Du siehst hier eine ((antike Vase .. vase)) und eine ((Statue .. statue)).
+=== foyer
+
+Du siehst hier eine ((@vase antike Vase)) und eine ((@statue Statue)) und einen ((@pfeil Pfeil)).
 
 * @vase Nimm sie mit
+    Du schnappst dir die Vase.
 
 * @vase Schmeiß sie auf den Boden
+    Du zerstörst die Vase.
 
 * @statue Berühre sie
+    Du fasst die Statue an.
 
+-
 
+-> foyer
 
 -> END
 
