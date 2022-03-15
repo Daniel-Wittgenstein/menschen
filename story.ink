@@ -16,6 +16,9 @@ Marek grinst. Er hat spitze Eckzähne, wie ein Wolf.
 * Gehe ins Haus
     Du trittst ein.
 
+* Laufe weg
+
+* Schreie
 
 * Sage: "Du zuerst!"
     Er lacht: "Na, meinetwegen."

@@ -140,6 +140,7 @@ img {
 .choice {
     text-align: center;
     line-height: 1.7em;
+    margin: 0;
 }
 
 /* 
@@ -344,4 +345,37 @@ body.dark {
     /* old choice text in output */
     opacity: 0.35;
     font-style: italic;
+}
+
+.story-choice {
+    border: 1px #CCC;
+    width: 400px;
+    max-width: 60vw;
+    height: 62px;
+    max-height: 15vh;
+    cursor: pointer;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    background: #444;
+    color: white;
+    font-size: 12pt;
+}
+
+.story-choice:hover {
+    background: #DDD;
+    color: #222;
+}
+
+.first-ch {
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 1px solid #3b3b3b;
+}
+
+.middle-ch {
+    border-radius: 0px 0px 0px 0px;
+    border-bottom: 1px solid #3b3b3b;
+}
+
+.last-ch {
+    border-radius: 0px 0px 8px 8px;
 }

@@ -170,6 +170,8 @@ let very_first_para_done = false
         }
 
         // Create HTML choices from ink choices
+        let ch_index = 0
+
         story.currentChoices.forEach(function(choice) {
 
             // Create paragraph with anchor element
@@ -178,9 +180,11 @@ let very_first_para_done = false
 
             let text = choice.text
 
-            text = post_process_choice_text(text)
+            text = post_process_choice_text(text, ch_index,
+                ch_index === story.currentChoices.length - 1)
+            ch_index ++
 
-            choiceParagraphElement.innerHTML = `<a href='#'>${text}</a>`
+            choiceParagraphElement.innerHTML = text
             storyContainer.appendChild(choiceParagraphElement);
 
             // Fade choice in after a short delay
@@ -188,7 +192,7 @@ let very_first_para_done = false
             delay += 200.0;
 
             // Click on choice
-            var choiceAnchorEl = choiceParagraphElement.querySelectorAll("a")[0];
+            var choiceAnchorEl = choiceParagraphElement.querySelectorAll("button")[0];
             choiceAnchorEl.addEventListener("click", function(event) {
 
                 // Don't follow <a> link
@@ -410,7 +414,7 @@ let very_first_para_done = false
 
 
 let debug = {
-    quick_start: 0,
+    quick_start: 1,
 }
 
 window.onload = () => {
@@ -430,8 +434,13 @@ function start_up2() {
 }
 
 
-function post_process_choice_text(text) {
-    return text
+function post_process_choice_text(text, index, is_last) {
+    if (index === 0) {
+        return `<button class="first-ch story-choice">${text}</button>`
+    } else if (is_last) {
+        return `<button class="last-ch story-choice">${text}</button>`        
+    }
+    return `<button class="middle-ch story-choice">${text}</button>`
 }
 
 
