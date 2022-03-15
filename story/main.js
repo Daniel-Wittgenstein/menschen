@@ -1,4 +1,14 @@
 
+
+let debug = {
+    quick_start: 1,
+    disable_auto_loading_game: 1, //very important for development,
+        //because if you change the story, Ink wll then try to restore
+        //from a broken save state and sometimes throw a
+        //good error, sometimes a cryptic error.
+        //this can be hard to fix if you don't know what you are looking for.
+}
+
 let very_first_para_done = false
 
 
@@ -53,7 +63,9 @@ function split_into_first_word_and_rest(str) {
 
     // page features setup
     setupTheme(globalTagTheme);
-    var hasSave = loadSavePoint();
+    var hasSave = false
+    if (!debug.disable_auto_loading_game) hasSave = loadSavePoint();
+
     setupButtons(hasSave);
 
     // Set initial save point
@@ -440,6 +452,7 @@ function split_into_first_word_and_rest(str) {
 
             removeAll("p");
             removeAll("img");
+
             try {
                 let savedState = window.localStorage.getItem('save-state');
                 if (savedState) story.state.LoadJson(savedState);
@@ -459,9 +472,6 @@ function split_into_first_word_and_rest(str) {
 })(storyContent);
 
 
-let debug = {
-    quick_start: 1,
-}
 
 window.onload = () => {
     if (debug.quick_start) {
