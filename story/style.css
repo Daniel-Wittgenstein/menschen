@@ -320,7 +320,9 @@ body.dark {
       text-align: center;
   }
 
-
+#start-link-wrapper {
+    display: block;
+}
 
 .pretty-link {
     border-radius: 50% !important;
