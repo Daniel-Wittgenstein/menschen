@@ -575,6 +575,9 @@ function show_sub_choice_selection(entry) {
     el.html(html)
     $("#selection-overlay").css("display", "flex")
     $("#selection-overlay").on("click", hide_sub_choice_selection)
+    $("#selection-overlay-inner").addClass("animate__animated")
+    $("#selection-overlay-inner").addClass("animate__backInUp")
+    
 }
 
 window.click_overlay = (index) => {

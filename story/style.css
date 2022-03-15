@@ -424,6 +424,7 @@ body.dark {
     width: 400px;
     max-width: 100vw;
     border-radius: 8px;
+    --animate-duration: 0.15s;
 }
 
 .selection-overlay-entry {
