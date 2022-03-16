@@ -1,0 +1,135 @@
+
+-> start
+
+=== start
+
+Okay, schwarze Büsche, schwarze Bäume, schwarzer Himmel, keine Laternen, keine Beleuchtung, überhaupt kein Licht weit und breit, nur der Mond über euch, fahl und dreiäugig, der Mond und Mareks Arm an deinem Arm und das Prasseln der Tropfen auf dem Regenschirm, taka-taka-taka und dein Herz tam-tam-tam, nicht weil du etwa in den Typen verliebt bist, der für dich den Regenschirm hält, und auch nicht, weil er einer der wichtigsten Experimentalfilmemacher Mitteleuropas ist, und schon gar nicht, weil es dich nervös macht, wenn er gleich mit dir ins Bett will, sondern weil die Bäume schwarz sind und die Büsche schwarz sind und das Ding da vorne, was auch immer es sein mag, auch schwarz ist, und weil Marek dich sicher hierher gebracht hat, um gleich ein Messer rauszuziehen und dich von oben bis unten aufzuschlitzen, so Schweigen-der-Lämmer-Style.
+
+"Ich gehe nie wieder auf eine Filmpremiere", schießt eine verängstigte Stimme durch deinen Kopf.
+
+
+"Und ich gehe nie wieder danach mit einem fremden Mann nach Hause", fügt eine zweite, ebenfalls verängstigte Stimme hinzu.
+
+Und eine dritte, ebenfalls verängstigte, aber vor allem hämische Stimme fügt hinzu: "Weil ich bald tot sein werde."
+
+
+"Gleich da", sagt Marek mit monotoner Stimme, fast, als könnte er die Stimmen in deinem Kopf hören.
+
+    * Du sagst: "Vielleicht gehe ich besser nach Hause."
+
+        "Gleich da", sagt er, ohne groß Emotion in die Stimme zu legen. Manchmal klingt er wirklich ein wenig ... wie ein Roboter, oder so.
+
+    * Du gehst schweigend weiter.
+
+Schweigend geht ihr weiter.
+
+* Du fragst: "Wohin gehen wir?"
+
+"Es wird dir gefallen", sagt er, ohne groß Emotion in die Stimme zu legen. Manchmal klingt er wirklich ein wenig ... wie ein Roboter, oder so.
+
+-
+
+Links und rechts des Weges ragen die Slhouetten hoher Pappeln in den Nachthimmel. Das hier ist kein Garten. Eher ein Park. Du wusstest nicht, dass er reich ist. Schon gar nicht <i>so</i> reich.
+
+* "Gehört das alles hier dir?"
+
+    "Hmmm", macht er nur.
+    
+    Du denkst immer noch darüber nach, ob das "ja", "nein" oder etwas ganz anderes bedeutet, als <>
+
+* "Der Film hat mir wirklich gut gefallen."
+    
+    "Der Film?", fragt er geistesabwesend. "Oh ja, <i>der</i> Film."
+    
+    Du wartest, ob noch mehr kommt. Du wartest immer noch, als <>
+
+-
+
+die Pappeln sich wegducken und den Blick auf die Silhouette eines Hauses freigeben. Du erkennst wegen der Lichtverhältnisse nicht viel, aber die schiere Größe sagt alles. Es ist ein richtiger Palast. Und kein einziges Fenster ist erleuchtet."
+
+
+* "Wohnst du hier?"
+
+* "Wohnst du hier ganz alleine?"
+
+* "Ich glaube, ich will nach Hause."
+    
+    "Unsinn!", sagt er.
+    
+    ** "Nein, wirklich. Ich gehe jetzt!"
+
+    Du bleibst stehen. Er auch.
+    
+    "Was ist los?", fragt er.
+    
+        *** "Das gefällt mir nicht.
+        
+        *** ""
+
+    ** Folge ihm.
+    
+
+-
+
+
+
+Marek grinst. Er hat spitze Eckzähne, wie ein Wolf.
+
+"Ladies first!", sagt er und deutet auf die Tür.
+
+* Gehe ins Haus
+    Du trittst ein.
+
+* Sage: "Du zuerst!"
+    Er lacht: "Na, meinetwegen."
+    
+    Er wendet sich um und tritt ohne ein weiteres Wort ein.
+    
+    ** Folge ihm
+    
+    ** Gehe nach Hause
+        Du zögerst. Du fühlst dich nicht ganz wohl bei der Sache. Sollst du wirklich nach Hause gehen?
+        
+        Hinter dem Vordach, unter dem du stehst, fällt der Regen in Strömen herab.
+        
+        Du willst nicht nass werden.
+        
+        *** Du denkst: "Vielleicht gehe ich nur kurz rein und bitte ihn, mir seinen Regenschirm zu leihen."
+        
+        *** Du denkst: "Vielleicht gehe ich nur kurz rein und bitte ihn, mir ein Taxi zu rufen."
+        
+        *** Du denkst: "Was soll's, ich bleib doch hier!"
+        
+        
+        Das würde bedeuten, klitschnass zu werden.
+    
+-
+
+-> foyer
+
+=== foyer
+
+Wow!
+
+Du siehst hier eine ((@vase antike Vase)) und eine ((@statue Statue)) und einen ((@pfeil Pfeil)).
+
+* @vase Nimm sie mit
+    Du schnappst dir die Vase.
+
+* @vase Schmeiß sie auf den Boden
+    Du zerstörst die Vase.
+
+* @statue Berühre sie
+    Du fasst die Statue an.
+
+-
+
+-> foyer
+
+-> END
+
+
+
+
+
+
