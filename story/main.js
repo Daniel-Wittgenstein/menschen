@@ -1,7 +1,7 @@
 
 
 let debug = {
-    quick_start: 1,
+    quick_start: 0,
     disable_auto_loading_game: 1, //very important for development,
         //because if you change the story, Ink wll then try to restore
         //from a broken save state and sometimes throw a
@@ -145,10 +145,17 @@ function split_into_first_word_and_rest(str) {
                 }
 
 
-                // IMAGE: src
+                // JS
                 if( splitTag && splitTag.property.toLowerCase() == "js" ) {
                     eval(splitTag.val)
                 }
+
+
+                // JS
+                if( splitTag && splitTag.property.toLowerCase() == "story_event" ) {
+                    story_event_handler(splitTag.val)
+                }
+
 
 
                 // IMAGE: src
