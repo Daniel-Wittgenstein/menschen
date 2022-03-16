@@ -144,6 +144,13 @@ function split_into_first_word_and_rest(str) {
                   this.audioLoop.loop = true;
                 }
 
+
+                // IMAGE: src
+                if( splitTag && splitTag.property.toLowerCase() == "js" ) {
+                    eval(splitTag.val)
+                }
+
+
                 // IMAGE: src
                 if( splitTag && splitTag.property == "IMAGE" ) {
                     var imageElement = document.createElement('img');
@@ -500,7 +507,6 @@ window.onload = () => {
     }
 
     $("body").on("keydown", (e) => {
-        console.log(e.key)
         if (e.key === "Escape") hide_sub_choice_selection()
     })
 
