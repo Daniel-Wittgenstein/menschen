@@ -1,7 +1,7 @@
 
 
 let debug = {
-    quick_start: 0,
+    quick_start: 1,
     disable_auto_loading_game: 1, //very important for development,
         //because if you change the story, Ink wll then try to restore
         //from a broken save state and sometimes throw a
@@ -499,7 +499,6 @@ function start_up2() {
 function post_process_choice_text(text, index, is_last,
     choice, inline_link_info ) {
     //has side-effect: MODIFIES inline_link_info!
-
     if ( text.trim().startsWith("@") ) {
         let p = split_into_first_word_and_rest(text)
         let first_word = p[0]
@@ -582,15 +581,14 @@ function show_sub_choice_selection(entry) {
     for (let item of entry) {
         index++
         html += `<div class="selection-overlay-entry"
-            onclick="click_overlay(${index})"
+            onclick="click_overlay(${item.choice.index})"
             >${item.text}</div>`
     }
     el.html(html)
     $("#selection-overlay").css("display", "flex")
     $("#selection-overlay").on("click", hide_sub_choice_selection)
     $("#selection-overlay-inner").addClass("animate__animated")
-    $("#selection-overlay-inner").addClass("animate__backInUp")
-    
+    $("#selection-overlay-inner").addClass("animate__backInUp")   
 }
 
 window.click_overlay = (index) => {
