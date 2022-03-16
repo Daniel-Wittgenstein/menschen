@@ -9,6 +9,21 @@ let debug = {
         //this can be hard to fix if you don't know what you are looking for.
 }
 
+let DELAY_SETTINGS = {
+    paragraph: 0, //ink main's standard animation for paragraph entry: in milliseconds
+        //this makes it so that the paragraphs are not faded in simultaneously, but
+        //with a little delay, the first one earlier, the second one a bit later etc.
+        //0 to disable
+    image: 200, ////ink main's standard animation for image entry
+    choice: 100, ////ink main's standard animation for choice entry
+    animation_duration: '0.2s', //custom animation for paragraph entry
+        //(not for choice entry) with animate css. duration as string like '3.2s'
+    animation_duration_from_inline_choice: '0s' //like animation_duration, but
+        //if last clicked choice was an inline choice
+}
+
+
+
 let very_first_para_done = false
 
 
@@ -76,7 +91,7 @@ function split_into_first_word_and_rest(str) {
 
     // Main story processing function. Each time this is called it generates
     // all the next content up as far as the next set of choices.
-    function continueStory(firstTime) {
+    function continueStory(firstTime, from_inline_choice = false) {
 
         var paragraphIndex = 0;
         var delay = 0.0;
@@ -136,7 +151,7 @@ function split_into_first_word_and_rest(str) {
                     storyContainer.appendChild(imageElement);
 
                     showAfter(delay, imageElement);
-                    delay += 200.0;
+                    delay += DELAY_SETTINGS.image
                 }
 
                 // LINK: url
@@ -183,6 +198,12 @@ function split_into_first_word_and_rest(str) {
 
             paragraphElement.innerHTML = text;
 
+            let ddur = DELAY_SETTINGS.animation_duration
+            if (from_inline_choice) {
+                ddur = DELAY_SETTINGS.animation_duration_from_inline_choice
+            }
+
+            $(paragraphElement).css('animation-duration', ddur)
             paragraphElement.classList.add('animate__animated')
             paragraphElement.classList.add('animate__slideInUp')
 
@@ -194,7 +215,7 @@ function split_into_first_word_and_rest(str) {
 
             // Fade in paragraph after a short delay
             showAfter(delay, paragraphElement);
-            delay += 200.0;
+            delay += DELAY_SETTINGS.paragraph
         }
 
         // Create HTML choices from ink choices
@@ -223,7 +244,7 @@ function split_into_first_word_and_rest(str) {
 
             // Fade choice in after a short delay
             showAfter(delay, choiceParagraphElement);
-            delay += 200.0;
+            delay += DELAY_SETTINGS.choice
 
             // Click on choice
             var choiceAnchorEl = choiceParagraphElement.querySelectorAll("button")[0];
@@ -367,7 +388,7 @@ function split_into_first_word_and_rest(str) {
         return null;
     }
 
-    window.do_select_choice = (index) => {
+    window.do_select_choice = (index, from_inline_choice = false) => {
         // Remove all existing choices
         removeAll(".choice");
     
@@ -378,7 +399,7 @@ function split_into_first_word_and_rest(str) {
         savePoint = story.state.toJson();
     
         // Aaand loop
-        continueStory();
+        continueStory(false, from_inline_choice);
     }
 
     // Loads save state if exists in the browser memory
@@ -593,7 +614,7 @@ function show_sub_choice_selection(entry) {
 
 window.click_overlay = (index) => {
     hide_sub_choice_selection()
-    window.do_select_choice(index)
+    window.do_select_choice(index, true)
 }
 
 function hide_sub_choice_selection() {
