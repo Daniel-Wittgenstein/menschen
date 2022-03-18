@@ -28,6 +28,7 @@ let max_undo = 5 //tested: roughly 21 bytes for 13 undo states(?) seems really s
 let undo_pointer = -1
 let undo_states = []
 
+let confirm_button_color = '#444'
 
 let very_first_para_done = false
 
@@ -349,6 +350,8 @@ function split_into_first_word_and_rest(str) {
 
     function restart() {
         Swal.fire({
+            confirmButtonColor: confirm_button_color,
+            title: "Neustart?",
             text: `Wenn du das Spiel neu startest, geht dein gesamter
                 bisheriger Fortschritt verloren.`,
             showDenyButton: true,
@@ -559,7 +562,12 @@ function split_into_first_word_and_rest(str) {
                 window.localStorage.setItem('save-state', savePoint);
                 document.getElementById("reload").removeAttribute("disabled");
                 window.localStorage.setItem('theme', document.body.classList.contains("dark") ? "dark" : "");
-                Swal.fire('Gespeichert!', '(Klicke das Laden-Icon, um an diese Stelle zurückzukehren.)', 'success')
+                Swal.fire({
+                    title: 'Gespeichert!',
+                    text: '(Klicke das Laden-Icon, um an diese Stelle zurückzukehren.)',
+                    icon: 'success',
+                    confirmButtonColor: confirm_button_color,
+                })
             } catch (e) {
                 console.warn("Couldn't save state");
             }
@@ -574,11 +582,14 @@ function split_into_first_word_and_rest(str) {
         reloadEl.addEventListener("click", function(event) {
             if (reloadEl.getAttribute("disabled")) {
                 Swal.fire({
-                    text: `Kein gespeicherter Spielstand vorhanden.`
+                    text: 'Kein gespeicherter Spielstand vorhanden.',
+                    confirmButtonColor: confirm_button_color,
                 })
             }
 
             Swal.fire({
+                confirmButtonColor: confirm_button_color,
+                title: "Laden?",
                 text: `Willst du den gespeicherten Spielstand laden?
                 Dein gesamter bisheriger Fortschritt geht dabei verloren.`,
                 showDenyButton: true,

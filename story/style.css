@@ -472,3 +472,7 @@ body.dark {
 #undo.disabled-undo:hover {
     cursor: default;
 }
+
+.swal2-popup {
+    border: 3px solid #666;
+}
