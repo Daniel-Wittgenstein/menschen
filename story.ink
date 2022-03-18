@@ -4,10 +4,17 @@ VAR brauche_regenschirm = false
 VAR brauche_taxi = false
 VAR tmp = ""
 
--> start
--> start.verdammt_pass_auf
+
+<h1>Hannah Kavka</h1>
+<h2>Menschen, die verschwinden</h2>
+
+* Neues Spiel
+    -> start
 
 === start
+
+#story_event: start_story
+
 
 Schwarze Pappeln am Wegrand.
 
@@ -148,6 +155,9 @@ Du trittst ein.
 
 === foyer
 
+
+# story_event: enter_foyer
+
 Du findest dich in einem großen Eingangssaal mit Marmorwänden wieder. <>
 
 - (backfoyer)
@@ -190,7 +200,7 @@ Du befindest dich in einem großen Saal mit Marmorwänden. <>
 
 === salon
 
-Du betrittst einen prunkvollen, aber trotzdem gemütlichen Salon. Braune Ledersessel, Bücherregale, ein Tisch aus Massivholz (vielleicht Eche), ein Kamin, in dem ein Feuer prasselt.
+Du betrittst einen prunkvollen, aber trotzdem gemütlichen Salon. Braune Ledersessel, Bücherregale, ein Tisch aus Massivholz (vielleicht Eiche?), ein Kamin, in dem ein Feuer prasselt.
 
 Marek steht neben dem Kamin und starrt ein Ölgemälde an.
 
@@ -252,8 +262,7 @@ Er dreht sich um und starrt dich mit leerem Blick an. Nach einigen Sekunden blin
         
     ** "Nein."
     
-        "Gut." Er nickt. "Ich dachte schon kurz ..." Er scheint nachzudenken. Dann erwacht er unvermittelt zu neuem Leben, als hätte jemand einen
-            Knopf gedrückt. "<>
+        "Gut." Er nickt. "Ich dachte schon kurz ..." Er scheint nachzudenken. Dann erwacht er unvermittelt zu neuem Leben, als hätte jemand einen Knopf gedrückt. "<>
         -> lib_er_vorschlag
 
 
@@ -479,7 +488,7 @@ Er holt aus einer Vitrine schwarze Kerzen und fängt an, sie auf dem Boden im Kr
     
     * "Oh fuck!"
     
-        "Oh fuck!", stammelst du. Du schielst zur Tür, durch die du gekommen bist, und merkst, dass sie geschlossen ist. Keine Ahnung, wann das passiert ist.
+        "Oh fuck!", stammelst du. Der Typ ist wirklich durchgeknallt. Du schielst zur Tür, durch die du gekommen bist, und merkst, dass sie geschlossen ist. Keine Ahnung, wann das passiert ist.
     
     * Laufe einfach weg.
         Du schielst zur Tür, durch die du gekommen bist, und merkst, dass sie geschlossen ist. Keine Ahnung, wann das passiert ist.
@@ -510,7 +519,7 @@ die Whiskeyflasche, die Marek auf dem Eichentisch abgestellt hat, anfängt, zu s
 
 <i>Es funktioniert wirklich.</i>
 
-Marek. Hat Marek gerade eben einen Geist beschworen?
+Marek. Hat Marek gerade eben einen Geist beschwört?
 
 * Schreie.
     Du versuchst zu schreien, aber kein Laut entweicht deinem Mund.
@@ -521,12 +530,65 @@ Marek. Hat Marek gerade eben einen Geist beschworen?
 -
 Entsetzt beobachtest du, wie die Flasche eine Runde durch den Raum dreht und wieder auf dem Tisch landet. Marek scheint nichts bemerkt zu haben. Er entzündet die letzte Kerze und steht Freude strahlend auf.
 
+* "Fass mich bloß nicht an!"
+    "Ruhig, nur ruhig", <>
+
+* "Die ... die Flasche hat sich bewegt!"
+    "Die Flasche? Unsinn!", <>
+
+* "Was soll das alles?"
+    "Alles zu seiner Zeit", <>
+
+-
+
+sagt er. Ohne Eile tritt er an die Vitrine und holt aus einer Schublade einen langen, gekrümmten Dolch hervor. "Es wird ganz schnell vorbei sein."
+
+* Schreie
+    Du schreist, aber das scheint Marek nicht zu kümmern. Er packt dich und schleudert dich zu Boden.
+
+* Greife ihn an
+    Du stürzt dich auf ihn, aber er packt dich und schleudert dich zu Boden.
+
+* Trete die Tür ein
+    Du trittst gegen die Tür, aber sie gibt kein bisschen nach. Im nächsten Augenblick steht schon Marek hinter dir, packt dich und schleudert dich zu Boden.
 
 
+-
+
+Dann lässt er sich auf dich fallen. Du kannst nicht mehr aufstehen. Du spürst seinen heißen Atem in deinem Gesicht.
+
+"Tut mir leid", flüstert er, "Sieh's mal so: dein Leben war nichts Besonderes. Du bist nur ein Mädchen von vielen. Du wärst alt geworden, hässlich geworden. Du hättest nie etwas Großes erreicht. Nie gewusst, weshalb du lebst. Ich erspare dir das alles. Es tut mir wirklich leid. Aber ... es ist besser so, ja."
+
+* Wehr dich.
+Du versuchst, dich zu wehren, aber er liegt mit seinem ganzen Gewicht auf dir. Du kannst nichts tun.
+
+* Lass es geschehen.
+Du kannst sowieso nichts tun.
+
+-
+
+Der Dolch nähert sich deinem Hals.
+
+"Mach die Augen zu", flüstert Marek, "Dann ist es schneller vorbei."
+
+Aber deine Augen sind sperrangelweit offen. Und mit deinen offenen Augen siehst du, wie die Whiskeyflasche vom Tisch abhebt und in eure Richtung schwebt ...
+
+* ...
+
+-> verhoer
 
 
+=== verhoer
+
+#story_event: verhoer_start
+
+"Okay. Stoppen wir mal an der Stelle."
+
+Das Licht ist grell und surrt. Das feine, nervtötende Surren von Neonröhren. Wie lange sitzt du schon in diesem gottverdammten Raum?
 
 -> DONE
+
+
 
 
 
