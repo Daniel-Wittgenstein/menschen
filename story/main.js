@@ -22,6 +22,12 @@ let DELAY_SETTINGS = {
         //if last clicked choice was an inline choice
 }
 
+let settings = {
+    fg: "#ffffff",
+    bg: "#222222",
+    override_colors: false,
+}
+
 let max_undo = 5 //tested: roughly 21 bytes for 13 undo states(?) seems really small.
     //(for a small story with few variables, though)
 
@@ -134,8 +140,6 @@ function split_into_first_word_and_rest(str) {
     // all the next content up as far as the next set of choices.
     function continueStory(firstTime, from_inline_choice = false,
             from_undo = false) {
-
-
 
         var paragraphIndex = 0;
         var delay = 0.0;
@@ -345,7 +349,32 @@ function split_into_first_word_and_rest(str) {
         if( !firstTime )
             scrollDown(previousBottomEdge);
 
+        fix_colors()
 
+    }
+
+    function fix_colors() {
+        let method
+        if (settings.override_colors) {
+            method = "addClass"
+            let dd = document.querySelector(':root')
+            dd.style.setProperty('--custom-fg', settings.fg)
+            dd.style.setProperty('--custom-bg', settings.bg)
+        } else {
+            method = "removeClass"
+        }
+        let list = ["button", "p", "a", "body", "#story", "#controls", ".icon"]
+        for (let item of list) {
+            $(item)[method]("has-custom-color")
+        }
+
+/*
+        $(".icon").css({
+            filter: "invert(98%) sepia(8%) saturate(0%) hue-rotate(180deg) brightness(119%) contrast(100%)",
+            //#222 / #fff -> doesn't look pretty, but this way icons can always
+            //be seen, no matter what weird text and background color the player chooses
+        })
+       */ 
     }
 
     function restart() {
@@ -550,6 +579,62 @@ function split_into_first_word_and_rest(str) {
 
     // Used to hook up the functionality for global functionality buttons
     function setupButtons(hasSave) {
+        function fg_set(v) {
+            settings.fg = v
+        }
+
+        function bg_set(v) {
+            settings.bg = v
+        }
+
+        function set_visibility() {
+            $(".col-input-wrapper").css("visibility", settings.override_colors ?
+            "visible" : "hidden")
+            $("#custom-colors-on").prop('checked', settings.override_colors)
+        }
+
+        let settingsEl = document.getElementById("settings");
+        if (settingsEl) settingsEl.addEventListener("click", function(event) {
+            let col_choice = `<div class="col-input-wrapper">
+                    <p class="small-info">(Durch diese Einstellung sieht das Spiel
+                        u. U. nicht mehr ganz so gut aus.
+                        Verwende diese Einstellung, wenn du Probleme hast,
+                        den Text zu lesen.)
+                        </p>
+                    <p>Text:
+                    <input class="col-input" type="color" 
+                    id="head" name="head" value="${settings.fg}">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    Hintergrund:
+                    <input class="col-input2" type="color" 
+                    id="head" name="head" value="${settings.bg}"></p></div>
+                    `
+            Swal.fire({
+                title: 'Einstellungen',
+                html: `
+                <p>Eigene Farben verwenden:
+                <input type="checkbox" id="custom-colors-on">
+                </p>
+                ${col_choice}`,
+                confirmButtonColor: confirm_button_color,
+            })
+            $(".col-input").on("change", function() {
+                fg_set( $(this).val() )
+                fix_colors()
+            })
+            $(".col-input2").on("change", function() {
+                bg_set( $(this).val() )
+                fix_colors()
+            })
+            $("#custom-colors-on").on("change", function() {
+                    let val = $(this).is(':checked')
+                    settings.override_colors = val
+                    set_visibility()
+                    fix_colors()
+                }
+            )
+            set_visibility()
+        })
 
         let rewindEl = document.getElementById("rewind");
         if (rewindEl) rewindEl.addEventListener("click", function(event) {

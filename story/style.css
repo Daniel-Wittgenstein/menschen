@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Quattrocento:700');
 
+:root {
+    --custom-fg: #fff;
+    --custom-bg: #222;
+}
+
+
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: lighter;
@@ -391,8 +397,9 @@ body.dark {
     font-family: 'Roboto', sans-serif !important;
     font-size: 13pt;
     background: none;
-    color: rgb(2, 132, 165);
+    color: rgb(29, 154, 185);
     border: none;
+    text-decoration: underline;
 }
 
 .__inline_link:hover {
@@ -475,4 +482,26 @@ body.dark {
 
 .swal2-popup {
     border: 3px solid #666;
+}
+
+.small-info {
+    font-size: 10pt;
+}
+
+.has-custom-color {
+    color: var(--custom-fg) !important;
+    background: var(--custom-bg) !important;
+}
+
+#controls.has-custom-color {
+
+}
+
+.icon.has-custom-color {
+    /* set to standard style, so it's always visible no matter
+    what strange colors the user sets*/
+    background: #fff !important;
+    filter: none !important;
+    border-radius: 4px;
+    border:2px solid #222;
 }
