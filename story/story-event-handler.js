@@ -25,13 +25,13 @@
             case "start_story":
                 rain_sound1 = new Howl({ 
                     src: ['assets/rain2.wav'], loop: true, volume: 0});
-                    
+                
                 rain_sound_id1 = rain_sound1.play();
                 
                 rain_sound1.fade(0, 0.5, 400, rain_sound_id1);            
             break
             case "enter_foyer":
-                rain_sound1.fade(0.5, 0.2, 1000)
+                rain_sound1.fade(0.5, 0.1, 1000)
     /*
                 rain_sound2 = new Howl({ 
                     src: ['assets/rain1.wav'], loop: true, volume: 0});
@@ -41,6 +41,12 @@
                     rain_sound_id2 = rain_sound2.play();
                 
                     rain_sound2.fade(0, 1.0, 0, rain_sound_id2);     */  
+
+            break
+            
+            case "verhoer_start":
+            rain_sound1.fade(0.2, 0.0, 300)
+
 
             break
         }
