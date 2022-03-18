@@ -22,6 +22,11 @@ let DELAY_SETTINGS = {
         //if last clicked choice was an inline choice
 }
 
+let max_undo = 5 //tested: roughly 21 bytes for 13 undo states(?) seems really small.
+    //(for a small story with few variables, though)
+
+let undo_pointer = -1
+let undo_states = []
 
 
 let very_first_para_done = false
@@ -40,6 +45,40 @@ function split_into_first_word_and_rest(str) {
 
 ;(function(storyContent) {
 
+
+    function add_undo_state() {
+        undo_pointer++
+        let state = story.state.toJson()
+        undo_states[undo_pointer] = {
+            state,
+        }
+        update_undo_icon()
+        if (undo_states.length > max_undo + 1) {
+            undo_states.shift()
+            undo_pointer--
+        }
+    }
+
+    function flush_undo_state() {
+        undo_pointer = -1
+        undo_states = []
+        update_undo_icon()
+    }
+
+    function update_undo_icon() {
+        let undoEl = document.getElementById("undo")
+        if (undo_states[undo_pointer - 1]) {
+            //$(undoEl).show()
+            undoEl.classList.remove('disabled-undo')
+        } else {
+            //$(undoEl).hide()
+            undoEl.classList.add('disabled-undo')
+        }
+    }
+
+    //reset undo state:
+    flush_undo_state()
+    
     // Create ink story from the content using inkjs
     var story = new inkjs.Story(storyContent);
 
@@ -83,6 +122,7 @@ function split_into_first_word_and_rest(str) {
 
     setupButtons(hasSave);
 
+    add_undo_state()
     // Set initial save point
     savePoint = story.state.toJson();
 
@@ -91,7 +131,10 @@ function split_into_first_word_and_rest(str) {
 
     // Main story processing function. Each time this is called it generates
     // all the next content up as far as the next set of choices.
-    function continueStory(firstTime, from_inline_choice = false) {
+    function continueStory(firstTime, from_inline_choice = false,
+            from_undo = false) {
+
+
 
         var paragraphIndex = 0;
         var delay = 0.0;
@@ -301,6 +344,7 @@ function split_into_first_word_and_rest(str) {
         if( !firstTime )
             scrollDown(previousBottomEdge);
 
+
     }
 
     function restart() {
@@ -310,6 +354,10 @@ function split_into_first_word_and_rest(str) {
 
         setVisible(".header", true);
 
+        flush_undo_state()
+
+        add_undo_state()
+        
         // set save point to here
         savePoint = story.state.toJson();
 
@@ -403,12 +451,17 @@ function split_into_first_word_and_rest(str) {
     }
 
     window.do_select_choice = (index, from_inline_choice = false) => {
+
+
+
         // Remove all existing choices
         removeAll(".choice");
     
         // Tell the story where to go next
         story.ChooseChoiceIndex(index);
-    
+
+        add_undo_state()
+
         // This is where the save button will save from
         savePoint = story.state.toJson();
     
@@ -497,11 +550,23 @@ function split_into_first_word_and_rest(str) {
             continueStory(true);
         });
 
-        let themeSwitchEl = document.getElementById("theme-switch");
+        let undoEl = document.getElementById("undo")
+        undoEl.addEventListener("click", function(event) {
+            let state = undo_states[undo_pointer - 1]
+            if (!state) {
+                return
+            }
+            undo_pointer -= 1
+            story.state.LoadJson(state.state)
+            update_undo_icon()
+            continueStory(false, false, true)
+        })
+
+        let themeSwitchEl = document.getElementById("theme-switch")
         if (themeSwitchEl) themeSwitchEl.addEventListener("click", function(event) {
             document.body.classList.add("switched");
             document.body.classList.toggle("dark");
-        });
+        })
     }
 
 })(storyContent);

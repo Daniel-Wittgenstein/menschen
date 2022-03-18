@@ -464,3 +464,11 @@ body.dark {
 .icon:hover {
     filter: invert(48%) sepia(69%) saturate(849%) hue-rotate(154deg) brightness(91%) contrast(103%);
 }
+
+.disabled-undo {
+    opacity: 0.3;
+}
+
+#undo.disabled-undo:hover {
+    cursor: default;
+}
