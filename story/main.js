@@ -348,6 +348,30 @@ function split_into_first_word_and_rest(str) {
     }
 
     function restart() {
+        Swal.fire({
+            text: `Wenn du das Spiel neu startest, geht dein gesamter
+                bisheriger Fortschritt verloren.`,
+            showDenyButton: true,
+            showCancelButton: false,
+            confirmButtonText: 'Ja, starte neu',
+            denyButtonText: `Lieber nicht`,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                actually_restart()
+            } else if (result.isDenied) {
+                return
+            }
+        })
+        //  Swal.fire('Saved!', '', 'success')
+        return
+    }
+
+    function actually_restart() {
+        removeAll("p");
+        removeAll("img");
+        setVisible(".header", false);
+
         very_first_para_done = false
 
         story.ResetState();
@@ -484,6 +508,20 @@ function split_into_first_word_and_rest(str) {
         return false;
     }
 
+    function actually_load() {
+
+        removeAll("p");
+        removeAll("img");
+
+        try {
+            let savedState = window.localStorage.getItem('save-state');
+            if (savedState) story.state.LoadJson(savedState);
+        } catch (e) {
+            console.debug("Couldn't load save state");
+        }
+        continueStory(true);
+    }
+
     // Detects which theme (light or dark) to use
     function setupTheme(globalTagTheme) {
 
@@ -512,9 +550,6 @@ function split_into_first_word_and_rest(str) {
 
         let rewindEl = document.getElementById("rewind");
         if (rewindEl) rewindEl.addEventListener("click", function(event) {
-            removeAll("p");
-            removeAll("img");
-            setVisible(".header", false);
             restart();
         });
 
@@ -524,6 +559,7 @@ function split_into_first_word_and_rest(str) {
                 window.localStorage.setItem('save-state', savePoint);
                 document.getElementById("reload").removeAttribute("disabled");
                 window.localStorage.setItem('theme', document.body.classList.contains("dark") ? "dark" : "");
+                Swal.fire('Gespeichert!', '(Klicke das Laden-Icon, um an diese Stelle zurückzukehren.)', 'success')
             } catch (e) {
                 console.warn("Couldn't save state");
             }
@@ -534,20 +570,31 @@ function split_into_first_word_and_rest(str) {
         if (!hasSave) {
             reloadEl.setAttribute("disabled", "disabled");
         }
+
         reloadEl.addEventListener("click", function(event) {
-            if (reloadEl.getAttribute("disabled"))
-                return;
-
-            removeAll("p");
-            removeAll("img");
-
-            try {
-                let savedState = window.localStorage.getItem('save-state');
-                if (savedState) story.state.LoadJson(savedState);
-            } catch (e) {
-                console.debug("Couldn't load save state");
+            if (reloadEl.getAttribute("disabled")) {
+                Swal.fire({
+                    text: `Kein gespeicherter Spielstand vorhanden.`
+                })
             }
-            continueStory(true);
+
+            Swal.fire({
+                text: `Willst du den gespeicherten Spielstand laden?
+                Dein gesamter bisheriger Fortschritt geht dabei verloren.`,
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: 'Ja, lade alten Spielstand',
+                denyButtonText: `Lieber nicht`,
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    actually_load()
+                } else if (result.isDenied) {
+                    return
+                }
+            })
+            return
+
         });
 
         let undoEl = document.getElementById("undo")
