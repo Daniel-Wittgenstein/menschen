@@ -3,10 +3,10 @@
 VAR brauche_regenschirm = false
 VAR brauche_taxi = false
 VAR tmp = ""
+VAR geht_sie_nichts_an = false
 
-
-<h1>Hannah Kavka</h1>
-<h2>Menschen, die verschwinden</h2>
+<h1>TEIL 1</h1>
+<h2>Regen</h2>
 
 * Neues Spiel
     -> start
@@ -118,6 +118,7 @@ Marek sperrt auf.
 * Trete ein.
     Du trittst ein und findest dich in einem großen Eingangssaal mit Marmorwänden wieder.
     ~ tmp = "mrk"
+    # story_event: enter_foyer
     -> foyer.backfoyer
 
 
@@ -571,7 +572,7 @@ Der Dolch nähert sich deinem Hals.
 
 "Mach die Augen zu", flüstert Marek, "Dann ist es schneller vorbei."
 
-Aber deine Augen sind sperrangelweit offen. Und mit deinen offenen Augen siehst du, wie die Whiskeyflasche vom Tisch abhebt und in eure Richtung schwebt ...
+Aber deine Augen sind sperrangelweit offen. Und mit deinen offenen Augen siehst du ...
 
 * ...
 
@@ -584,12 +585,374 @@ Aber deine Augen sind sperrangelweit offen. Und mit deinen offenen Augen siehst 
 
 "Okay. Stoppen wir mal an der Stelle."
 
-Das Licht ist grell und surrt. Das feine, nervtötende Surren von Neonröhren. Wie lange sitzt du schon in diesem gottverdammten Raum?
+Das Licht ist grell und surrt. Das feine, nervtötende Surren von Neonröhren. Wie lange sitzt du schon in diesem gottverdammten Verhörraum?
+
+Der junge Polizist starrt dich mit blauen, durchdringenden Augen an. "In diesem Moment bewegte sich die Flasche, laut ihrer Angabe, zum ersten Mal?", fragt er auf Englisch, "Ist das korrekt?"
+
+* "Nein."
+    "Nein?", wiederholt der alte Polizist.
+    
+    ** "Nein."
+    
+        Sie warten einen Augenblick, ob noch mehr kommt.
+    
+        "Und genauer?", fragt der junge Polizist schließlich.
+        
+        *** "Das habe ich alles schon erzählt."
+            -> pol_schon_erzaehlt
+    
+        *** "WAS EXAKT wollen sie genauer wissen?"
+            "Das mit der Flasche", sagt der junge Polizist.
+            -> pol_weiter
+    
+    ** "Das habe ich alles schon zu Protokoll gegeben."
+            -> pol_schon_erzaehlt
+
+* "Verdammt nochmal, wie oft denn noch: Nein!"
+    -> pol_anti
+
+* "Hören Sie mir überhaupt zu?"
+    -> pol_anti
+
+
+=== pol_anti
+
+    "Reißen Sie sich zusammen", fährt der alte Polizist dir über den Mund.
+
+    "Also, nochmal", sagt der junge Polizist ruhig, "Die Flasche. Was passierte mit ihr?"
+    -> pol_weiter
+
+
+=== pol_schon_erzaehlt
+        "Ja, natürlich", der junge Polizist nickt, "Wenn Sie uns nur den Gefallen tun würden, es nochmal zu wiederholen." Er deutet auf den Papierbogen, der vor ihm liegt. "Reine Formalität."
+    -> pol_weiter
+
+=== pol_weiter
+    
+    * "Die Flasche fing zu schweben an."
+    
+        "Die Flasche fing zu schweben an", sagst du, "<>
+        -> pol_weiter2
+    
+    
+    * "Sie glauben mir sowieso nicht."
+
+        "Ob wir Ihnen glauben oder nicht, tut nichts zur Sache", sagt der junge Polizist, "Erzählen Sie einfach, was aus Ihrer Sicht passiert ist."
+
+        ** "Was heißt: AUS MEINER SICHT? Glauben Sie, ich bin verrückt?"
+        
+            Der junge Polizist schüttelt den Kopf: "Nein, das glaube ich nicht. Sehen Sie, Frau Kavka, unter akutem psychischem Stress können Menschen sich allerlei Dinge einbilden."
+
+            *** "Ich habe mir das NICHT nur eingebildet."
+
+                "Da gehen unsere Meinungen wohl auseinander", sagt der junge Polizist mit einem kleinen Lächeln. "Wollen Sie uns noch einmal schildern, was dann passierte?"
+
+                **** "Meinetwegen."
+                    -> pol_meinetwegen
+                    
+                **** "Sehen Sie in Ihrem Protokoll nach."
+                    -> pol_anti2
+
+            *** "Glauben Sie wirklich?"
+            
+                "Ja", antwortet der junge Polizist, "Aber machen Sie sich keine Sorgen. Sie scheinen mir vollkommen psychisch gesund zu sein."
+                
+                "Da bin ich mir nicht so sicher", murmelt der alte Polizist auf Tschechisch, weil er glaubt, dass du ihn nicht verstehst.
+
+                "Wollen Sie uns noch einmal schildern, was dann passierte?", fragt der junge Polizist.
+                
+                **** "Okay."
+                    "Okay", sagst du, "Die Flasche fing zu schweben an. <>
+                    -> pol_weiter2
+                
+                **** "Meinetwegen."
+                    -> pol_meinetwegen
+
+        ** "Meinetwegen."
+            -- (pol_meinetwegen)
+        
+            "Meinetwegen", seufzt du, "Die Flasche fing zu schweben an. <>
+            -> pol_weiter2
+
+
+=== pol_weiter2
+
+Wie ich bereits vorhin sagte. Aber es war nicht das erste Mal. Vorhin war sie schon einmal geschwebt."
+
+Der junge Polizist nickt. "Während er Kerzen aufstellte, flog die Flasche eine langsame Runde durch den Raum und landete wieder auf dem Tisch", liest er von seinem Blatt ab.
+
+* "Richtig."
+
+    Der junge Polizist nickt zufrieden. "Die Flasche", fährt er fort, "landete also wieder auf dem Tisch und blieb dort. Nachdem der Angreifer Sie zu Boden geworfen hatte, fing die Flasche allerdings ein <i>zweites</i> Mal zu schweben an." Er wirft einen Blick auf seine Unterlagen. <>
+
+* "Sehen Sie? Sie haben es schon aufgeschrieben. Was fragen Sie also noch?"
+
+    "Erzählen Sie uns nicht, wie wir unsere Arbeit machen sollen", brummt der alte Polizist und funkelt dich böse an.
+    
+    "Die Flasche", sagt der junge Polizist, "landete also wieder auf dem Tisch und blieb dort. Nachdem der Angreifer sie zu Boden geworfen hatte, fing sie allerdings ein <i>zweites</i> Mal zu schweben an." Er wirft einen Blick auf seine Unterlagen. <>
+
+-
+-> pol_und_landete
+
+=== pol_und_landete
+"Und landete auf <i>dem Kopf</i> des Angreifers. Können Sie beschreiben, wie genau <i>das</i> ablief?"
+
+* "Sie landete eben auf seinem Kopf."
+
+    "Einfach so?"
+    
+    ** "Sie flog, bis sie über seinem Kopf schwebte."
+
+        -> pol_ueber_kopf
+
+
+    ** "Sie stellen wirklich dämliche Fragen."
+    
+    "Nennen Sie uns dämlich?", fragt der alte Polizist.
+    
+    Der junge Polizist winkt ab. "Bleiben wir doch bei der Sache, Frau Kavka", sagt er, "Sie haben hier zu Protokoll gegeben, dass die Flasche sich in der Luft über Herrn Nedostals Kopf positionierte. Was passierte dann?"
+
+        *** "Sie schlug zu."
+            -> pol_schlug_zu
+        
+        *** "Lesen SIE es mir doch vor."
+
+        Der junge Polizist seufzt. "Na, wenn Sie meinen", sagt er, "Sie haben zu Protokoll gegeben, dass die Flasche <i>zuschlug</i>. <>
+            -> pol_wie_darf
+
+* "Sie flog, bis sie über seinem Kopf schwebte."
+        -> pol_ueber_kopf
+
+
+
+=== pol_ueber_kopf
+
+        "Sie flog, bis sie über seinem Kopf schwebte", sagst du.
+        
+        "Und dann?"
+        
+-> pol_schlug_zu
+        
+=== pol_schlug_zu
+
+        "Dann schlug sie zu", sagst du.
+
+        "Sie ...?"
+        
+        Die zwei Polizisten tauschen einen ratlosen Blick aus.
+
+        "Die Flasche schlug zu?", wiederholt der junge Polizist. "<>
+
+    -> pol_wie_darf
+
+
+=== pol_wie_darf
+
+Wie darf ich mir das vorstellen? Die Flasche schlug zu, wie ... eine Flasche zuschlägt, wenn jemand damit ... jemanden schlägt? Aber da war kein Arm, der die Flasche bewegte?"
+    
+    
+* "Ja."
+
+    "Verstehe", sagt der junge Polizist.
+
+* "Sie drehte sich erst in der Luft."
+    "Sie drehte sich erst in der Luft", sagst du, "Und dann schlug sie eben zu. Mit der breiten Seite. Der unteren Seite. Sie wissen, was ich meine." 
+
+    "Ja, ich denke, ich kann es mir vorstellen", sagt der junge Polizist.
+
+
+-
+
+"Bekloppt, bekloppt, bekloppt", murmelt der alte Polizist auf Tschechisch, weil er glaubt, dass du ihn nicht verstehst. "Sie sagen also, Marek Nedostal", fährt er dann in scharfem Ton auf Englisch fort, "Prager Regisseur, bekannt für seine Experimentalfilme, wurde von einer zum Leben erwachten, fliegenden Whiskeyflasche erschlagen. Während er versuchte, sie zu vergewaltigen?"
+
+
+* "Er versuchte, mich zu ERMORDEN."
+
+    "Sie zu ermorden, ja", sagt der alte Polizist skeptisch, "Wieso sind Sie mit ihm nach Hause gegangen?"
+    
+    -- (pol_warum_mitgehen_pre)
+    
+    ** "Wieso ich ...?"
+    
+        "Ja", sagt der alte Polizist barsch, "Gestern Nacht erst haben Sie ihn kennengelernt", sagt der alte Polizist, "Und da dachten Sie sich, ich gehe sofort mit ihm nach Hause, obwohl ich ihn kaum kenne? Wieso? Weil er reich war? Weil er berühmt war?"
+    
+    ** "Ich habe ihn auf einer Filmpremiere kennengelernt."
+    
+        "Auf einer Filmpremiere, ja", sagt der alte Polizist, "Gestern Nacht erst. Und da dachten Sie sich, ich gehe sofort mit ihm nach Hause, obwohl ich ihn kaum kenne? Warum? Weil er reich war? Weil er berühmt war?"
+    
+    ** "Das geht Sie überhaupt nichts an."
+        
+        "Das wird dem Richter gefallen, wenn Sie ihm sagen, dass ihn das nichts angeht", antwortet der alte Polizist mit einem höhnischen Grinsen, "Wussten Sie, dass unsere glorreiche Regierung gerade die Haftstrafe für vorsätzlichen Mord nach oben gesetzt hat, Frau Kavka?"
+        
+            ~ geht_sie_nichts_an = true
+        
+        
+        *** "Ja. Ich lese Zeitung."
+        
+            "Oh, wundervoll", der alte Polizist grinst, "Sie informieren sich, wie ich sehe. Sie sind eine niveauvolle, junge Frau, nicht wahr? Was bewegt Sie dann eigentlich dazu, mit einem wildfremden Mann nach Hause zu gehen? Sie haben Marek Nedostal gestern Nacht kennengelernt. Und schon laufen Sie mit ihm mit. Warum? Weil er reich war? Weil er berühmt war?"
+        
+        *** "Sie machen mir keine Angst."
+        
+            "Ich mache Ihnen keine Angst, so, so", der alte Polizist grinst, "Hat ihnen Marek Nedostal Angst gemacht? Sie haben ihn erst gestern Nacht kennengelernt. Und schon laufen Sie mit ihm nach Hause. Warum? Weil er reich war? Weil er berühmt war?"
+
+
+        *** "Ich habe niemanden umgebracht!"
+        
+            "Ja, kann sein", sagt der alte Polizist unbeeindruckt, "Ich frage mich aber immer noch, wieso Sie mit einem wildfremden Mann nach Hause gehen. Sie haben Marek Nedostal erst gestern Nacht kennengelernt. Was hat Sie dazu bewogen, mit ihm mitzugehen? Weil er reich war? Weil er berühmt war?"
+
+    --
+    -> pol_warum_mitgehen
+
+
+* "Ja."
+    
+    "Tatsächlich?" Der alte Polizist grinst triumphierend. "Vorhin sagten Sie noch, er wollte Sie ERMORDEN. Mit einem Messer. Lügen Sie uns an, Frau Kavka?"
+
+    ** "Nein."
+        
+    ** "Ich weiß nicht, was er von mir wollte!"
+    
+    
+    --
+    "So, so", der alte Polizist wiegt den Kopf und legt die Stirn in Falten, "Wissen Sie, was ich mich frage? Wieso sind Sie mit ihm nach Hause gegangen?"
+    -> pol_warum_mitgehen_pre
+    
+
+* "Ich wusste doch, dass Sie mir nicht glauben würden."
+    
+    "Ach, tatsächlich?", fragt der alte Polizist mit einem listigen Lächeln, "Sie finden die Geschichte, die Sie erzählt haben, also unglaubwürdig?"
+
+    ** "Ist das eine Fangfrage?"
+    
+        "Ich brauche Ihnen keine Fangfragen zu stellen, Sie widersprechen sich ganz von alleine", sagt der alte Polizist, "Können Sie mir wenigstens erklären, warum Sie mit Nedostal nach Hause gegangen sind?"
+      -> pol_warum_mitgehen_pre      
+        
+    ** "Nein, finde ich nicht."
+    
+        "Sie haben also schon oft von fliegenden Flaschen gehört, die Menschen ermorden", sagt der alte Polizist, "Anscheinend ganz gewöhnlich bei Ihnen in Deutschland. Nur wir Tschechen leben ganz offensichtlich hinter dem Mond, bei uns hat man nämlich davon noch nicht Wind bekommen. Können Sie mir wenigstens erklären, wieso sie mit Nedostal nach Hause gegangen sind?"
+        -> pol_warum_mitgehen_pre
+        
+    ** "Ich erzähle nur, was ich mit meinen eigenen Augen gesehen habe."
+
+        "So, so", der alte Polizist wiegt den Kopf und legt die Stirn in Falten, "Wissen Sie, was ich mich frage? Wieso sind Sie mit Nedostal nach Hause gegangen?"
+        -> pol_warum_mitgehen_pre
+
+=== pol_warum_mitgehen
+
+
+
+* "Das geht Sie nichts an!"
+
+    {geht_sie_nichts_an:
+        "Ja, das sagten Sie bereits."
+    - else:
+        "Geht mich nichts an", brummt er, "So, so."
+    }
+
+
+* "Was ist das bitte für eine Frage?"
+
+    "Eine ganz gewöhnliche Frage, Frau Kavka."
+
+* "Ich weiß nicht, warum ich mit ihm mitgegangen bin."
+
+    "Sie wissen es also nicht. So, so."
+
+-
+
+<> Er räuspert sich. "Gehen Sie oft mit fremden Männern nach Hause, Frau Kavka?"
+
+
+* "Ja."
+
+    "Aha. Und spielte das Vermögen von Herrn Nedostal eine Rolle bei Ihrer Entscheidung, ihn zu begleiten?"
+
+
+* "Nein."
+
+    "Aber bei Herrn Nedostal war es anders. Wieso? Spielte das Vermögen von Herrn Nedostal eine Rolle bei Ihrer Entscheidung, ihn zu begleiten?"
+
+
+* "Diese Frage ist eine Unverschämtheit."
+
+    "Also, ja", sagt der Alte, "Diese Männer, mit denen Sie nach Hause gehen, Frau Kavka, spielt ... wie soll ich sagen ... das Vermögen dieser Männer eine Rolle bei Ihrer Entscheidung, sie zu begleiten?"
+    
+-
+
+Plötzlich fasst der junge Polizist den alten Polizisten am Arm an.
+
+"Ich glaube ... das führt zu nichts", murmelt er auf Tschechisch.
+
+Der Alte sieht ihn böse an: "Was soll das heißen, führt zu nichts? Die Kleine ist eine Hobbyhure, das sehe ich."
+
+"Ich glaube nicht, dass sie ...", er beißt auf seine Unterlippe, "können wir draußen sprechen?"
+
+"Draußen? Wieso?"
+
+Der Junge nickt in Richtung der Kamera, die über der Tür angebracht ist.
+
+Der Alte zieht die Augenbrauen nach oben und steht auf.
+
+"Wir sind gleich zurück, Frau Kavka", sagt der junge Polizist mit einem bemüht freundlichen Lächeln. Dann verschwinden sie durch die Tür.
+
+* Warte.
+
+    Du wartest. Das Surren der Neonröhren ist laut und raubt dir den letzten Nerv. Du sitzt echt in der Tinte, Hannah. Die wollen dir einen verfluchten Mord anhängen.
+
+* Versuche, die Tür zu öffnen.
+
+    Die Tür ist von außen abgesperrt. Hmm ... wäre ohnehin keine sehr gute Idee gewesen, aus der Polizeiwache auszubrechen. Du sitzt so schon tief genug in der Tinte. Die wollen dir einen verfluchten Mord anhängen.
+
+-
+Nach ein paar Minuten kommt der junge Polizist zurück.
+
+"Das wäre dann alles, Frau Kavka", sagt er mit einem zurückhaltenden Lächeln. Sie dürfen gehen."
+
+* Du starrst ihn überrascht und sprachlos an.
+
+    Sein Lächeln wird etwas breiter. "Überrascht?", fragt er, "Machen Sie sich keine Sorgen. Wir haben alle Anklagepunkte gegen Sie fallen gelassen.  Was den Mörder von Marek Nedostal angeht ... wir haben zumindest eine Tatwaffe. Mal sehen, was das Labor an DNA hergibt."
+    
+* Du sagst: "Und wie geht es weiter?"
+    Sein Lächeln wird etwas breiter. "Wie es mit Ihnen weiter geht?", fragt er, "Machen Sie sich keine Sorgen. Wir haben alle Anklagepunkte gegen Sie fallen gelassen. Was den Mörder von Marek Nedostal angeht ... wir haben zumindest eine Tatwaffe. Mal sehen, was das Labor an DNA hergibt."
+
+-
+
+<i>Mal sehen, was das Labor an DNA hergibt?</i>
+
+Ist das hier eine Folge CSI? Du verstehst nicht, warum er mit dir Details der Ermittlungen bespricht. Und schon gar nicht verstehst du, warum Sie dir eben noch einen Mord anhängen wollten und dich jetzt auf einmal gehen lassen.
+
+* "Sie glauben also, dass jemand Marek erschlagen hat?"
+
+    "Ja, natürlich. Irgendein Fremder ist in das Haus eingedrungen, während Sie sich dort mit Herrn Nedostal aufhielten. Dass Sie sich nicht an den Angreifer erinnern, ist ein ganz normales Symptom von posttraumatischem Stress. Lassen Sie sich von einem Arzt, untersuchen, ja?"
+
+
+* "Ich verstehe nicht ..."
+
+    "Das müssen Sie auch nicht, Frau Kavka. Sie stehen ganz offensichtlich noch unter Schock. Ihre Zeugenaussage mit dem unsichtbaren Angreifer deutet ganz klar darauf hin. Lassen Sie sich von einem Arzt untersuchen, ja?"
+
+Er deutet dir mit einer ungeduldigen Handbewegung an, den Raum zu verlassen.
+
+-
+
+* Weiter
+    -> part2
+
+
 
 -> DONE
 
+=== pol_anti2
+
+Der junge Polizist räuspert sich: "Sie sind nicht gerade kooperativ, Frau Kavka. Aber gut. Ich lese noch einmal in meinem Protokoll nach. Hier steht, dass die Flasche eine Runde durch den Raum flog und wieder auf dem Tisch landete. Dort ... blieb sie erst einmal. Nachdem der Angreifer Sie zu Boden geworfen hatte, fing die Flasche allerdings ein <i>zweites</i> Mal zu schweben an." Er wirft einen Blick auf seine Unterlagen. <>
+    -> pol_und_landete
 
 
 
 
+=== part2
+
+<h1>TEIL 2</h1>
+<h2>Gespenster</h2>
+
+-> DONE
 
