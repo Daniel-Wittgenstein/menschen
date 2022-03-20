@@ -11,6 +11,13 @@ INCLUDE kassandra-haus.ink
 
 INCLUDE menschen.ink
 
+
+/* testing redirects: */
+-> kassandra_start_laden
+
+
+/* testing redirects, end */
+
 -> start
 
 === start
