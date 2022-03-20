@@ -1,6 +1,5 @@
 
-INCLUDE kassandra-laden.ink
-INCLUDE kassandra-haus.ink
+
 
 === kassandra_start
 
@@ -12,6 +11,5 @@ INCLUDE kassandra-haus.ink
 
 === kassandra_start_ok
 
-...
+-> kassandra_start_laden
 
--> END

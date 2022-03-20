@@ -1,6 +1,4 @@
 
-INCLUDE gespenster-jagd.ink
-INCLUDE gespenster-party.ink
 
 === gespenster_start
 
@@ -12,6 +10,6 @@ INCLUDE gespenster-party.ink
 
 === gespenster_start_ok
 
-...
+-> gespenster_jagd_start
 
 -> END
