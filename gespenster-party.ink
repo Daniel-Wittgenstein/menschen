@@ -29,31 +29,31 @@ VAR dame_raum = rgarten
 
 VAR spieler_raum_actual_knot = -> ballsaal
 
-CONST frau_name1 = "eine platinblonde Frau in einem Minirock"
-CONST Frau_name1 = "Eine platinblonde Frau in einem Minirock"
+CONST frau_name1 = "((@frau eine platinblonde Frau in einem Minirock))"
+CONST Frau_name1 = "((@frau Eine platinblonde Frau in einem Minirock))"
 
-CONST frau_name2 = "die platinblonde Frau im Minirock"
-CONST Frau_name2 = "Die platinblonde Frau im Minirock"
+CONST frau_name2 = "((@frau die platinblonde Frau im Minirock))"
+CONST Frau_name2 = "((@frau Die platinblonde Frau im Minirock))"
 
 VAR frau_name = frau_name1
 VAR Frau_name = Frau_name1
 
 
-CONST herr_name1 = "ein junger Mann mit einer roten Krawatte"
-CONST Herr_name1 = "Ein junger Mann mit einer roten Krawatte"
+CONST herr_name1 = "((@herr ein junger Mann mit einer roten Krawatte))"
+CONST Herr_name1 = "((@herr Ein junger Mann mit einer roten Krawatte))"
 
-CONST herr_name2 = "der junge Mann mit der roten Krawatte"
-CONST Herr_name2 = "Der junge Mann mit der roten Krawatte"
+CONST herr_name2 = "((@herr der junge Mann mit der roten Krawatte))"
+CONST Herr_name2 = "((@herr Der junge Mann mit der roten Krawatte))"
 
 VAR herr_name = herr_name1
 VAR Herr_name = Herr_name1
 
 
-CONST dame_name1 = "eine ältere Dame mit einer Turmfrisur"
-CONST Dame_name1 = "Eine ältere Dame mit einer Turmfrisur"
+CONST dame_name1 = "((@dame eine ältere Dame mit einer Turmfrisur))"
+CONST Dame_name1 = "((@dame Eine ältere Dame mit einer Turmfrisur))"
 
-CONST dame_name2 = "die ältere Dame mit der Turmfrisur"
-CONST Dame_name2 = "Die ältere Dame mit der Turmfrisur"
+CONST dame_name2 = "((@dame die ältere Dame mit der Turmfrisur))"
+CONST Dame_name2 = "((@dame Die ältere Dame mit der Turmfrisur))"
 
 VAR dame_name = dame_name1
 VAR Dame_name = Dame_name1
@@ -74,7 +74,7 @@ VAR Dame_name = Dame_name1
     }
     
     {o == rballsaal and n == rgarten:
-        {Frau_name} kommt von drinnen. Sie wirft einen arroganten Blick um sich und stellt sich neben den Pool.
+        {Frau_name} kommt von drinnen in den Garten stolziert. Sie wirft einen arroganten Blick um sich und stellt sich neben den Pool.
         ~ return
     }
 
@@ -375,23 +375,23 @@ VAR party_count = 0
 
     {frau_mentioned and get_location_of_person(frau) == spieler_raum and jci != frau:
 
-        {~Die Frau mit dem platinblonden Haaren steht alleine da und scheint sich zu langweilen.|Die Frau mit den platinblonden Haaren nippt an ihrem Martini.|Die Blonde mit dem Minirock gähnt gelangweilt.|Die blonde Frau mit dem Minirock wirft einen ratlosen Blick um sich.}
+        {~((@frau Die Frau)) mit dem platinblonden Haaren steht alleine da und scheint sich zu langweilen.|((@frau Die Frau)) mit den platinblonden Haaren nippt an ihrem Martini.|((@frau Die Blonde)) mit dem Minirock gähnt gelangweilt.|((@frau Die blonde Frau)) mit dem Minirock wirft einen ratlosen Blick um sich.}
 
 
     }
     
     {herr_mentioned and get_location_of_person(herr) == spieler_raum and jci != herr:
 
-        {~Der junge Mann mit der roten Krawatte nippt an seinem Glas Cola.|Der junge Mann mit der roten Krawatte wirft dir einen verstohlenen Blick zu. Als du zurückschaust, wendet er sich schnell ab.|Der Mann mit roten Krawatte steht abseits der anderen Gäste und wartet, dass ihn jemand anspricht.|Der junge Mann mit der roten Krawatte gähnt.}
+        {~((@herr Der junge Mann)) mit der roten Krawatte nippt an seinem Glas Cola.|((@herr Der junge Mann)) mit der roten Krawatte wirft dir einen verstohlenen Blick zu. Als du zurückschaust, wendet er sich schnell ab.|((@herr Der Mann)) mit roten Krawatte steht abseits der anderen Gäste und wartet, dass ihn jemand anspricht.|((@herr Der junge Mann)) mit der roten Krawatte gähnt.}
 
     }
     
     {dame_mentioned and get_location_of_person(dame) == spieler_raum and jci != dame:
         { spieler_raum:
             - rgarten:
-                Unweit des Pools steht die ältere Dame mit der Turmfrisur und unterhält sich angeregt mit einer Freundin.
+                Unweit des Pools steht ((@dame die ältere Dame)) mit der Turmfrisur und unterhält sich angeregt mit einer Freundin.
             - else:
-                Die ältere Dame mit der Turmfrisur {~lacht laut über etwas, was jemand gesagt hat.|unterhält sich angeregt mit einer anderen Frau.}          
+                Die ((@dame ältere Dame)) mit der Turmfrisur {~lacht laut über etwas, was jemand gesagt hat.|unterhält sich angeregt mit einer anderen Frau.}          
         }
     
 
