@@ -1,3 +1,8 @@
+.debug {
+    color: #D00;
+}
+
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Quattrocento:700');
 
 :root {
@@ -505,3 +510,4 @@ body.dark {
     border-radius: 4px;
     border:2px solid #222;
 }
+
