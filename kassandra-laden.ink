@@ -112,7 +112,22 @@ Hmmm ... laut deiner Karten-App müsste es hier in der Nähe sein.
 * Trete in den Laden ein
 
 -
+
+Du betrittst den Laden.
+
+"Kann ich Ihnen helfen?"
+
+Sie hat rote Haare.
+
+
+* ...
+
+* ... 
+
+-
 ...
+
+
 
 -> END
 
