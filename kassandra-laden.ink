@@ -279,7 +279,7 @@ Kassandra schenkt dir ein Kopfnicken, gepaart mit einem kalten Lächeln.
     
     Kassandra starrt dich mit entsetztem Ausdruck an.
     
-    Von lacht: "Ein offensichtliches Missverständnis. {self_name} scheint sich falsch zu erinnern. Die Kassandra der Sage war nicht blind. Eine Verwechslung mit dem Seher Teiresias, nehme ich an." Er legt Kassandra eine Hand auf die Schulter und flüstert ihr etwas ins Ohr. Der schockierte Ausdruck weicht aus ihrem, Gesicht.
+    Von lacht: "Ein offensichtliches Missverständnis. {self_name} scheint sich falsch zu erinnern. Die Kassandra der Sage war nicht blind. Eine Verwechslung mit dem Seher Teiresias, nehme ich an." Er legt Kassandra eine Hand auf die Schulter und flüstert ihr etwas ins Ohr. Der schockierte Ausdruck weicht aus ihrem Gesicht.
     
     "Nun gut", sagt Von, "Wenn die Damen mir nun <>
 
