@@ -91,6 +91,8 @@ function split_into_first_word_and_rest(str) {
 
     window.global_story = story
 
+    keygen.init(story)
+
     var savePoint = "";
 
     let savedTheme;

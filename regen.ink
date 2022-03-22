@@ -1,5 +1,20 @@
 
 
+VAR keytest1 = false
+VAR keytest2 = false
+VAR keytest3 = false
+VAR keytest4 = true
+
+VAR keytest5 = false
+VAR keytest6 = false
+VAR keytest7 = false
+VAR keytest8 = true
+
+VAR keytest9 = true
+VAR keytest10 = true
+VAR keytest11 = false
+VAR keytest12 = true
+
 VAR brauche_regenschirm = false
 VAR brauche_taxi = false
 VAR tmp = ""
