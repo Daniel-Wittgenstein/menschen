@@ -14,9 +14,10 @@ INCLUDE menschen.ink
 
 /* testing redirects: */
 
--> gespenster_start
-
 -> kassandra_start_laden
+
+
+-> gespenster_start
 
 -> gespenster_party_start
 

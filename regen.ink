@@ -575,7 +575,7 @@ sagt er. Ohne Eile tritt er an die Vitrine und holt aus einer Schublade einen la
 
 Dann lässt er sich auf dich fallen. Du kannst nicht mehr aufstehen. Du spürst seinen heißen Atem in deinem Gesicht.
 
-"Tut mir leid", flüstert er, "Sieh's mal so: dein Leben war nichts Besonderes. Du bist nur ein Mädchen von vielen. Du wärst alt geworden, hässlich geworden. Du hättest nie etwas Großes erreicht. Nie gewusst, weshalb du lebst. Ich erspare dir das alles. Es tut mir wirklich leid. Aber ... es ist besser so, ja."
+"Tut mir leid", flüstert er, "Sieh's mal so: dein Leben war nichts Besonderes. Du bist nur ein Mädchen von vielen. Du wärst alt geworden, hässlich geworden. Du hättest nie etwas Großes erreicht. Nie gewusst, weshalb du lebst. Ich erspare dir das alles. Und du kannst Teil von etwas Größerem werden. Es tut mir wirklich leid. Aber ... es ist besser so, ja."
 
 * Wehr dich.
 Du versuchst, dich zu wehren, aber er liegt mit seinem ganzen Gewicht auf dir. Du kannst nichts tun.

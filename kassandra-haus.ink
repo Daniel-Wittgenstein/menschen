@@ -3,6 +3,11 @@
 === kassandra_start_haus
 
 
+    Ihr erreicht Bensons Haus.
+
+-> END
+
+=== aaasonstiges
 
 - Kassandra und du brecht in Bensons Haus ein, das voll mit Fallen ist.
     Schließlich schafft ihr es, ihn zu stellen.

@@ -7,6 +7,8 @@ try to use it.
 
 */
 
+VAR self_name = ""
+
 
 === kassandra_start_laden
 
@@ -27,7 +29,7 @@ Fuck! Wie sollst du jemals wieder ein normales Leben führen, wenn du weißt, da
 
 * Bleibe stehen und lausche
 
-Du bleibst stehen und lauschst. Der Lärm der Autos, der Menschen. Wenn sich jemand an dich anschleicht, würdest du es nie im Leben merken. Dein Herz klopft schneller.
+Du bleibst stehen und lauschst. Der Lärm der Autos, der Menschen. Wenn sich jemand Unsichtbares an dich anschleicht, würdest du es nie im Leben merken. Dein Herz klopft schneller.
 
     ** Versuche, tief ein und auszuatmen.
         -> k_atmen
@@ -230,7 +232,7 @@ Der kleine, alte Mann hebt die Schultern. "Ich mache mich gar nicht lustig", sag
 
 * "Das heißt ... Sie haben schon einmal unsichtbare Menschen getroffen?"
     
-    Der alte Mann schmunzelt. "Nicht nue getroffen. Diese Dame hier neben mir ist sogar un..."
+    Der alte Mann schmunzelt. "Nicht nur getroffen. Diese Dame hier neben mir ist sogar un..."
 
 -
 
@@ -260,13 +262,13 @@ Die rothaarige Frau wirft ihm einen bösen Blick zu und er verstummt.
 Wie heißen Sie überhaupt, meine Liebe?"
 
 
-* Sage: "Hannah."
+* Sage: "Hannah Kavka."
     "Hannah", wiederholt Von, "Die Anmutige. <>
-    ~ self_name = "Hannah"
+    ~ self_name = "Frau Kavka"
 
-* Lüge: "Bianca."
+* Lüge: "Bianca Bronski."
     "Bianca", wiederholt Von, "Die Weiße. <>
-    ~ self_name = "Bianca"
+    ~ self_name = "Frau Bronski"
     
 
 -
@@ -293,28 +295,370 @@ Kassandra schenkt dir ein Kopfnicken, gepaart mit einem kalten Lächeln.
 
 ins Hinterzimmer folgen würden. Ich denke doch, dass es sich dort angenehmer parlieren lässt, meint ihr nicht auch?"
 
-+ ...
+
+
+* Folge ihm
 
 -
 
--> END
+Du folgst ihnen in ein kleines Hinterzimmer, das vollgestopft ist mit Büchern und alten Zeitschriften. In der Mitte des Zimmers ist gerade genug Platz für ein winziges Tischchen, zwei gelbe, zerschlissene Sessel und einen Korbstuhl.
+
+* Setz dich in den Korbstuhl
+    
+    Du lässt dich in den Korbstuhl sinken. Kassandra und Von nehmen auf den Sesseln Platz.
+
+* Setz dich in einen Sessel
+
+    Du setzt dich in einen der Sessel. Kassandra und Von nehmen ebenfalls Platz.
+    
+-
+
+Du erzählst ihnen alles von Anfang an, von deinem Besuch bei Marek, von dem Mann, der dich auf dem Altstädter Ring verfolgt hat, und von deiner Begegnung mit Kross.
+
+Als du fertig bist, seufzt Von laut. Er nimmt seine Brille ab, reibt sie langsam am Ärmel seines Jacketts und setzt sie dann wieder auf. "Glauben Sie an Dämonen, {self_name}?"
 
 
-VAR self_name = ""
+* "WAS?!!!"
+    Von lächelt: "Eine verständliche Reaktion für einen Menschen des 21. Jahrhunderts. Ich persönlich glaube auch nicht daran. <>
 
-=== sonstiges
+* "Nein."
+    "Ich ebenfalls nicht", sagt Von. "<>
 
-() Du gehst zu Laden, triffst Kassandra und Von.
-    Von sagt, wenn es dieser Dolch ist, schwebt ihr in Gefahr
-    Ihr müsst den Dolch finden und vernichten, dann ist der Fluch zu Ende
-    Benson ist ein anderer Unsichtbarer, der schon halb durchgeknallt ist.
+* "Vielleicht."
+    "Nun, ich persönlich glaube nicht daran", sagt Von. "<>
 
-    Suche nach Vons Laden (irgendein Puzzle?)
+    -
+    Die Naturwissenschaften waren nie meine Stärke, aber ich bin davon überzeugt, dass wir in einigen Jahrzehnten eine ganz plausible Erklärung haben werden, weshalb unser Freund Kross nicht mehr sichtbar ist. Einige unserer Mitmenschen aber ... sehen das leider anders." Er räuspert sich, nimmt noch einmal die Brille ab und reibt sie an seinem Jackettärmel, obwohl sie längst sauber ist. "Ich will nicht allzu weit ausholen ..."
+    
+* "Okay."
 
-    Dialog mit Kassandra und Von
+* "Doch, bitte!"
 
 
-* ...
+-
+    "Es ist keine interessante Geschichte, glauben Sie mir", fährt Von fort, "Deswegen werde ich es kurz machen. Es gab da einmal drei junge Männer. Das war in den Neunzigern, nach dem Fall der Sowjetunion, als alle glaubten, dass es mit der Welt nur noch bergauf gehen kann. Alle Idioten zumindest. Leute, die Bücher lesen, wie ich, waren da schon immer skeptischer. Aber ich verliere mich ... wo war ich?"
+    
+* "Drei Jungen."
+    "Ja, richtig." <>
+
+* "Die Neunziger."
+    "Hmmm ... ja", sagt er, "Havel war einer der wenigen Lichtblicke. Jedenfalls ... drei junge Männer ..." <>
+    
+-
+    Sein Blick wird glasig und er starrt auf die Tischplatte. Man kann in seinem Gesicht Ekel und Abscheu sehen. "Drei Jungen", fährt er mechanisch fort, als versuche er, das Ganze möglichst schnell loszuwerden, "Drei dumme, junge Jungen. Sie hatten in einem Buch - wahrscheinlich das einzige Buch, das sie je aufgeklappt hatten - etwas über alte sumerische Riten gelesen. Drei Viertel davon hatte nichts mit sumerischen Riten zu tun, sondern war irgendwelcher dazugedichtete Quatsch, Aleister Crowley und ähnliche Scharlatane. Sie nahmen das Ganze ernst und töteten ein Mädchen. Als Opfer an einen sumerischen Dämon. Ich möchte nicht einmal den Namen dieses angeblichen Dämons aussprechen, so lächerlich ist das Ganze. Natürlich kamen sie damit davon, weil sie das Opfer gut gewählt hatten; sie hatten sich jemanden ausgesucht, auf den sowieso niemand etwas gibt. Und damit hätte die Geschichte auch schon zu Ende sein können, eine von tausenden Geschichten sinnloser menschlicher Brutalität und Dummheit."
+
+
+* "Und dann?"
+    "Dann verschwanden zwei dieser Jungen."
+
+* "IST die Geschichte zu Ende?"
+    "Nein, leider nicht. Kurz nach dem Mord verschwanden zwei dieser Jungen."
+    
+-
+    "Du meinst, sie wurden unsichtbar", sagt Kassandra.
+    
+    "Ja, natürlich", er nickt, "Weiß Gott, warum. Vielleicht hatte die StB sie sich geschnappt und mit ihnen experimentiert. Vielleicht die Amerikaner, die unsichtbare Spione hinter den eisernen Vorhang schleusen wollten. Wobei die Frage offen bleibt, warum sie niemand Erfahreneren aussuchten. Ich persönlich glaube ja, dass es ein Zufall war, irgendein seltenes physikalisches Phänomen, das uns genauso mysteriös und übernatürlich erscheinen muss wie dem Steinzeitmenschen Feuer oder Blitze." Er zuckt mit den Schultern. "Wie dem auch sei. An diesem Punkt hätte die Geschichte ebenfalls enden können. Zumal sie sich nicht groß herumsprach."
+    
+* "Aber?"
+    "Aber es gab über die Jahrzehnte ein paar Idioten, die davon Wind bekamen. <>
+
+* "Ich kann mir nicht vorstellen, dass man so etwas geheim halten kann."
+    "Vielleicht nicht", sagt er, "Aber die, die davon erfuhren, glaubten ohnehin nicht daran. Zumindest die meisten. Leider gab es einige, die es doch taten. <>
+
+-
+    Und da kommt der Dolch ins Spiel. Der Dolch mit dem ...", er zögert.
+    
+    "... sie damals das Mädchen abgestochen haben", ergänzt Kassandra.
+    
+    Von nickt langsam: "Ja. Manche glauben, dass dieser Dolch, der übrigens ganz banaler Provenienz ist, ein Artefakt, kaum hundert Jahre alt, dem aber trotzdem allerlei mystische Eigenschaften angedichtet werden, also, dass sie mit diesem Dolch eine ... wie soll ich sagen ..."
+    
+    "Sie glauben, dass der Dolch Zauberkräfte hat und dass sie damit eine Frau opfern müssen", unterbricht ihn Kassandra, "Sie glauben, dass sie dann auch unsichtbar werden oder magische Kräfte bekommen oder so."
+    
+    "Ja", sagt Von zerknirscht, "Sehr prägnant auf den Punkt gebracht, Cassie, wenn auch etwas lapidar."
+
+* "Glauben das Leute wirklich?"
+
+    "Wir reden hier von ein paar Durchgeknallten", sagt Kassandra, "Wie Marek Nedostal."
+    
+* "Oh, mein Gott! Marek!"
+
+    "Genau", sagt Kassandra.
+    
+-
+Das ist also der Grund. Er wollte dich töten, um übernatürliche Kräfte zu erhalten? Der Gedanke erfüllt dich mit Abscheu. 
+
+* "Gibt es noch andere, die hinter dem Dolch her sind?"
+
+    "Mindestens einer", sagt Kassandra, "Du hast uns doch von ihm erzählt."
+    
+    ** "Ja, mein Verfolger am Altstädter Ring."
+        
+        "Ja", sagt Kassandra, "<>
+    
+    ** "Wen meinst du?"
+    
+        "Deinen Stalker", sagt Kassandra, "<>
+    
+    Vielleicht wollte er den Dolch für sich. Oder um ihn an jemanden zu verkaufen, der damit einen Ritualmord vorhat."
+
+* "Dieser Kerl am Altstädter Ring, wollte er deswegen den Dolch?"
+
+    "Mit Sicherheit", sagt Kassandra, "Entweder für sich selbst oder um ihn an jemanden zu verkaufen, der damit einen Ritualmord vorhat."
+
+
+-
+
+
+* "Wir müssen zur Polizei gehen."
+
+    Kassandra und Von tauschen einen finsteren Blick.
+    
+    "Die Polizei hat, was das angeht, etwas eigene Ansichten", sagt Von kryptisch.
+    
+    ** "Sie meinen, dass sie uns nicht glauben werden?"
+
+        "Einige von ihnen werden uns nicht glauben, ja", sagt Von, "Andere wissen genau, wovon wir sprechen."
+
+        *** "Ist das Ihr Ernst?"
+
+            "Ja, das ist sein Ernst", sagt Kassandra.
+
+            Sie tauscht wieder einen Blick mit Von.            
+
+            "Die Polizisten sind auch abergläubisch", sagt sie schließlich, "Sie wollen mit dem Dolch nichts zu tun haben."
+            
+        *** "Und warum tun sie dann nichts?"
+            
+            Kassandra und Von tauschen wieder einen Blick.
+            
+            "Sie sind auch abergläubisch", sagt Kassandra schließlich, "Sie wollen mit dem Dolch nichts zu tun haben."
+            
+        ---
+            
+        *** "Was?! Das kann doch nicht die Erklärung sein?"
+            
+            "Glaub mir, sie werden uns nicht helfen", sagt Kassandra, "deine Erfahrung mit ihnen war auch nicht rosig, oder?"
+            
+            **** "Ja, das stimmt."
+            
+            
+            **** "Sie waren schrecklich zu mir."
+        
+            ----
+            
+            "Eben", sagt Kassandra, "Aber ich weiß, was ich mache."
+
+            **** "Und zwar?"
+
+            **** "Ach?
+            
+            ----
+            "<>
+        
+        *** "Was können wir dann tun?"
+            "Ganz einfach", sagt Kassandra, "<>        
+        
+    ** "Was können wir dann tun?"
+        "Ganz einfach", sagt Kassandra, "<>
+    
+
+* "Das ist schrecklich."
+
+    "Auf jeden Fall", sagt Kassandra, "Aber es wird nicht passieren. <>
+   
+   
+-
+  
+    Ich hole mir diesen Dolch und werfe ihn in die Moldau. Ne, noch besser, ich schmelze ihn ein."
+    
+    * "Das wird meinem Stalker nicht gefallen."
+    
+        "Mit dem werden wir schon fertig, keine Sorge", sagt Kassandra.
+    
+        ** "Danke, das ist nett."
+        
+            Auf Kassandras Lippen blitzt ein Lächeln auf, das ehrlich wirkt: "Keine Ursache."
+        
+        ** "Da bin ich mir nicht so sicher."
+    
+            "Unterschätz mich nicht", antwortet Kassandra mit gerunzelter Stirn.
+    
+        ** "Du? Wie willst DU mit dem fertig werden?
+        
+            "Unterschätz mich nicht", antwortet Kassandra pikiert.
+
+
+        --
+        
+        Von räuspert sich laut. "Dein Plan in allen Ehren, Cassie, aber wir wissen nicht einmal, wo der Dolch sich derzeit befindet. Wie {self_name} ja gesagt hat, er ist vom Tatort verschwunden."
+    
+    * "Aber wir wissen noch nicht einmal, wo der Dolch ist."
+    
+        "Ja, das stimmt leider", murmelt Kassandra und zieht ihre Stirn in Falten.
+        
+
+-
+
+* "Vielleicht hat ihn die Polizei vom Tatort mitgenommen."
+
+    "Als Beweisstück, ja", sagt Kassandra, "Außer Kross hat ihn sich vorher geschnappt."
+
+    -- (k_kross_genommen)
+
+    ** "Aber Kross sagte, er hat den Dolch nicht."
+    
+        "Er hat ihn <i>im Moment</i> nicht", sagt Kassandra, "Heißt aber nicht, dass er ihn nicht gemommen und weitergegeben hat. Ihm macht es Spaß, nur die halbe Wahrheit zu sagen. Er ist ein totales Arschloch."
+    
+        --- (k_totales_arschloch)
+    
+        *** "Er hat mir immerhin das Leben gerettet."
+        
+            "Jaaa", sagt Kassandra lang gedehnt, "Sorry. Wollte nicht ...", sie beißt sich auf die Unterlippe, " ... ich wollte nicht sagen, dass es schlecht war, dass er dich gerettet hat, oder so. Jedenfalls. Wie finden wir diesen Dolch? Gibt es noch irgendeinen Hinweis? Irgendetwas, was Kross dir gesagt hat?"
+        
+        *** "Ja, das ist er."
+        
+            Kassandra wirft dir einen verwunderten Blick zu. Dann beißt sie sich auf die Unterlippe.
+            
+            "Na, gut", sagt sie schließlich, "Wie finden wir also diesen Dolch? Gibt es noch irgendeinen Hinweis? Irgendetwas, was Kross dir gesagt hat?"
+        
+        *** "Wie finden wir also diesen Dolch?"
+    
+            "Gibt es noch irgendeinen Hinweis?", fragt Kassandra, "Irgendetwas, was Kross dir gesagt hat?"
+    
+    ** "Vielleicht sollten wir in die Asservatenkammer der Polizei einbrechen."
+
+        Kassandra und Von starren dich entgeistert an.
+        
+        "Oder ... vielleicht auch nicht?", setzt du schnell hinzu.
+
+        "Das würde sich doch eher schwierig gestalten", sagt Von mit einem kleinen Lächeln, "Wir sind leider, anders als unser Freund Kross, nicht mit der Gabe der Unsichtbarkeit ausgestattet."
+
+        *** "Aber wir könnten Kross bitten ..."
+        
+            "Oh, nein, das können wir nicht", sagt Kassandra, "Er würde uns nicht helfen. Je mehr ich darüber nachdenke, desto mehr bin ich mir sicher, dass er den Dolch mitgenommen hat."
+            -> k_kross_genommen
+            
+        *** "Was dann?"
+        
+            "Wenn wir schon bei Kross sind", sagt Kassandra, "Ich tippe darauf, dass er den Dolch mitgenommen hat."
+            -> k_kross_genommen
+
+* "Jemand muss ihn vom Tatort mitgenommen haben."
+
+    "Wahrscheinlich Kross", sagt Kassandra.
+    -> k_kross_genommen
+
+-
+
+* "Er hat mir diese Adresse gegeben."
+
+    "Er wollte, dass du mit uns sprichst", sagt Kassandra, "Typisch Kross. Immer Probleme auf andere abwälzen."
+
+    ** "Ich hoffe, dass ich euch nicht allzu große Probleme bereite."
+    
+        "Oh, nein, du nicht", Kassandra lächelt dir aufmunternd zu, "Es ist gut, dass du gekommen bist."
+    
+    
+    ** "Woher kennt ihr Kross eigentlich?"
+
+        "Lange Geschichte", sagt Kassandra, "Ein anderes Mal."
+        
+        
+
+* "Vielleicht hat er den Dolch verkauft."
+
+    "Ja, das würde ihm leider ähnlich sehen", sagt Kassandra.
+    
+-
+
+* "Warte! Er hat mir noch die Zigaretten mitgegeben."
+
+* "Warte! Er sagte noch etwas von einem Vergnügungspark."
+
+    "Das ist nur seine Art sich auszudrücken", sagt Kassandra, "Noch etwas?"
+    
+    ** "Die Zigaretten, vielleicht?"
+    
+    ** "Er hat mir eine Packung Zigaretten mitgegeben."
+    
+    
+-
+
+Du holst die Zigarettenpackung aus der Tasche und reichst sie Kassandra.
+
+Kassandra atmet tief ein und aus und reicht die Packung an Von weiter.
+
+"Er ist also wieder in der Stadt", sagt Kassandra.
+
+"Ja, vermutlich", sagt Von.
+
+* "Wer ist wieder in der Stadt?"
+
+* "Hä?"
+
+-
+
+"Benson", sagt Kassandra. Sie deutet auf die Zigarettenpackung, auf der "Benson & Hedges" steht. "Benson ist ein alter Bekannter von uns. Ich nehme an, Kross hat ihm den Dolch gegeben. Das ist Kross' Humor. Seine Art, uns etwas mitzuteilen."
+
+* "Das ... klingt umständlich."
+
+    "Ja", seufzt Kassandra, "Kross war schon immer so."
+
+* "Und wo ist dieser Benson?"
+
+-
+
+Kassandra und Von tauschen einen tiefen Blick.
+
+"Ich glaube, ich weiß, wo Benson ist", sagt Kassandra.
+
+"Nimm doch {self_name} mit", sagt Von.
+
+Kassandra schürzt skeptisch den Mund.
+
+* "Ich will mitkommen!"
+
+    "Na, gut", sagt Kassandra, "Aber sei gewarnt. Benson ist etwas ... eigen."
+
+* "Ich entscheide immer noch selber, ob ich mitkomme."
+
+    "Okay", sagt Kassandra, "Und, <i>kommst</i> du mit?
+    
+    ** "Ja, natürlich."
+    
+    ** "Nein, lieber nicht."
+        "Okay", sagt Kassandra, "Dann ... alles Gute, schätze ich. Wenn ich es schaffe, diesen Dolch für immer loszuwerden, werde ich ... äääh ... einen auf dich trinken, okay?"    
+
+        <h2>✪✪✪ Ende  ✪✪✪</h2>
+
+        Du hast einen Rückzieher gemacht. Bist du mit diesem Ende zufrieden? Wenn nicht, versuche es mit der "Rückgängig"-Taste (Pfeil oben rechts).
+        -> END
+
+    
+
+-
 
 -> kassandra_start_haus
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
