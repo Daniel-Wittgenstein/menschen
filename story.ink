@@ -14,6 +14,9 @@ INCLUDE menschen.ink
 
 /* testing redirects: */
 
+
+-> kassandra_start_haus
+
 -> kassandra_start_laden
 
 
