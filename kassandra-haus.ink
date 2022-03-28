@@ -75,12 +75,13 @@ Ein kühler Raum mit Betonwänden. Hoch über dir siehst du vergitterte ((@fenst
     }
 
 
-
 * {not kass_lebt_doch} @kass betrachte
 
     Sprachlos starrst du sie an. Sie ist tot.
 
-+ @kass2 betrachte
+/* Die Bedingung vor @kass2 ist nicht strikt notwendig, weil unser System Optionen nur anzeigt, wenn der betreffende Inline-Link auftaucht. Aber für automatisches Testen ist es wichtig! */
+
++ {kass_lebt_doch} @kass2 betrachte
 
     Sie hat die Augen geschlossen, aber sie atmet noch.
 
@@ -147,7 +148,6 @@ Die Fenster sind zu weit oben und sind außerdem noch vergittert.
 
 * @waenden betrachte
     Mit mulmigem Gefühl betrachtest du die Wände. Woher kam das fliegende Sägeblatt, das Kassandra getroffen hat? Du siehst keine Öffnungen in den Wänden, aber du könntest schwören, dass das Sägeblatt direkt aus der Wand geschossen kam. Es handelte sich mit hundertprozentiger Sicherheit um eine Falle, von einem raffinierten Menschen so getarnt, dass man sie unmöglich sehen konnte. Was, wenn hier noch mehr Fallen lauern?
-
 
 
 * @saegeblatt nimm es mit
@@ -223,8 +223,39 @@ Wenn es nur so leicht wäre. Der einzige Weg nach draußen scheint tiefer in die
 
 === fabrik2
 
-Fabrikhalle2
--> END
+Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt Tageslicht. Leider gibt es sonst keine Fenster. Du siehst hier einen Haufen ((@bauschutt Bauschutt)). Außerdem eine ((@tuer1 Tür)), die zurück in den Vorraum führt und an der gegenüberliegenden Wand eine weitere Tür. Etwa drei Meter über der ((@tuer2 zweiten Tür)) ragt eine Plattform aus Stahlträgern aus der Wand, die über eine ((@leiter Leiter)) erreicht werden kann.
+
+* @glasfenster betrachte
+    Leider zu weit oben, um sie zu erreichen.
+
++ @tuer1 gehe in den Vorraum
+    -> fabrik1
+    
++ @tuer2 gehe durch die Tür
+
+    Als du durch die Tür gehst, schwingt eine rostige Sense von oben herab. Eigentlich sollte sie dich enthaupten, aber aufgrund eines Konstruktionsfehlers dringt sie nur tief in deinen Hals an. Du verblutest langsam und qualvoll.
+    
+    ~ end_msg("Du bist gestorben.")
+    -> END
+
+
+* @bauschutt betrachte
+    Nur Bauschutt.
+
+* @bauschutt durchsuche
+    Du greifst in den Bauschutt und stichst dir den Finger an einem rostigen Nagel. Hoffentlich hast du an deine Tetanusauffrischung gedacht.
+
+* @leiter untersuche die Leiter
+    Du rüttelst an der Leiter. Wirkt stabil.
+    
++ @leiter klettere nach oben
+
+
+-
+
+-> fabrik2
+
+
 === aaasonstiges
 
 - Kassandra und du brecht in Bensons Haus ein, das voll mit Fallen ist.

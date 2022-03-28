@@ -629,9 +629,8 @@ Kassandra schürzt skeptisch den Mund.
     ** "Nein, lieber nicht."
         "Okay", sagt Kassandra, "Dann ... alles Gute, schätze ich. Wenn ich es schaffe, diesen Dolch für immer loszuwerden, werde ich ... äääh ... einen auf dich trinken, okay?"    
 
-        <h2>✪✪✪ Ende  ✪✪✪</h2>
-
-        Du hast einen Rückzieher gemacht. Bist du mit diesem Ende zufrieden? Wenn nicht, versuche es mit der "Rückgängig"-Taste (Pfeil oben rechts).
+        ~ end_msg("Du hast einen Rückzieher gemacht.")
+        
         -> END
 
     

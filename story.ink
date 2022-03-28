@@ -39,3 +39,17 @@ INCLUDE menschen.ink
         -> start
 
 -> END
+
+
+=== function end_msg(txt)
+    <h2>✪✪✪ Ende  ✪✪✪</h2>
+    /*spaces in the line above are correct! */
+
+    {txt}
+    
+    Bist du mit diesem Ende zufrieden? Wenn nicht, versuche es mit der "Rückgängig"-Taste (Pfeil oben rechts).
+
+
+
+
+
