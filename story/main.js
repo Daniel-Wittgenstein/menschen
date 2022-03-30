@@ -38,7 +38,6 @@ let confirm_button_color = '#444'
 
 let very_first_para_done = false
 
-
 function split_into_first_word_and_rest(str) {
     //this returns a trimmed! version of both first_word and rest
     str = str.trim()
@@ -47,11 +46,7 @@ function split_into_first_word_and_rest(str) {
     return [str.substr(0, ix), str.substr(ix).trim()]
 }
 
-
-
-
 ;(function(storyContent) {
-
 
     function add_undo_state() {
         undo_pointer++
@@ -89,7 +84,17 @@ function split_into_first_word_and_rest(str) {
     // Create ink story from the content using inkjs
     var story = new inkjs.Story(storyContent);
 
+    let world_manager = new WorldManager(story, update_inline_links)
+
     window.global_story = story
+
+    // window.kavka: global interface object. Its methods are supposed to be called
+    // from inside the Ink story to do some advanced stuff that
+    // would be hard or impossible to do from inside Ink.
+    window.kavka = {
+        room_content: world_manager.get_room_content.bind(world_manager),
+    }
+
 
     keygen.init(story)
 
@@ -325,28 +330,16 @@ function split_into_first_word_and_rest(str) {
         //now mark the inline links as usable, unless
         //there are no entries for them:
 
-        let els = $(".__unfinished_inline_link")
-
-        for ( let el of els ) {
-            let id = $(el).prop("id")
-            id = id.replace("__inline-link-", "")
-            $(el).removeClass("__unfinished_inline_link")
-            let entry = inline_link_info[id]
-            if (!entry || entry.length === 0) {
-                //no choices: just print as normal text:
-                let nu_el = $(`<span>${$(el).html()}</span>`)
-                $(el).replaceWith(nu_el)
-            } else {
-                $(el).addClass("__inline_link")
-            }
-        }
-
-        update_inline_link_handler(inline_link_info)
+        update_inline_links(inline_link_info) //xyzzy
+        
+        world_manager.notify_turn_end(inline_link_info)
 
         // Extend height to fit
         // We do this manually so that removing elements and creating new ones doesn't
         // cause the height (and therefore scroll) to jump backwards temporarily.
         storyContainer.style.height = contentBottomEdgeY()+"px";
+
+        //todo to do: scroll up
 
         if( !firstTime )
             scrollDown(previousBottomEdge);
@@ -377,6 +370,24 @@ function split_into_first_word_and_rest(str) {
             //be seen, no matter what weird text and background color the player chooses
         })
        */ 
+    }
+
+    function update_inline_links(inline_link_info) { //xyzzy
+        let els = $(".__unfinished_inline_link")
+        for ( let el of els ) {
+            let id = $(el).prop("id")
+            id = id.replace("__inline-link-", "")
+            $(el).removeClass("__unfinished_inline_link")
+            let entry = inline_link_info[id]
+            if (!entry || entry.length === 0) {
+                //no choices: just print as normal text:
+                let nu_el = $(`<span>${$(el).html()}</span>`)
+                $(el).replaceWith(nu_el)
+            } else {
+                $(el).addClass("__inline_link")
+            }
+        }
+        update_inline_link_handler(inline_link_info)
     }
 
     function restart() {
@@ -726,7 +737,6 @@ window.onload = () => {
     $("body").on("keydown", (e) => {
         if (e.key === "Escape") hide_sub_choice_selection()
     })
-
 }
 
 
@@ -859,8 +869,4 @@ function linkify_text(text) {
     })
     return text
 }
-
-
-
-
 

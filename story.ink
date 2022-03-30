@@ -14,6 +14,7 @@ INCLUDE menschen.ink
 
 /* testing redirects: */
 
+-> fabrik2
 
 -> kassandra_start_haus
 
@@ -41,15 +42,39 @@ INCLUDE menschen.ink
 -> END
 
 
-=== function end_msg(txt)
+VAR gestorben = 0
+VAR qualvolle_tode = 0
+VAR feige = 0
+
+=== end_game(txt, grund, sub, -> ret)
     <h2>✪✪✪ Ende  ✪✪✪</h2>
-    /*spaces in the line above are correct! */
+    /* spaces in the line above are correct! */
 
     {txt}
+
+    {grund == "tot": 
+        ~ gestorben += 1
+    }
+
+    {grund == "tot" and sub == "qualvoll": 
+        ~ qualvolle_tode += 1
+    }
     
-    Bist du mit diesem Ende zufrieden? Wenn nicht, versuche es mit der "Rückgängig"-Taste (Pfeil oben rechts).
+    {grund == "feige": 
+        ~ feige += 1
+    }
+    
 
-
-
+    ~ statistik()
+    
+    + Letzte Entscheidung rückgängig machen
+        -> ret
+    
+=== function statistik()
+    <h2>Statistik</h2>
+    
+    • Gestorben: {gestorben}x
+    • Qualvolle Tode: {qualvolle_tode} von {gestorben}
+    • Das Abenteuer abgelehnt und beschlossen, stattdessen ein ruhiges Leben zu führen: {feige}x
 
 

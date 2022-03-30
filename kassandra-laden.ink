@@ -608,6 +608,10 @@ Kassandra atmet tief ein und aus und reicht die Packung an Von weiter.
 
 -
 
+-> k_last_par
+
+=== k_last_par
+
 Kassandra und Von tauschen einen tiefen Blick.
 
 "Ich glaube, ich weiß, wo Benson ist", sagt Kassandra.
@@ -629,7 +633,7 @@ Kassandra schürzt skeptisch den Mund.
     ** "Nein, lieber nicht."
         "Okay", sagt Kassandra, "Dann ... alles Gute, schätze ich. Wenn ich es schaffe, diesen Dolch für immer loszuwerden, werde ich ... äääh ... einen auf dich trinken, okay?"    
 
-        ~ end_msg("Du hast einen Rückzieher gemacht.")
+        -> end_game("Du hast einen Rückzieher gemacht.", "feige", "", -> k_last_par)
         
         -> END
 

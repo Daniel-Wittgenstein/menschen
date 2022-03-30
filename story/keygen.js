@@ -57,7 +57,6 @@ usage:
         hash2[ my_map2[i] ] = n
     })
 
-
     function obfuscate(str) {
         return de_ob_fusc(str, hash1)
     }
