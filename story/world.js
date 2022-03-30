@@ -113,7 +113,6 @@ class WorldManager {
         function fetch_prop(thing, property) {
             let vv = that.story.variablesState
             let acc = thing.id + "_" + property
-            console.log(acc)
             return vv[acc]
         }
 

@@ -341,8 +341,17 @@ function split_into_first_word_and_rest(str) {
 
         //todo to do: scroll up
 
+        /*
+            ENTIRELY DISABLED: WE NEVER SCROLL DOWN, because
+            each turn the screen is flushed. instead we want to scroll UP
+            every turn!
+            
         if( !firstTime )
             scrollDown(previousBottomEdge);
+        */
+        
+            //scroll up:
+        outerScrollContainer.scrollTo(0, 0)
 
         fix_colors()
 
