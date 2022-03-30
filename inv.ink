@@ -1,7 +1,7 @@
 
 
 
-
+/* just testing things */
 
 VAR things = "sword, schild, papagei, amsel, affe, kessel, schrank, truhe, sma, anita, koerner, elefant"
 

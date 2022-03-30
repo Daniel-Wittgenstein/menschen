@@ -203,6 +203,36 @@ class WorldManager {
         return txt
     }
 
+    show_character() {
+        function add_text(thing_id) {
+            let thing = that.things[thing_id]
+            let txt = "<p>✪&nbsp;" + that.printed_thing_proper(thing, "acc")+"</p>"
+            return txt
+        }
+        let that = this
+        let vv = this.story.variablesState
+        let things = vv.things.split(",").map(n=>n.trim()).filter(n=>n)
+        let txt = ""
+        let okay = false
+        for (let thing_id of things) {
+            let room = thing_id + "_room"
+            if (vv[room] === "player") {
+                txt += add_text(thing_id)
+                okay = true
+            }
+        }
+        if (!okay) txt = "✪✪✪ Nichts Erwähnenswertes. ✪✪✪"
+        that.show_character_dialog(txt)
+    }
+
+    show_character_dialog(txt) {
+        Swal.fire({
+            title: 'Du trägst bei dir:',
+            html: txt,
+            confirmButtonColor: confirm_button_color,
+        })
+    }
+
     init() {
         let vv = this.story.variablesState
 

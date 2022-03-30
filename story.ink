@@ -1,4 +1,6 @@
 
+INCLUDE items.ink
+
 INCLUDE regen.ink
 
 INCLUDE gespenster.ink

@@ -417,29 +417,12 @@ Das hier war wohl mal ein Büro. Hier steht ein verstaubter Schreibtisch, ein um
 
 -> buero
 
-VAR things = "kuehlschrank, brot, gabel"
-VAR options_language = "German"
-
-VAR kuehlschrank_name = "der Kühlschrank"
-VAR kuehlschrank_container = true
-VAR kuehlschrank_open = false
-VAR kuehlschrank_room = "fabrik3"
-
-VAR brot_name = "das Stück verschimmeltes Brot"
-VAR brot_room = "kuehlschrank"
-
-VAR gabel_name = "die Gabel"
-VAR gabel_room = "kuehlschrank"
-
-VAR current_room = ""
-
-VAR kue_offen = false
 
 === fabrik3
 
 Ein kleiner, dunkler Raum. Das einzige Licht hier fällt durch die  du Türöffnung, durch die du gekommen bist. In einer Ecke steht ein kaputter ((@kuehlschrank Kühlschrank)). <>
 
-    {kue_offen:
+    {kuehlschrank_open:
         # js: kavka.room_content("kuehlschrank", "links", "acc", "und", ".rc-span", {nothing: "", pre: "Im Kühlschrank siehst du ", post: "."})
         
         <span class="rc-span"></span>    
@@ -451,7 +434,7 @@ Ein kleiner, dunkler Raum. Das einzige Licht hier fällt durch die  du Türöffn
 
 * @kuehlschrank öffne ihn
     Du machst den Kühlschrank auf.
-    ~ kue_offen = true
+    ~ kuehlschrank_open = true
 
 + Gehe zurück in die Fabrikhalle
     ~ current_room = "fabrik2"
@@ -462,25 +445,8 @@ Ein kleiner, dunkler Raum. Das einzige Licht hier fällt durch die  du Türöffn
 -> fabrik3
 
 
-=== thing_actions(-> ret)
-
-+ {brot_room == current_room or (brot_room == "kuehlschrank" and kuehlschrank_room == current_room and kuehlschrank_open == true)} Nimm das Brot
-    Angewidert hebst du das Brot auf.
-    ~ brot_room = "player"
-
-+ {gabel_room == current_room or (gabel_room == "kuehlschrank" and kuehlschrank_room == current_room and kuehlschrank_open == true)} Nimm die Gabel
-    Du schnappst dir die Gabel.
-    ~ gabel_room = "player"
-    
--
--> ret
 
 
-=== function inventory()
-    Du trägst bei dir:
-    
-    ⍟ 
-    
 
 === aaasonstiges
 

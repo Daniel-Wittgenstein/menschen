@@ -658,6 +658,11 @@ function split_into_first_word_and_rest(str) {
             set_visibility()
         })
 
+        let charEl = document.getElementById("character");
+        if (charEl) charEl.addEventListener("click", function(event) {
+            world_manager.show_character()
+        });
+
         let rewindEl = document.getElementById("rewind");
         if (rewindEl) rewindEl.addEventListener("click", function(event) {
             restart();
