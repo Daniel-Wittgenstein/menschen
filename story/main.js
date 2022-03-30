@@ -349,7 +349,7 @@ function split_into_first_word_and_rest(str) {
         if( !firstTime )
             scrollDown(previousBottomEdge);
         */
-        
+
             //scroll up:
         outerScrollContainer.scrollTo(0, 0)
 

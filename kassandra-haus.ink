@@ -464,16 +464,23 @@ Ein kleiner, dunkler Raum. Das einzige Licht hier fällt durch die  du Türöffn
 
 === thing_actions(-> ret)
 
-+ {brot_room == current_room or (brot_room == "kuehlschrank" and kuehlschrank_room == current_room)} Nimm das Brot
++ {brot_room == current_room or (brot_room == "kuehlschrank" and kuehlschrank_room == current_room and kuehlschrank_open == true)} Nimm das Brot
     Angewidert hebst du das Brot auf.
     ~ brot_room = "player"
 
-+ {gabel_room == current_room or (gabel_room == "kuehlschrank" and kuehlschrank_room == current_room)} Nimm die Gabel
++ {gabel_room == current_room or (gabel_room == "kuehlschrank" and kuehlschrank_room == current_room and kuehlschrank_open == true)} Nimm die Gabel
     Du schnappst dir die Gabel.
     ~ gabel_room = "player"
     
 -
 -> ret
+
+
+=== function inventory()
+    Du trägst bei dir:
+    
+    ⍟ 
+    
 
 === aaasonstiges
 
