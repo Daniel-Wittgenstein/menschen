@@ -5,7 +5,8 @@ VAR current_room = ""
 
 /* fabrik 3: */
 
-VAR things = "kuehlschrank, brot, gabel, bleistift, pflaster, amulett"
+VAR things = "kuehlschrank, brot, gabel, bleistift, pflaster, amulett, eisenstange"
+
 VAR options_language = "German"
 
 VAR kuehlschrank_name = "der Kühlschrank"
@@ -28,6 +29,8 @@ VAR pflaster_room = "aktenschraenke"
 VAR amulett_name = "der Umhänger"
 VAR amulett_room = "aktenschraenke"
 
+VAR eisenstange_name = "die Eisenstange"
+VAR eisenstange_room = "nirwana"
 
 === thing_actions(-> ret)
 

@@ -226,11 +226,20 @@ Wenn es nur so leicht wäre. Der einzige Weg nach draußen scheint tiefer in die
 
 VAR plattform_kaputt = false
 
-VAR eisenstange = false
+VAR lichtschranke_entdeckt = false
 
 === fabrik2
 
-Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt Tageslicht. Leider gibt es sonst keine Fenster. Du siehst hier einen Haufen ((@bauschutt Bauschutt)). Außerdem eine ((@tuer1 Tür)), die zurück in den Vorraum führt, und an der gegenüberliegenden Wand eine ((@tuer2 weiß gestrichene Tür)) und eine ((@tuer3 Türöffnung ohne Tür)). <>
+Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt Tageslicht. {Leider gibt es sonst keine Fenster. |}Du siehst hier einen Haufen ((@bauschutt Bauschutt)). {Außerdem mehrere Türen (naja, eher türlose Tür<i>rahmen</i>, wenn wir genau sein wollen), hinter denen du dunkle, kahle Räume erblickst.|}
+
+    Eine ((@tuer1 Tür)) führt zurück in den Vorraum. An der gegenüberliegenden Wand gibt es eine ((@tuer2 weiße Tür))<>
+
+    {lichtschranke_entdeckt:
+        <>, an der ein ((@lichtkasten schwarzer Kasten)) montiert ist,<>
+    }
+
+
+    <> und eine ((@tuer3 erbsengrün gestrichene Tür)). <>
 
     {
         - not plattform_kaputt:
@@ -242,23 +251,71 @@ Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt 
     }
 
 
-* {plattform_kaputt and not eisenstange} @eisenst nimm
+* {plattform_kaputt and eisenstange_room != "player"} @eisenst nimm
     Du hebst eine der kleineren Eisenstangen auf. Sie ist etwa einen Meter lang. Vielleicht hilft sie dir, wenn du dich verteidigen musst. 
-    ~ eisenstange = true
+    ~ eisenstange_room = "player"
 
 * @glasfenster betrachte
     Leider zu weit oben, um sie zu erreichen.
 
 + @tuer1 gehe in den Vorraum
     -> fabrik1
-    
+
 + @tuer2 gehe durch die Tür
 
     Als du durch die Tür gehst, schwingt eine rostige Sense von oben herab. Eigentlich sollte sie dich enthaupten, aber aufgrund eines Konstruktionsfehlers dringt sie nur tief in deinen Hals ein. Du verblutest langsam und qualvoll.
     
     -> end_game("Du bist gestorben.", "tot", "qualvoll", -> fabrik2)
-    -> END
 
+
++ {lichtschranke_entdeckt} @tuer2 strecke deinen Arm durch die Türöffnung
+    Eine rostige Sense fällt von oben herab und trennt deine Hand ab. Du stirbst nicht sofort, sondern verblutest langsam und qualvoll.
+    -> end_game("Du bist gestorben.", "tot", "qualvoll", -> fabrik2)
+
+
++ {lichtschranke_entdeckt} @tuer2 Strecke etwas durch die Türöffnung
+    ~ temp xxx = ""
+
+    ** {gabel_room == "player"} die Gabel
+        ~ xxx = "ga"
+
+        Du hältst die Gabel durch die Türöffnung.
+
+    ** {bleistift_room == "player"} den Bleistift
+        ~ xxx = "bl"
+        Du hältst den Bleistift durch die Türöffnung.
+    
+    ** {eisenstange_room == "player"} die Eisenstange
+    
+    ** {amulett_room == "player"} den Prinzessinnenumhänger
+        ~ xxx = "um"
+
+        Du hältst den Umhänger durch die Türöffnung.
+    ++ ->
+        Du trägst nichts Geeignetes bei dir.
+        -> fabrik2
+    --
+    
+    Der schwarze Kasten gibt ein leises Piepen von sich. Aus einem dünnen, kaum sichtbaren Spalt im Türrahmen fällt eine Sense herab, <>
+    
+    {xxx == "ga": trifft mit einem metallischen "Kleng" die Gabel}
+
+    {xxx == "bl": trennt den Bleistift entzwei}
+
+    {xxx == "um": schneidet den Anhänger sauber entzwei}
+
+    <> und verschwindet wieder. Das alles hat nur den Bruchteil einer Sekunde gedauert. {Dir läuft ein kalter Schauer den Rücken herunter. Wer immer das gebaut hat, wusste, was er tut.|}
+    
+        
+    -> fabrik2
+
+
+
+* @tuer2 untersuche den Türrahmen
+    
+    Du betrachtest den Türrahmen. Dir fällt auf, dass am Türrahmen auf Höhe deines Knies ein kleiner, ((@lichtkasten schwarzer Kasten)) angebracht wurde. Im Gegensatz zum Rest der Umgebung ist er nicht verstaubt und sieht aus, als wäre er erst vor Kurzem montiert worden. Du hast so einen Kasten schon einmal gesehen. Eine Lichtschranke!
+    ~ lichtschranke_entdeckt = true   
+    
 + @tuer3 gehe durch die Türöffnung
     -> fabrik3
 
@@ -302,7 +359,7 @@ Du stehst auf einer eisernen "Plattform", mehr oder weniger ein schwankendes Git
 
 + {eisenstangen_ruettel == 1} @eisenstangen rüttle fester am Geländer
 
-    {anhaenger ==true:
+    {amulett_room == "player":
         -> anhaenger_rettung
     }
 
@@ -324,12 +381,14 @@ Du stehst auf einer eisernen "Plattform", mehr oder weniger ein schwankendes Git
 
         Du rappelst dich auf und betrachtest ungläubig den Anhänger. Die Stange hat das Gesicht der blonden, lachenden Prinzessin in ein klaffendes Loch verwandelt.
 
-        Die Wahrscheinlichkeit, dass der Anhänger sich genau zur richtigen Zeit am richtigen Ort befand, ist so klein, dass dir übel wird. Nein, wirklich. Du beugst dich nach vorne und kotzt auf den Boden der Fabrikhalle.
+        Die Wahrscheinlichkeit, dass der Anhänger sich genau zur richtigen Zeit am richtigen Ort befand, ist so klein, dass dir übel wird. Nein, wirklich. Du beugst dich nach vorne und übergibst dich auf den Boden der Fabrikhalle.
         
         * Wisch dir den Mund ab
         
         -
-        Du wischst dir den Mund ab. Pfui, das war ekelhaft. Und überflüssig. Was musst du Idiotin auch am Geländer rütteln?
+        Du wischst dir den Mund ab. Pfui, das war ekelhaft.
+        
+        Und du wärst fast dabei draufgegangen. Was musst du Idiotin auch am Geländer rütteln?
         ~ plattform_kaputt = true
         -> fabrik2
         
@@ -371,7 +430,7 @@ Das hier war wohl mal ein Büro. Hier steht ein verstaubter Schreibtisch, ein um
 
 === fabrik3
 
-Ein kleiner, dunkler Raum. Das einzige Licht hier fällt durch die  du Türöffnung, durch die du gekommen bist. In einer Ecke steht ein kaputter ((@kuehlschrank Kühlschrank)). <>
+Ein kleiner, dunkler Raum. Das einzige Licht hier fällt durch die Türöffnung, durch die du gekommen bist. In einer Ecke steht ein kaputter ((@kuehlschrank Kühlschrank)). <>
 
     {kuehlschrank_open:
         # js: kavka.room_content("kuehlschrank", "links", "acc", "und", ".rc-span", {nothing: "", pre: "Im Kühlschrank siehst du ", post: "."})

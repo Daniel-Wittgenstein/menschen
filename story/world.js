@@ -137,7 +137,6 @@ class WorldManager {
             text += xx
         }
         let final = texts.pre + text + texts.post
-        console.log(final)
         if (final.endsWith(")).")) {
             final = final.substr(0, final.length - 3) + ".))"
         }

@@ -16,6 +16,15 @@ INCLUDE menschen.ink
 
 /* testing redirects: */
 
+
+~ gabel_room = "player"
+~ bleistift_room = "player"
+~ amulett_room = "player"
+~ eisenstange_room = "player"
+
+
+-> fabrik2
+
 -> buero
 
 -> fabrik2
