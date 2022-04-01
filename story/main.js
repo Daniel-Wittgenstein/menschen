@@ -653,6 +653,12 @@ function split_into_first_word_and_rest(str) {
                     settings.override_colors = val
                     set_visibility()
                     fix_colors()
+                    let el = $("#theme-switch")
+                    if (val) {
+                        el.addClass("disabled-theme-switch")
+                    } else {
+                        el.removeClass("disabled-theme-switch")
+                    }
                 }
             )
             set_visibility()
@@ -734,6 +740,7 @@ function split_into_first_word_and_rest(str) {
 
         let themeSwitchEl = document.getElementById("theme-switch")
         if (themeSwitchEl) themeSwitchEl.addEventListener("click", function(event) {
+            if ( $(themeSwitchEl).hasClass("disabled-theme-switch") ) return
             document.body.classList.add("switched");
             document.body.classList.toggle("dark");
         })
