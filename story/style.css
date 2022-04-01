@@ -476,7 +476,7 @@ body.dark {
 
 
 .special-icon:hover {
-    filter: sepia(69%) saturate(849%) hue-rotate(154deg) brightness(91%) contrast(103%) !important;
+    filter: invert(48%) sepia(69%) saturate(849%) hue-rotate(154deg) brightness(91%) contrast(303%) !important;
 }
 
 
@@ -516,7 +516,7 @@ body.dark {
 
 .icon.has-custom-color {
     /* set to standard style, so it's always visible no matter
-    what strange colors the user sets*/
+    what strange colors the user sets */
     background: #fff !important;
     filter: none !important;
     border-radius: 4px;
