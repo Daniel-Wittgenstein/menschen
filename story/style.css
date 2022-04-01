@@ -531,3 +531,7 @@ body.dark {
     border:2px solid #222;
 }
 
+.color-preview {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}

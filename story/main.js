@@ -23,8 +23,8 @@ let DELAY_SETTINGS = {
 }
 
 let settings = {
-    fg: "#ffffff",
-    bg: "#222222",
+    fg: "#404040",
+    bg: "#fff3b8",
     override_colors: false,
 }
 
@@ -372,6 +372,22 @@ function split_into_first_word_and_rest(str) {
             $(item)[method]("has-custom-color")
         }
 
+        //but remove has-custom-color from popup window elements:
+        $(".swal2-html-container").children().each( (i, child) => {
+            console.log("a", i, child)
+                $(child).removeClass("has-custom-color")
+                $(child).children().each( (i, kid) => {
+                    console.log(i, kid)
+                    $(kid).removeClass("has-custom-color")
+                })
+            }
+        )
+        // and from pop-up window button:
+        $(".swal2-confirm").removeClass("has-custom-color")
+
+        //except for color preview field(s):
+        $(".color-preview").addClass("has-custom-color")
+
 /*
         $(".icon").css({
             filter: "invert(98%) sepia(8%) saturate(0%) hue-rotate(180deg) brightness(119%) contrast(100%)",
@@ -629,7 +645,9 @@ function split_into_first_word_and_rest(str) {
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     Hintergrund:
                     <input class="col-input2" type="color" 
-                    id="head" name="head" value="${settings.bg}"></p></div>
+                    id="head" name="head" value="${settings.bg}"></p>
+                    <div class="color-preview">Vorschau</div>
+                    </div>
                     `
             Swal.fire({
                 title: 'Einstellungen',
@@ -662,6 +680,7 @@ function split_into_first_word_and_rest(str) {
                 }
             )
             set_visibility()
+            fix_colors()
         })
 
         let charEl = document.getElementById("character");
