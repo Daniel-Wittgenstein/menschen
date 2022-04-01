@@ -228,6 +228,8 @@ VAR plattform_kaputt = false
 
 VAR lichtschranke_entdeckt = false
 
+VAR falle_kaputt = false
+
 === fabrik2
 
 Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt Tageslicht. {Leider gibt es sonst keine Fenster. |}Du siehst hier einen Haufen ((@bauschutt Bauschutt)). {Außerdem mehrere Türen (naja, eher türlose Tür<i>rahmen</i>, wenn wir genau sein wollen), hinter denen du dunkle, kahle Räume erblickst.|}
@@ -241,15 +243,26 @@ Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt 
 
     <> und eine ((@tuer3 erbsengrün gestrichene Tür)). <>
 
+    {falle_kaputt:
+        Im weißen Türrahmen liegen die Reste der Falle: eine ((@sense scharfe Sense)), die noch intakt scheint, und weitere Eisenteile.  
+    }
+
     {
         - not plattform_kaputt:
     Etwa drei Meter über der weißen Tür ragt eine Plattform aus Eisengittern aus der Wand, die über eine ((@leiter Leiter)) erreicht werden kann.
     
         - else:
     Am Boden liegen die Reste der Plattform: Eisengitter, ((@eisenst Eisenstangen)) und ein paar lose Schrauben.
-        
     }
 
++ {sense_room == "fabrik2"} @sense nimm sie
+    Die Sense hat leider keinen Griff, sodass sie als Waffe oder Werkzeug ganz und gar unbrauchbar wäre. <i>Naja ... vielleicht kann ich sie ja werfen</i>, wenn mich jemand angreift, fährt es dir durch den Kopf.
+    
+    ++ Nimm sie mit.
+        Du nimmst die Sense.
+        ~ sense_room = "player"
+        
+    ++ Lass sie liegen.
 
 * {plattform_kaputt and eisenstange_room != "player"} @eisenst nimm
     Du hebst eine der kleineren Eisenstangen auf. Sie ist etwa einen Meter lang. Vielleicht hilft sie dir, wenn du dich verteidigen musst. 
@@ -263,23 +276,27 @@ Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt 
 
 + @tuer2 gehe durch die Tür
 
+    {falle_kaputt:
+        -> erfolgreich_durch_tuer
+    }
+
     Als du durch die Tür gehst, schwingt eine rostige Sense von oben herab. Eigentlich sollte sie dich enthaupten, aber aufgrund eines Konstruktionsfehlers dringt sie nur tief in deinen Hals ein. Du verblutest langsam und qualvoll.
     
     -> end_game("Du bist gestorben.", "tot", "qualvoll", -> fabrik2)
 
 
-+ {lichtschranke_entdeckt} @tuer2 strecke deinen Arm durch die Türöffnung
++ {lichtschranke_entdeckt and not falle_kaputt} @tuer2 strecke deinen Arm durch die Türöffnung
     Eine rostige Sense fällt von oben herab und trennt deine Hand ab. Du stirbst nicht sofort, sondern verblutest langsam und qualvoll.
     -> end_game("Du bist gestorben.", "tot", "qualvoll", -> fabrik2)
 
 
-+ {lichtschranke_entdeckt} @tuer2 strecke etwas durch die Türöffnung
++ {lichtschranke_entdeckt and not falle_kaputt} @tuer2 strecke etwas durch die Türöffnung
     ~ temp xxx = ""
 
     ** {gabel_room == "player"} die Gabel
         ~ xxx = "ga"
 
-        Du hältst die Gabel durch die Türöffnung.
+        Du streckst die Gabel durch die Türöffnung.
 
     ** {bleistift_room == "player"} den Bleistift
         ~ xxx = "bl"
@@ -287,9 +304,15 @@ Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt 
         Du hältst den Bleistift durch die Türöffnung.
     
     ** {eisenstange_room == "player"} die Eisenstange
+        ~ xxx = "ei"
     
-    ...
-
+    Der schwarze Kasten piept. Aus einem dünnen Spalt im Türrahmen fällt eine Sense herab, trifft die Eisenstange und zerbricht mit einem scheußlichen Knirschen.
+    
+    Mit Genugtuung betrachtest du die kaputte Falle. 
+    
+        ~ falle_kaputt = true
+        ~ sense_room = "fabrik2"
+    
     
     ++ ->
         Du trägst nichts Geeignetes bei dir.
@@ -301,6 +324,7 @@ Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt 
     {xxx == "ga": trifft mit einem metallischen "Kleng" die Gabel}
 
     {xxx == "bl": trennt den Bleistift entzwei}
+
 
 
     <> und verschwindet wieder. Das alles hat nur den Bruchteil einer Sekunde gedauert. {Dir läuft ein kalter Schauer den Rücken herunter. Wer immer das gebaut hat, wusste, was er tut.|}
@@ -456,7 +480,11 @@ Ein kleiner, dunkler Raum. Das einzige Licht hier fällt durch die Türöffnung,
 
 
 
+=== erfolgreich_durch_tuer
 
+...
+
+-> END
 
 === aaasonstiges
 

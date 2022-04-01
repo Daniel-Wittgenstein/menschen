@@ -5,7 +5,7 @@ VAR current_room = ""
 
 /* fabrik 3: */
 
-VAR things = "kuehlschrank, brot, gabel, bleistift, pflaster, amulett, eisenstange"
+VAR things = "kuehlschrank, brot, gabel, bleistift, pflaster, amulett, eisenstange, sense"
 
 VAR options_language = "German"
 
@@ -32,9 +32,12 @@ VAR amulett_room = "aktenschraenke"
 VAR eisenstange_name = "die Eisenstange"
 VAR eisenstange_room = "nirwana"
 
-
 VAR bleistift_inv_text = ""
 VAR amulett_inv_text = ""
+
+VAR sense_name = "die Sense"
+VAR sense_room = "nirwana"
+
 
 === thing_actions(-> ret)
 
