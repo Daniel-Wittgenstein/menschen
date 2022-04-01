@@ -288,11 +288,9 @@ Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt 
     
     ** {eisenstange_room == "player"} die Eisenstange
     
-    ** {amulett_room == "player"} den Prinzessinnenumhänger
-        ~ xxx = "um"
-        ~ amulett_inv_text = "kaputt und entzweigeschnitten"
-        
-        Du hältst den Umhänger durch die Türöffnung.
+    ...
+
+    
     ++ ->
         Du trägst nichts Geeignetes bei dir.
         -> fabrik2
@@ -304,7 +302,6 @@ Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt 
 
     {xxx == "bl": trennt den Bleistift entzwei}
 
-    {xxx == "um": schneidet den Anhänger sauber entzwei}
 
     <> und verschwindet wieder. Das alles hat nur den Bruchteil einer Sekunde gedauert. {Dir läuft ein kalter Schauer den Rücken herunter. Wer immer das gebaut hat, wusste, was er tut.|}
     
