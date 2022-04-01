@@ -337,7 +337,19 @@ Du stehst auf einer eisernen "Plattform", mehr oder weniger ein schwankendes Git
 
 === buero
 
-Das hier war wohl mal ein Büro. Hier steht ein verstaubter Schreibtisch, ein umgekippter ((@papierkorb Papierkorb)) und ein paar ((@aktens Aktenschränke)). Und vermaledeiterweise kein Fenster. Durch die ((@tuer Tür)) geht es wieder nach draußen.
+Das hier war wohl mal ein Büro. Hier steht ein verstaubter Schreibtisch, ein umgekippter ((@papierkorb Papierkorb)) und ein paar ((@aktens Aktenschränke)). Und vermaledeiterweise kein Fenster. Durch die ((@tuer Tür)) geht es wieder nach draußen. <>
+
+    {aktens_count == 2:
+    # js: kavka.room_content("aktenschraenke", "links", "acc", "und", ".rc-span", {nothing: "", pre: "In der Schublade eines Aktenschranks siehst du ", post: "."})
+    
+    <span class="rc-span"></span>    
+    }
+    
+    {aktens_count == 1:
+        ~aktens_count = 2
+    }
+
+    <- thing_actions(-> buero)
 
 + @tuer verlasse das Büro
     Du gehst wieder raus.
@@ -347,74 +359,13 @@ Das hier war wohl mal ein Büro. Hier steht ein verstaubter Schreibtisch, ein um
     Wenn du dir den Zustand der Aktenschränke ansiehst, kannst du dir denken, warum man sie einfach hier zurückgelassen hat.
 
 + {aktens_count == 0} @aktens öffne sie
-    Du öffnest ein paar Schubladen. Du findest einen zerbrochenen ((@bleistift Bleistift)), ein benutztes ((@pflaster Pflaster)) und einen billigen ((@anhaenger Anhänger)).
+    Du öffnest ein paar Schubladen. <>
+    # js: kavka.room_content("aktenschraenke", "links", "acc", "und", ".rc-span2", {nothing: "", pre: "In einer Schublade findest du ", post: "."})
+    <span class="rc-span2"></span>
+
     ~ aktens_count = 1
-    -> buero_aktens_sub_post
-    
-+ {aktens_count == 1} @aktens untersuche sie
-    
-    Du guckst dir nochmal die Aktenschränke an.
-    
-    -- (buero_aktens_sub)
-
-    {
-        - not bleistift and anhaenger:
-        In einer Schublade liegt ein zerbrochener ((@bleistift Bleistift)) und ein benutztes ((@pflaster Pflaster)).        
-        - not bleistift and not anhaenger:
-        In einer Schublade siehst du einen ((@bleistift Bleistift)), ein benutztes ((@pflaster Pflaster)) und einen billigen ((@anhaenger Anhänger)).
-        - bleistift and anhaenger:
-        In einer Schublade siehst du ein benutztes ((@pflaster Pflaster)).
-        - not anhaenger and bleistift:
-        In einer Schublade liegt ein billiger ((@anhaenger Anhänger)) und ein benutztes ((@pflaster Pflaster)).  
-    }
-
-
-    -- (buero_aktens_sub_post)
-
-    ++ {not bleistift} @bleistift nimm
-        Du nimmst die zwei kaputten Hälften des Bleistifts und steckst sie in die Tasche.
-        ~ bleistift = true
-    
-    ** @pflaster nimm
-        Pfui! Das fasst du lieber nicht an.
-        
-    ++ {not anhaenger} @anhaenger nimm
-        Du nimmst den Anhänger in die Hand und betrachtest ihn. Er besteht aus rosa Hartplastik und ist unwahrscheinlich dick und klobig. Auf der Vorderseite klebt ein Sticker mit einer blonden Prinzessin. Auf der Rückseite steht in geschwungenen Lettern: "best friend's 4ever".
-        
-        +++ hänge ihn dir um
-            In einem Anflug von Geschmacklosigkeit hängst du ihn dir um den Hals.
-            ~ anhaenger = true
-            
-        +++ lass ihn liegen
-            Du legst ihn zurück.
-    
-    ++ Guck dir den Rest des Büros an
-        -> buero
-    
-    --
-    -> buero_aktens_sub
-    
-* @papierkorb untersuche
-    Du guckst in den Papierkorb rein und findest ein paar zusammengeknüllte Blätter. 
-
-    ++ Nimm sie
-    Du hebst die Blätter auf und knüllst sie auseinander. Auf den Seiten stehen viele Zahlen, in Spalten angeordnet. Wahrscheinlich Buchhaltungskram. Auf eines der Blätter hat jemand mit einem himmelblauen Buntstift und krakeliger Schrift "Ariadne" geschrieben.
-    
-        +++ Nimm die Blätter mit
-            Du steckst die Blätter ein.
-    
-        +++ Lass sie liegen
-            Du lässt die Blätter wieder auf den Boden fallen.
-    
-    ++ Lass sie liegen
-        Sicher nicht wichtig. Du lässt die Blätter liegen.
-    
-
-
 
 -
-
-
 -> buero
 
 

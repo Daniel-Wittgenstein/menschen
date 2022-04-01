@@ -374,10 +374,8 @@ function split_into_first_word_and_rest(str) {
 
         //but remove has-custom-color from popup window elements:
         $(".swal2-html-container").children().each( (i, child) => {
-            console.log("a", i, child)
                 $(child).removeClass("has-custom-color")
                 $(child).children().each( (i, kid) => {
-                    console.log(i, kid)
                     $(kid).removeClass("has-custom-color")
                 })
             }
@@ -394,7 +392,8 @@ function split_into_first_word_and_rest(str) {
             //#222 / #fff -> doesn't look pretty, but this way icons can always
             //be seen, no matter what weird text and background color the player chooses
         })
-       */ 
+*/
+
     }
 
     function update_inline_links(inline_link_info) { //xyzzy

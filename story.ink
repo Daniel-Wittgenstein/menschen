@@ -16,6 +16,8 @@ INCLUDE menschen.ink
 
 /* testing redirects: */
 
+-> buero
+
 -> fabrik2
 
 -> kassandra_start_haus

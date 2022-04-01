@@ -149,7 +149,7 @@ class WorldManager {
             const tabl1 = { //^
                 m: { nom: "er", dat: "en", acc: "en" },
                 f: { nom: "e", dat: "en", acc: "e" },
-                n: { nom: "e", dat: "en", acc: "e" },
+                n: { nom: "es", dat: "en", acc: "es" },
                 p: { nom: "e", dat: "en", acc: "e" },
             }
 
