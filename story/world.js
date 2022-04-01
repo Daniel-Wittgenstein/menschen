@@ -100,7 +100,6 @@ class WorldManager {
             this.update_inline_links(inline_link_info)
             this.current_lists = {}
         }, 0)
-
     }
 
     get_list(target_room, inline_links, grammar_case, and, texts) {
@@ -127,20 +126,27 @@ class WorldManager {
             let comma = ", "
             if (i === thingsies.length - 1) comma = ""
             if (i === thingsies.length - 2) comma = " " + and + " "
-            let xx = this.printed_thing(thing, inline_links, grammar_case) + comma
+            let xx = this.printed_thing(thing, grammar_case)
+            let join_with_link = false
+            if (comma === ", ") join_with_link = true
+            if (join_with_link) xx += comma
+            if (inline_links) {
+                xx = `((@${thing.id} ${xx}))`
+            }
+            if (!join_with_link) xx += comma
             text += xx
         }
-        return texts.pre + text + texts.post
+        let final = texts.pre + text + texts.post
+        console.log(final)
+        if (final.endsWith(")).")) {
+            final = final.substr(0, final.length - 3) + ".))"
+        }
+
+        return final
     }
     
-    printed_thing(thing, inline_links, grammar_case) {
-        let pre = ""
-        let post = ""
-        if (inline_links) {
-            pre = `((@${thing.id} `
-            post = `))`
-        }
-        return pre + this.printed_thing_proper(thing, grammar_case) + post
+    printed_thing(thing, grammar_case) {
+        return this.printed_thing_proper(thing, grammar_case)
     }
 
     printed_thing_proper(thing, grammar_case) {
