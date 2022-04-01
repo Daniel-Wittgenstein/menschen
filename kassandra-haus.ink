@@ -273,7 +273,7 @@ Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt 
     -> end_game("Du bist gestorben.", "tot", "qualvoll", -> fabrik2)
 
 
-+ {lichtschranke_entdeckt} @tuer2 Strecke etwas durch die Türöffnung
++ {lichtschranke_entdeckt} @tuer2 strecke etwas durch die Türöffnung
     ~ temp xxx = ""
 
     ** {gabel_room == "player"} die Gabel
@@ -283,13 +283,15 @@ Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt 
 
     ** {bleistift_room == "player"} den Bleistift
         ~ xxx = "bl"
+        ~ bleistift_inv_text = "in zwei Teilen"
         Du hältst den Bleistift durch die Türöffnung.
     
     ** {eisenstange_room == "player"} die Eisenstange
     
     ** {amulett_room == "player"} den Prinzessinnenumhänger
         ~ xxx = "um"
-
+        ~ amulett_inv_text = "kaputt und entzweigeschnitten"
+        
         Du hältst den Umhänger durch die Türöffnung.
     ++ ->
         Du trägst nichts Geeignetes bei dir.
@@ -378,7 +380,8 @@ Du stehst auf einer eisernen "Plattform", mehr oder weniger ein schwankendes Git
     * Stehe auf
     
     - 
-
+        ~ amulett_inv_text = "kaputt"
+        
         Du rappelst dich auf und betrachtest ungläubig den Anhänger. Die Stange hat das Gesicht der blonden, lachenden Prinzessin in ein klaffendes Loch verwandelt.
 
         Die Wahrscheinlichkeit, dass der Anhänger sich genau zur richtigen Zeit am richtigen Ort befand, ist so klein, dass dir übel wird. Nein, wirklich. Du beugst dich nach vorne und übergibst dich auf den Boden der Fabrikhalle.

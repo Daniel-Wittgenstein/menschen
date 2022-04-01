@@ -32,6 +32,10 @@ VAR amulett_room = "aktenschraenke"
 VAR eisenstange_name = "die Eisenstange"
 VAR eisenstange_room = "nirwana"
 
+
+VAR bleistift_inv_text = ""
+VAR amulett_inv_text = ""
+
 === thing_actions(-> ret)
 
 

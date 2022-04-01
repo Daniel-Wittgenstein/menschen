@@ -211,7 +211,14 @@ class WorldManager {
     show_character() {
         function add_text(thing_id) {
             let thing = that.things[thing_id]
-            let txt = "<p>✪&nbsp;" + that.printed_thing_proper(thing, "acc")+"</p>"
+            let add_txt = ""
+            let vv = that.story.variablesState
+            let xx = vv[thing.id + "_inv_text"]
+            if (xx) {
+                add_txt = " (" + xx + ")"
+            }
+            let txt = "<p>✪&nbsp;" + that.printed_thing_proper(thing, "acc") +
+                add_txt + "</p>"
             return txt
         }
         let that = this
