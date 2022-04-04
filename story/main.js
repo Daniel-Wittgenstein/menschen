@@ -808,16 +808,7 @@ function post_process_choice_text(text, index, is_last,
 
         return { dont_print: true }
     }
-
-    if (index === 0 && is_last) {
-        return `<button class="single-ch story-choice">${text}</button>`
-    }
-    else if (index === 0) {
-        return `<button class="first-ch story-choice">${text}</button>`
-    } else if (is_last) {
-        return `<button class="last-ch story-choice">${text}</button>`        
-    }
-    return `<button class="middle-ch story-choice">${text}</button>`
+    return `<button class="story-choice">${text}</button>`
 }
 
 
