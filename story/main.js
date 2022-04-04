@@ -909,3 +909,11 @@ function linkify_text(text) {
     return text
 }
 
+function show_image_big(src) {
+    let div = $(`<div class="image-big-wrapper">
+    <img class="image-big" src="${src}"></div>`)
+    $("body").append(div)
+    div.on("click", () => {
+        div.remove()
+    })
+}

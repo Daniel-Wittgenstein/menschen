@@ -541,3 +541,51 @@ body.dark {
     /* inventory items: */
     line-height: 16px;
 }
+
+
+@keyframes roll_in {
+    0% { 
+       opacity: 0; 
+       transform: translateX(-100%) rotate(-120deg); 
+    }
+    100% { 
+       opacity: 1; 
+       transform: translateX(0px) rotate(0deg); 
+    }
+}
+
+.roll_in {
+    animation-name: roll_in;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+.inventory-image {
+    width: 48px;
+    height: auto;
+    cursor: pointer;
+}
+
+.inventory-image:hover {
+    filter: sepia(69%);
+}
+
+.image-big-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: rgba(0,0,0, 0.7);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.image-big {
+    width: 350px;
+    height: 400px;
+}

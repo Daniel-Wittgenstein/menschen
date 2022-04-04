@@ -218,7 +218,13 @@ class WorldManager {
                 add_txt = " (" + xx + ")"
             }
             let txt = "<p>✪&nbsp;" + that.printed_thing_proper(thing, "acc") +
-                add_txt + "</p>"
+                add_txt
+            let x = vv[thing_id + "_pic"]
+            if (x) {
+                txt += `<img onclick="show_image_big('assets/${x}')"
+                    src="assets/${x}" class="inventory-image">`
+            }
+            txt += "</p>"
             return txt
         }
         let that = this
