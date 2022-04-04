@@ -337,7 +337,7 @@ function split_into_first_word_and_rest(str) {
         // Extend height to fit
         // We do this manually so that removing elements and creating new ones doesn't
         // cause the height (and therefore scroll) to jump backwards temporarily.
-        storyContainer.style.height = contentBottomEdgeY()+"px";
+        //storyContainer.style.height = contentBottomEdgeY()+"px";
 
         //todo to do: scroll up
 
