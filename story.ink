@@ -77,7 +77,7 @@ VAR feige = 0
         ~ feige += 1
     }
     
-
+    
     ~ statistik()
     
     + Letzte Entscheidung rückgängig machen
