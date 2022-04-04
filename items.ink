@@ -5,7 +5,7 @@ VAR current_room = ""
 
 /* fabrik 3: */
 
-VAR things = "kuehlschrank, brot, gabel, bleistift, pflaster, amulett, eisenstange, sense"
+VAR things = "kuehlschrank, brot, gabel, bleistift, pflaster, amulett, eisenstange, sense, foto1, foto2, foto3, foto4, foto5"
 
 VAR options_language = "German"
 
@@ -19,6 +19,24 @@ VAR brot_room = "kuehlschrank"
 
 VAR gabel_name = "die Gabel"
 VAR gabel_room = "kuehlschrank"
+
+VAR foto1_name = "das Polaroid-Foto einer jungen Frau"
+VAR foto2_name = "das Polaroid-Foto eines jungen, rothaarigen Mannes"
+VAR foto3_name = "das Polaroid-Foto eines jungen Mannes, der dir vage bekannt vorkommt"
+VAR foto4_name = "das Polaroid-Foto eines jungen, schwarzen Mannes"
+VAR foto5_name = "das Polaroid-Foto eines Kindes"
+
+VAR foto1_pic = "polaroid1.png"
+VAR foto2_pic = "polaroid2.png"
+VAR foto3_pic = "polaroid3.png"
+VAR foto4_pic = "polaroid4.png"
+VAR foto5_pic = "polaroid5.png"
+
+VAR foto1_room = "kuehlschrank"
+VAR foto2_room = "nirwana"
+VAR foto3_room = "nirwana"
+VAR foto4_room = "nirwana"
+VAR foto5_room = "nirwana"
 
 VAR bleistift_name = "der Bleistift"
 VAR bleistift_room = "aktenschraenke"
@@ -40,6 +58,32 @@ VAR sense_room = "nirwana"
 
 
 === thing_actions(-> ret)
+
+
++ {foto1_room == current_room or (foto1_room == "kuehlschrank" and kuehlschrank_room == current_room and kuehlschrank_open == true)} @foto1 Nimm das Foto
+    <img src="assets/polaroid1.png" class="story-image">
+    Du nimmst das Foto an dich.
+    ~ foto1_room = "player"
+
++ {foto2_room == current_room} @foto2 Nimm das Foto
+    <img src="assets/polaroid2.png" class="story-image">
+    Du nimmst das Foto.
+    ~ foto2_room = "player"
+
++ {foto3_room == current_room} @foto3 Nimm das Foto
+    <img src="assets/polaroid3.png" class="story-image">
+    Du nimmst das Foto.
+    ~ foto3_room = "player"
+
++ {foto4_room == current_room or (foto4_room == "aktenschraenke" and aktens_count)} @foto4 Nimm das Foto
+    <img src="assets/polaroid4.png" class="story-image">
+    Du schnappst dir das Foto.
+    ~ foto4_room = "player"
+
++ {foto5_room == current_room} @foto5 Nimm das Foto
+    <img src="assets/polaroid5.png" class="story-image">
+    Du nimmst das Foto.
+    ~ foto5_room = "player"
 
 
 + {brot_room == current_room or (brot_room == "kuehlschrank" and kuehlschrank_room == current_room and kuehlschrank_open == true)} @brot Nimm das Brot

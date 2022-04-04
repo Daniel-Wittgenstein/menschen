@@ -917,3 +917,4 @@ function show_image_big(src) {
         div.remove()
     })
 }
+

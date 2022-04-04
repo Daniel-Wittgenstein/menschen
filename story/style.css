@@ -589,3 +589,10 @@ body.dark {
     width: 350px;
     height: 400px;
 }
+
+.story-image {
+    width: 95vw;
+    max-width: 480px;
+    height: auto;
+}
+

@@ -17,11 +17,17 @@ INCLUDE menschen.ink
 /* testing redirects: */
 
 
+/*
 ~ gabel_room = "player"
 ~ bleistift_room = "player"
 ~ amulett_room = "player"
 ~ eisenstange_room = "player"
-
+~ foto1_room = "player"
+~ foto2_room = "player"
+~ foto3_room = "player"
+~ foto4_room = "player"
+~ foto5_room = "player"
+*/
 
 -> fabrik2
 
@@ -76,8 +82,7 @@ VAR feige = 0
     {grund == "feige": 
         ~ feige += 1
     }
-    
-    
+
     ~ statistik()
     
     + Letzte Entscheidung rückgängig machen
