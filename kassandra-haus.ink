@@ -312,7 +312,7 @@ Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt 
     
         ~ falle_kaputt = true
         ~ sense_room = "fabrik2"
-    
+        -> fabrik2
     
     ++ ->
         Du trägst nichts Geeignetes bei dir.
@@ -347,6 +347,23 @@ Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt 
 
 * @bauschutt durchsuche
     Du greifst in den Bauschutt und stichst dir den Finger an einem rostigen Nagel. Hoffentlich hast du an deine Tetanusauffrischung gedacht.
+    ~ bauschutt_durchsucht = true
+
+
++ {bauschutt_durchsucht == true and foto2_room != "player"} @bauschutt durchsuche nochmal den Bauschutt
+    Du wühlst im Bauschutt herum und bringst das Foto eines jungen, rothaarigen Mannes zutage.
+    
+    <img src="assets/polaroid2.png" class="story-image">
+        
+    ** Nimm es
+        Du nimmst das Foto mit.
+        ~ foto2_room = "player"
+        -> fabrik2
+        
+    ++ Lass es liegen
+        Du lässt das Foto, wo es ist.
+        -> fabrik2
+
 
 * {not plattform_kaputt} @leiter untersuche die Leiter
     Du rüttelst an der Leiter. Wirkt etwas instabil.
@@ -359,7 +376,7 @@ Eine Industriehalle. Durch die ((@glasfenster Glasfenster)) in der Decke fällt 
 
 -> fabrik2
 
-
+VAR bauschutt_durchsucht = false
 
 === plattform 
 
@@ -454,7 +471,7 @@ Das hier war wohl mal ein Büro. Hier steht ein verstaubter Schreibtisch, ein um
 
 === fabrik3
 
-Ein kleiner, dunkler Raum. Das einzige Licht hier fällt durch die Türöffnung, durch die du gekommen bist. In einer Ecke steht ein kaputter ((@kuehlschrank Kühlschrank)). <>
+Ein kleiner, dunkler Raum. Das einzige Licht hier fällt durch die Türöffnung, durch die du gekommen bist. Es gibt noch eine ((@esc_tür zweite Tür)), neben der ein modernes Panel mit einem ((@esc_ziffern  Ziffernblock)) angebracht ist. In einer Ecke steht ein kaputter ((@kuehlschrank Kühlschrank)). <>
 
     {kuehlschrank_open:
         # js: kavka.room_content("kuehlschrank", "links", "acc", "und", ".rc-span", {nothing: "", pre: "Im Kühlschrank siehst du ", post: "."})
@@ -474,17 +491,371 @@ Ein kleiner, dunkler Raum. Das einzige Licht hier fällt durch die Türöffnung,
     ~ current_room = "fabrik2"
     -> fabrik2
 
++ @esc_tür untersuche
+    Eine schwere, geschlossene Metalltür.
+
++ @esc_ziffern untersuche
+    Sieht aus, als müsste man einen Code eingeben, um die Tür zu öffnen.
+
++ @esc_ziffern tippe einen Code
+    {Du tippst wahllos ein paar Zahlen ein. Nichts passiert. Entweder das Panel ist defekt oder das war nicht der richtige Code.|Du tippst beliebige Zahlen ein. Nichts passiert.}
+
++ @esc_tür schlage sie
+    Womit?
+    
+    ++ Mit der Hand
+        Brich dir lieber nicht die Hand.
+
+    ++ {eisenstange_room == "player"} Mit der Eisenstange
+        Du schlägst mit der Metallstange gegen die Tür. Kleng! Du dachtest doch nicht ernsthaft, dass du die Tür kaputtschlagen kannst? Du bist nicht Buffy.
+    
+    ++ {bleistift_room == "player"} Mit dem Bleistift
+        Sehr effektiv. Die Tür bleibt natürlich ganz.
+
 -
-
 -> fabrik3
-
 
 
 === erfolgreich_durch_tuer
 
-...
+Du trittst durch die Tür und findest dich in einem dunklen Korridor wieder. Hinter dir siehst du das Licht der Fabrikhalle, aus der du kommst, vor dir glaubst du ein schwaches Pünktchen Licht zu erkennen, ein klitzekleiner, heller Fleck in der Finsternis.
+
++ Folge dem Licht
+    Du schreitest mit unsicheren Schritten durch die Dunkelheit voran. Das Pünktchen Licht vor dir wird ein wenig größer. Schließlich stehst du direkt vor ihm. Es ist eines dieser Neonsternchen, das Kinder gerne an Wände kleben und die im Dunkeln leuchten.
+        Sonst ist hier nichts.
+    
+    -- (k_back_dunkel)
+
+    ++ Gehe geradeaus weiter
+        Vor dir fühlst du eine nasse, kalte Wand. Hier geht es nicht weiter.
+
+    ++ Suche links von dir nach einem Durchgang
+        Du tappst im Dunkeln herum, aber fühlst nur nassen, kalten Beton. Das ist doch zum Verzweifeln! Hier hinten ist gar nichts! Hast du die Falle ganz umsonst entschärft?
+    
+    ++ Suche rechts von dir
+        Du tappst im Dunkeln herum, aber fühlst nur nassen, kalten Beton.
+
+    ++ Taste die Wände ab
+        Du tastest die Wände ab, aber findest keinen Durchgang.
+    
+    ++ {not dunkel_papier} Taste den Boden ab
+        Du tastest den Boden ab und findest etwas, das sich wie ein Stück Papier anfühlt.
+    
+        +++ Nimm es
+            Du nimmst das Papier.
+            ~ dunkel_papier = true
+        +++ Lass es liegen
+            Du lässt es lieber liegen.
+    
+    ++ Kehre um
+        -> back_dark_fabrik2
+    
+    --
+    -> k_back_dunkel
+
++ Kehre um.
+    -> back_dark_fabrik2
+
+
+
+VAR dunkel_papier = false
+VAR dunkel_papier_gesehen = false
+
+
+=== back_dark_fabrik2
+
+{dunkel_papier == true && dunkel_papier_gesehen == false:
+    -> dunkel_entziffer
+
+}
+
+-> fabrik2
+
+
+=== dunkel_entziffer
+Du gehst zurück in die Fabrikhalle und wirfst einen Blick auf das Papier, das du mitgenommen hast. Es entpuppt sich als das Foto eines jungen Mannes. Er kommt dir vage bekannt vor.
+
+    <img src="assets/polaroid3.png" class="story-image">
+     ~ foto3_room = "player"
+     
++ weiter
+-> pen_enter
+
+
+=== pen_enter
+
+"Er hat sich verändert, oder?"
+
+Da ist niemand, der gesprochen haben könnte. Und es ist auch nicht Kross' Stimme.
+
++ Schlage wild um dich
+    Du triffst nur Luft.
+
+    -- (k_back_bens_gesp)
+    
+    ++ Frage: "Ist da jemand?"
+        "Nein. Niemand hier."
+
+    ++ Sage: "Ich bin bewaffnet!"
+        "Be-waff-net. Gut. Lass dich nicht lumpen."
+    
++ Laufe weg
+    Und wohin? Du sitzt hier in der Falle, schon vergessen?
+    -> k_back_bens_gesp
+
++ Frage: "Wer ist da?"
+    "Niemand. Gar niemand."
+
++ Frage: "WER hat sich verändert?"
+    "Na, er. Natürlich hat er sich verändert, ja. Musste ja der einzige sein. Wobei ... wir vielleicht auch. Aber würde man es merken? Nein, natürlich nicht. Manchmal taste ich mein Gesicht ab, aber Falten spürt man nicht, weißt du? Oder erst, wenn es zu spät ist, schätze ich."
+
++ Frage: "Benson?"
+    "Benson. Du kennst Benson? Merkwürdig."
+
+-
+<> Es ist die Stimme einer Frau. "Ich hatte die Fotos aus einem Grund versteckt, weißt du. Nicht damit du anfängst, sie alle wieder rauszuzerren. Vor allem das da."
+
+- (penback1)
+
+~ k_count_pen1 += 1
+
+* {k_count_pen1 == 1} "Das Foto hier? Was ist damit?"
+
+    "Na, es zeigt ihn. Was denn sonst? Jeder hat ein Foto bekommen, aber sie wollte ein Foto vor dem Himmelsblau. Also haben wir die Wand angemalt, denn wir konnten sie ja nicht rauslassen, nicht tagsüber. Das wäre ein Fehler gewesen. Hätte uns fast die Polizei erwischt."
+
+    ++ "Wer ist ER?"
+        "Erkennst du ihn nicht aus der Zeitung? Ich nicht, ich lese keine Zeitungen. Aber auch sonst ist er ja überall. Supersichtbar. Dank uns."
+
+    ++ "Erzählst du mir, dass du jemanden gefangen hältst?"
+    
+        "Gefangen. So wollten wir das nie nennen. Aber ich schätze, das war es, ja." Sie schluchzt leise. "Wir waren Teufel, oder? Waren wir das? Aber jetzt ist sie frei. Frei und groß."
+
+* "Wer bist du?"
+    "Wer weiß. Du bist du, ich bin ... Du bist überhaupt nicht da. Sonst hätte dich ja eine von den Fallen schon massakriert. Bist du ein Geist?"
+        ~ k_p_geist = true
+    
+    ++ "Ja."
+        "Ha! Genau das würde ein Geist sagen", ruft sie, "Ich glaube dir kein Wort."
+    
+    ++ "Nein."
+        "Ja, sonst wärst du nicht durch die Fallen ... ich meine, das wäre dann doch etwas zu offensichtlich ..."
+    
+    ++ "Ich heiße Hannah."
+        "Ja, doch. Aber das habe ich nicht gefragt. Ein Geist. Was wäre ein Geist schon ohne Namen? Irgendwo muss man ja seine Vitamine herkriegen, oder?" Sie kichert.
+
+* "Bist du unsichtbar?"
+
+    "Für dich, ja." Sie macht eine kurze Pause. "Für mich auch. Für alle, eigentlich. Blöde Antwort. Entschuldige. Ja, ich bin unsichtbar. Für alle und ewig. Wir alle sind unsichtbar. Außer er. Er ist sichtbar. Sehr sogar."
+
+    ++ "Er? Wen meinst du?"
+        "Na, er!" Das Foto des jungen Mannes, das du in deiner Hand trägst, flattert, als habe es eine Brise Wind gepackt.
+        
+        Du betrachtest das Foto. Es ist wie verhext. An irgendwen erinnert es dich, aber du weißt nicht, an wen.
+
+    ++ "Wie bist du unsichtbar geworden?"
+        "Das willst du nicht wissen. Nein, tust du nicht."
+
+* {k_count_pen1 > 2} "Ich verstehe nicht ..."
+    "Ja, das verstehe ich", sagt die Stimme.
+
+* {k_count_pen1 > 1} "Kennst du Kross?"
+    "Und wie. Und wie und wie. Es tut mir leid. Ich hätte es ihm nicht geben sollen."
+
+    ** "WAS nicht geben sollen?"
+    
+        "Das Ding. Mit dem wir damals das Ding gemacht haben. Kross wusste ja gar nicht, dass ich es habe. Dann bin ich zurück nach Prag gekommen. Ich Idiotin. Hätte es ihm wirklich nicht geben sollen. Aber wenigstens hat er es jetzt zurückgebracht."
+        
+        *** "Sprichst du von dem Dolch?"
+            
+            "Pssst! Ich habe nicht davon gesprochen. Das warst du. Und jetzt Schluss!"
+            ~ k_p_dolch = true
+        
+        *** "Du musst mir helfen."
+            -> k_p_musst_helfen
+    
+    ** "Woher kennst du Kross?"
+    
+        "Wir waren ja fünf Freunde. Ohne Hund. Nein, wir waren nur vier. Vier ohne den Hund. Also, eigentlich nur drei. Ich bin nur mitgegangen, weil Kross wollte. Und ich liebte Benson nicht. So war das."
+
+* {k_count_pen1 > 2} "Wie heißt du?"
+
+    "Ich bin ja gar nicht da, du. Schon lange nicht mehr. Man könnte ja glauben, dass man mich nicht sieht und der Rest noch da ist. Aber ich bin mir da nicht mehr so sicher, nach all den Jahren."
+
+* {k_count_pen1 > 3} "Du musst mir helfen."
+    -> k_p_musst_helfen
+
+* {k_count_pen1 > 4} "Meine Freundin liegt im Sterben."
+    -> k_p_im_sterben
+
+-
+
+-> penback1
+
 
 -> END
+
+VAR k_count_pen1 = 0
+VAR k_p_geist = false
+VAR k_p_dolch = false
+
+=== k_p_musst_helfen
+
+{
+    - k_p_geist:
+        "Helfen? Aber du bist doch ein Geist, wie soll ich dir das helfen? Oder bist du doch kein Geist? Ich bin verwirrt. "
+    - k_p_dolch:
+        "Du bekommst ihn aber nicht. Nein, nein. Wir sind sowieso nicht da."
+    - else:
+        "Helfen? Als ob du wirklich hier wärst"
+}
+
+- (k_p_back)
+
+* "Weißt du, wie ich hier rauskomme?"
+    "Durch die Wand, vielleicht? Nein, das ist nicht gut. Man muss ja dann doch drinnen bleiben."
+
+* "Meine Freundin liegt im Sterben!"
+    -> k_p_im_sterben
+    
+* "Weißt du, ob es hier noch mehr Fallen gibt?"
+    "Fallen? Nein. Nachdem Benson weg ist, hatte ich keine Lust mehr, welche zu bauen. Was heißt <i>weg</i>. Gestorben ist er. Habe ihn nie geliebt. Armer Benson."
+    
+    ** "DU hast die Fallen gebaut?"
+        "Ja, natürlich. Wer sonst? Benson hatte zwei linke Hände. Damit sie nicht kommen und uns holen. Dann sind wir weg aus Prag. Warum bin ich überhaupt wiedergekommen? Idiotisch."
+
+        *** "Eine deiner Fallen hat meine Freundin verwundet."
+        
+        *** "Meine Freundin ist verwundet."
+        
+        ---
+        "Ja, vielleicht. 
+        -> k_p_choice_next
+
+    ** "Meine Freundin liegt im Sterben!"
+        -> k_p_im_sterben
+
+-
+
+-> k_p_back
+
+
+=== k_p_im_sterben
+"Tun wir das nicht alle?
+
+-> k_p_choice_next
+
+=== k_p_choice_next
+
+<> Aber wahrscheinlich gibt es deine Freundin sowieso nicht."
+
++ "Doch, es gibt sie wirklich! Sie heißt Kassandra!"
+
+    Eine lange Pause. Du glaubst schon, dass sie gegangen ist, als du wieder ihre Stimme hörst. "Kassandra", sagt sie tonlos. Wieder eine lange Pause. Dann endlich: "Wo?"
+    ~ k_p_erz = true
+
++ "Doch, komm mit und ich zeige sie dir!"
+    Eine lange Pause. Du glaubst schon, dass sie gegangen ist, als du wieder ihre Stimme hörst:
+    "Zeig sie mir."
+    
+-
+
++ weiter
+
+-
+
+Du gehst zurück zu Kassandra. Sie liegt am Boden und ihre Augen sind geschlossen. Erleichtert stellst du fest, dass sie noch atmet.
+
+{k_p_erz:
+        "Sie ist es wirklich", sagt die Stimme hinter dir, "Sie ist wieder gekommen."
+    - else:
+        "Kassandra", sagt die Stimme hinter dir, "Sie ist wieder gekommen."
+}
+
++ "Warte mal ... du KENNST sie?"
+
++ "Kannst du ihr helfen?"
+
+-
+
+Keine Antwort. Du hörst einen Schritt, dann noch einen, verstärkt durch das Echo des leeren Raums. Eine von Kassandras rotblonden Locken tanzt, als wäre sie von einem Hauch Wind erfasst worden. "Cassie", flüstert die Stimme, "So groß ist sie geworden." Dann bewegt sich Kassandras Arm wie von einem unsichtbaren Faden geführt nach oben.
+
++ "Was machst du mit ihr?"
+    "Nichts, was ein Arzt nicht auch tun würde. <>
+
++ "Bist du das?"
+    "Nein, das ist Kassandra", antwortet die Stimme, "<>
+
+-
+Ihr Puls ist gut. Der Schnitt ist nicht tief. Nur das Gift. Benson mit seinen blöden Giften. Muskellähmung, respiratorische Depression, Tod. Sie hat vielleicht noch zwei Stunden. Falls sie das wirklich ist. Ich kann nicht glauben, dass das Cassie ist. Dass sie so groß geworden ist. Und wenn du schon dabei bist, könnte ich dir auch etwas für Cassie mitgeben."
+
++ "WOBEI bin?"
+
+    "Dabei, sie ins Krankenhaus zu bringen. Habe ich dich nicht schon darum gebeten? Tut mir leid. Also: du musst sie unbedingt ins Krankenhaus bringen. Nachdem ich dir das Zeug mitgebe. Was aber nicht so wichtig ist. Ich wollte es ihr schon länger geben. Aber viel Zeit bleibt nicht."
+
++ "Häh? Etwas mitgeben?!"
+
+    "Ach, nichts weiter. Etwas, was ich ihr schon länger geben wollte. Das kannst du ihr nachher geben ... erst müsst ihr ins Krankenhaus, denke ich. Unbedingt, sogar."
+
++ "Hast du Verbandszeug?"
+
+    "Oh, nein, das spielt keine Rolle. Ich habe gesagt, der Schnitt ist nicht tief. Habe ich das schon gesagt? Es ist das Gift. Muskellähmung, respiratorische Depression, Tod."
+
+    ++ "Ja, hast du schon gesagt."
+        
+    ++ "Okay. Was machen wir?"
+
+    --
+        "Sie muss ins Krankenhaus. Also, nachdem ich dir das Zeug mitgebe. Was aber nicht so wichtig ist. Ich wollte es ihr schon länger geben. Kannst du sie bitte ins Krankenhaus bringen? Das wäre dann doch wichtig."
+
+
+
+Du spürst etwas, das dein Handgelenk umschließt und festhält. "Bitte bring sie hin, ja?"
+
++ Schnappe danach.
+    Du schnappst nach vorne und bekommst einen unsichtbaren Arm zu fassen.
+    
+    "Du fühlst dich echt an", sagt die Frauenstimme emotionslos, "Fühle ich mich auch echt an?"
+    
+    ++ "Ja."
+    
+    "Merkwürdig", murmelt sie, "Aber sag mal ... wolltest du nicht Cassie mitnehmen?"
+    
+        +++ "Zeig mir den Ausgang!"
+        
+        +++ "Ich komme hier nicht raus."
+    
+    ++ "Du musst mir helfen, Kassandra hier rauszubringen."
+    
+    ++ "Wenn du mir nicht hilfst, lasse ich dich nicht mehr gehen."
+
+    "Ich und gehen?", fragt sie, "Ich geh tagsüber sowieso nicht raus. Zu gefährlich. Die Dämmerung ist gut. Da sieht man selbst noch, aber sie können einen nicht sehen. Auch keine Fußspuren. Aber du solltest gehen. Und sie mitnehmen."
+    
+    +++ "Ich komme hier nicht raus."
+    
+    +++ "Zeig mir, wie man hier rauskommt, sonst lasse ich dich nicht los."
+
++ Sage: "Ich bringe sie ins Krankenhaus, versprochen."
+
+    "Versprochen, versprochen, gleich wieder gebrochen." Die Hand lässt dich los. "Ich wette, du weißt noch nicht einmal, wie du hier rauskommst."
+
+    ++ "Dann zeig mir den Ausgang!"
+    
+    ++ "Dann zeig mir den Ausgang, verdammt!"
+    
+
++ Sage: "Ich kann hier nicht raus."
+
+-
+"Du willst hier raus?" Die Stimme klingt verwundert. "Das ist leicht. Warum hast du das nicht gleich gesagt?"
+
+
+-
+
+
+
+-> END
+
+VAR k_p_erz = false
 
 === aaasonstiges
 

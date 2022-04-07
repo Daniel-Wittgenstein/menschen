@@ -34,9 +34,9 @@ VAR foto5_pic = "polaroid5.png"
 
 VAR foto1_room = "kuehlschrank"
 VAR foto2_room = "nirwana"
-VAR foto3_room = "nirwana"
-VAR foto4_room = "nirwana"
-VAR foto5_room = "nirwana"
+VAR foto3_room = ""
+VAR foto4_room = "aktenschraenke"
+VAR foto5_room = ""
 
 VAR bleistift_name = "der Bleistift"
 VAR bleistift_room = "aktenschraenke"
@@ -84,7 +84,6 @@ VAR sense_room = "nirwana"
     <img src="assets/polaroid5.png" class="story-image">
     Du nimmst das Foto.
     ~ foto5_room = "player"
-
 
 + {brot_room == current_room or (brot_room == "kuehlschrank" and kuehlschrank_room == current_room and kuehlschrank_open == true)} @brot Nimm das Brot
     Angewidert hebst du das Brot auf.
