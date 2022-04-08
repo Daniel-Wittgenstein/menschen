@@ -29,6 +29,7 @@ INCLUDE menschen.ink
 ~ foto5_room = "player"
 */
 
+-> k_haus_ende
 
 -> pen_enter
 

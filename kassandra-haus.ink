@@ -846,11 +846,186 @@ Du spürst etwas, das dein Handgelenk umschließt und festhält. "Bitte bring si
 + Sage: "Ich kann hier nicht raus."
 
 -
+
+-> k_haus_ende
+
+VAR k_dolch_nimm = false
+
+=== k_haus_ende
+
 "Du willst hier raus?" Die Stimme klingt verwundert. "Das ist leicht. Warum hast du das nicht gleich gesagt?"
 
++ weiter
+-
+
+Dann bist du ihr gefolgt. Sie kannte die Kombination für die Tür.
+
++ weiter
+-
+
+Draußen schien die Sonne, als wäre nie etwas passiert.  
+  
++ weiter
+-
+  
+Dein Handy hatte Empfang. Du hast den Notruf gewählt und sie haben euch einen Krankenwagen geschickt.
+
++ weiter
+-
+
+Jetzt sitzt du in einem Gang im dritten Stock eines Krankenhauses.
+
+Sie haben gesagt, Kassandra wird wieder gesund.
+
++ weiter  
+-
+
+Aber du darfst sie heute nicht mehr sehen.
+
++ weiter  
+-
+
+Vielleicht wäre es besser, endlich nach Hause zu gehen.
+
++ gleich ...
+-
+
+Du bist so müde.
+
+Du betrachtest den Schuhkarton, den dir die unsichtbare Frau für Kassandra mitgegeben hat.
+
++ Nimm den Dolch aus der Schachtel
+    Du nimmst ihn in die Hand.
+    ~ k_dolch_nimm = true
+
++ Betrachte den Dolch, aber fass ihn nicht an
+    Du betrachtest ihn. 
 
 -
 
+Das ist er. Der Dolch, mit dem Marek dich ... es fühlt sich beinahe normal an, das zu denken. Und der Dolch sieht auch beinahe normal aus. Er hat eine gekrümmte Klinge. In den Knauf sind drei rote, billig wirkende Steine eingearbeitet. Du fragst dich ...
+
++ ... wie Marek so etwas tun konnte.
+
+    Nein. Du willst dich nicht mit solchen Fragen quälen. Nicht jetzt.
+    Konzentriere dich auf das Positive. Du bist noch am Leben.
+    Kassandra auch. Und du hast den Dolch. <>
+
++ ... welcher Vollidiot wirklich glauben würde, dass dieser Dolch mystische Kräfte besitzt.
+
+    Sehr gute Frage. Ich meine, du bist sicher, so ein Ramschding kriegt man auf dem nächsten Vietnamesenmarkt für 30 Euro oder weniger. Sollten sogenannte magische Artefakte nicht wenigstens alt <i>aussehen</i>?
+    
+        Wie auch immer. Du hast jetzt endlich den Dolch. <>
+-
+
+Du kannst ...
+
++ ... ihn zerstören, damit niemand mehr damit getötet wird.
+    Ja, du wirst den Dolch zerstören. Das war es, was Kassandra vorhatte, und es scheint dir das Sinnvollste. Solange es da draußen Verrückte gibt, die wirklich denken, dass man mit diesem Dolch irgendwelche dunklen Riten durchführen kann, stellt er eine Gefahr dar. Besser, ihn ein für alle Mal aus der Welt zu schaffen.
+
+        {k_dolch_nimm:
+            Du legst ihn zurück in die Schachtel.
+            -else:
+            Du wendest den Blick wieder von ihm ab.
+        }
+
++ ... ihn deinem Stalker geben, damit er dich in Ruhe lässt.
+    Kassandra wollte den Dolch zwar zerstören, aber du hast keine Lust, deinen Stalker zu verärgern. Du wirst ihm den Dolch geben und hoffen, dass er dich dann in Ruhe lässt. Hoffen, dass du einfach zu deinem normalen Leben zurückkehren kannst, in dem niemand bedroht, abgestochen oder von grausamen Fallen zerstückelt wird.
+        
+        {k_dolch_nimm:
+            Du legst den Dolch zurück in die Schachtel.
+            -else:
+            Du wendest den Blick vom Dolch ab.
+        }
+
+
++ ... ihn verscherbeln.
+    Kurz blitzt der Gedanke in deinem Kopf auf, dass du den Dolch verkaufen solltest. Laut Kassandra gibt es ja Verrückte, die wirklich glauben, dass der Dolch magische Kräfte besitzt. Vielleicht würde einer von ihnen dafür ordentlich Geld hinblättern. Aber das wäre falsch, oder? Am Ende versucht jemand das, was Marek mit dir versucht hat.
+    
+    ** Dolch hin oder her. Verrückte Mörder wird es immer geben.
+        
+        Das stimmt. Böse Menschen werden immer Ausreden finden, um böse zu sein. Der Dolch hat gar nichts damit zu tun. Oder doch? Du hast kein gutes Gefühl bei der Sache.
+        
+        *** Beschließe, den Dolch zu verkaufen
+            Ja, du wirst den Dolch verkaufen! Wenn du schon durch diese ganze Scheiße musstest, willst du auch dafür belohnt werden, richtig? Warum musst du auch immer die sein, die sich herumschubsen und misshandeln lässt? Ein einziges Mal willst du Glück haben. Du wirst den Dolch verkaufen und mit dem Geld wirst du ...
+            
+            **** ... dir irgendwas Schönes kaufen.
+                Jepp, so machst du es! Du wirst dir von dem Geld etwas Schönes kaufen. <>
+            
+            **** ... einen wohltätigen Zweck unterstützen.
+                    Ja, das ist eine gute Idee. Auch, um die Stimme zu beruhigen, die dir sagt, dass du den Dolch vielleicht doch nicht verkaufen solltest. Aber wenn du das Geld für etwas Gutes einsetzt, dann wird es schon richtig sein. <>
+            ----  
+            Bei diesem Gedanken fühlst du dich ...
+                
+            **** ... besser.
+                Ja, das fühlt sich besser an.
+            
+                {k_dolch_nimm:
+                    Du legst den Dolch zurück in die Schachtel.
+                    -else:
+                    Du wendest den Blick vom Dolch ab.
+                }
+
+                    
+            **** ... wütend.
+                Du fühlst dich wütend wegen allem, was du durchmachen musstest. Und wegen dieser bescheuerten kleinen Stimme, die dir sagt, dass es falsch ist, den Dolch zu verkaufen. Fuck it! Du hast keine Lust mehr auf Gewissensbisse.
+                
+                {k_dolch_nimm:
+                    Du knallst den Dolch zurück in die Schachtel.
+                    -else:
+                    Du wirfst dem Dolch einen letzten, hasserfüllten Blick zu und wendest dich von ihm ab.
+                }
+
+
+        *** Beschließe, darüber zu schlafen
+            Du beschließt, über die Sache zu schlafen und <>
+            
+            {k_dolch_nimm:
+                legst den Dolch zurück in die Schachtel.
+                -else:
+                wendest den Blick vom Dolch ab.
+            }
+
+    ** Nein, das kannst du nicht tun.
+
+        Nein, das kannst du nicht tun. Es wäre einfach falsch. Du wirst darüber nachdenken müssen, was du dann mit dem Dolch anstellen willst. Aber erst morgen, heute ist es zu spät dafür.
+
+        {k_dolch_nimm:
+            Du legst den Dolch zurück in die Schachtel.
+            -else:
+            Du wendest den Blick vom Dolch ab.
+        }
+
++ ... du bist dir noch nicht sicher, was du mit dem Dolch tun wirst.
+    Es ist nicht leicht, sich zu entscheiden. Einerseits wollte Kassandra ihn zerstören, damit keine Verrückten sich mehr dazu hinreißen lassen, mit ihm angeblich dunkle Riten zu vollführen. Andererseits wollte dein Stalker den Dolch. Er könnte wirklich sauer werden, wenn du ihm nicht gibst, was er will ... Entscheidungen sind so anstrengend. Vielleicht schläfst du besser eine Nacht drüber.
+
+
+        {k_dolch_nimm:
+            Du legst den Dolch zurück in die Schachtel.
+            -else:
+            Du wendest den Blick vom Dolch ab.
+        }
+
+- 
+
+* Nimm die Kladde aus der Schuhschachtel
+    -> k_buch
+
+
+=== k_buch
+
+Es ist eine schwarz-rote DIN-A5-Chinakladde. Du schlägst sie auf und beginnst zu lesen.
+
+* weiter
+-
+
+
+
+
+
++ saasj
+-
+ 
 Du hast den Dolch. Aber du wirst aus der ganzen Sache nicht schlau. Natürlich fängt es mit der Sache an, dass Leute nicht einfach so unsichtbar sein sollten. Aber es ist mehr als das. Die Frau, die du in der Fabrik getroffen hast, war offensichtlich nicht ganz bei Sinnen, aber sie wollte dir etwas sagen. Du weißt nur nicht, was. Und wieso kannte sie Kassandra?
 
 Vielleicht findet sich die Antwort in dem Buch hier.
