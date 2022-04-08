@@ -10,6 +10,8 @@ reenablein final version:
 :root {
     --custom-fg: #fff;
     --custom-bg: #222;
+
+    --choice-radius: 24px;
 }
 
 
@@ -374,6 +376,8 @@ body.dark {
     background: #444;
     color: white;
     font-size: 12pt;
+    border-bottom: 1px solid #222;
+    margin-bottom: 0px;
 }
 
 .story-choice:hover {
@@ -381,23 +385,26 @@ body.dark {
     color: #222;
 }
 
-.first-ch {
-    border-radius: 8px 8px 0px 0px;
-    border-bottom: 1px solid #3b3b3b;
+.auto-only-choice {
+    border-radius: var(--choice-radius);
+    margin-bottom: 40px;
+    border-bottom: none;
 }
 
-.middle-ch {
-    border-radius: 0px 0px 0px 0px;
-    border-bottom: 1px solid #3b3b3b;
+.auto-first-choice {
+    border-radius: var(--choice-radius) var(--choice-radius) 0px 0px;    
 }
 
-.last-ch {
-    border-radius: 0px 0px 8px 8px;
+.auto-last-choice {
+    border-radius: 0px 0px var(--choice-radius) var(--choice-radius);
+    margin-bottom: 40px;
+    border-bottom: none;
 }
 
-.single-ch {
-    border-radius: 8px 8px 8px 8px;
+.auto-mid-choice {
+    border-radius: 0px;
 }
+
 
 
 .__inline_link {
@@ -520,9 +527,11 @@ body.dark {
     background: var(--custom-bg) !important;
 }
 
+/*
 #controls.has-custom-color {
 
 }
+*/
 
 .icon.has-custom-color {
     /* set to standard style, so it's always visible no matter

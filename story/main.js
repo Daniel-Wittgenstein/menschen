@@ -288,27 +288,34 @@ function split_into_first_word_and_rest(str) {
         }
 
         // Create HTML choices from ink choices
-        let ch_index = 0
 
         let inline_link_info = {}
 
+        let displayed_choices = []
+
         story.currentChoices.forEach(function(choice) {
-
-            // Create paragraph with anchor element
-            var choiceParagraphElement = document.createElement('p');
-            choiceParagraphElement.classList.add("choice");
-
             let text = choice.text
 
-            text = post_process_choice_text(text, ch_index,
-                ch_index === story.currentChoices.length - 1, choice,
+            text = post_process_choice_text(text, choice,
                 inline_link_info)
             
             if (text.dont_print) return
-            
+
+            displayed_choices.push({choice: choice, text: text})
+        })
+
+
+        let ch_index = -1
+        
+        displayed_choices.forEach(function(el) {
+            // Create paragraph with anchor element
+            let choice = el.choice
+            var choiceParagraphElement = document.createElement('p');
+            choiceParagraphElement.classList.add("choice");
+
             ch_index ++
 
-            choiceParagraphElement.innerHTML = text
+            choiceParagraphElement.innerHTML = el.text
             storyContainer.appendChild(choiceParagraphElement);
 
             // Fade choice in after a short delay
@@ -317,6 +324,19 @@ function split_into_first_word_and_rest(str) {
 
             // Click on choice
             var choiceAnchorEl = choiceParagraphElement.querySelectorAll("button")[0];
+
+            let del = $(choiceAnchorEl)
+
+            if (displayed_choices.length === 1) {
+                del.addClass("auto-only-choice")
+            } else if (ch_index === 0) {
+                del.addClass("auto-first-choice")
+            } else if (ch_index === displayed_choices.length - 1) {
+                del.addClass("auto-last-choice")
+            } else {
+                del.addClass("auto-mid-choice")
+            }
+
             choiceAnchorEl.addEventListener("click", function(event) {
 
                 // Don't follow <a> link
@@ -789,7 +809,7 @@ function start_up2() {
 }
 
 
-function post_process_choice_text(text, index, is_last,
+function post_process_choice_text(text, 
     choice, inline_link_info ) {
     //has side-effect: MODIFIES inline_link_info!
     if ( text.trim().startsWith("@") ) {

@@ -29,6 +29,9 @@ INCLUDE menschen.ink
 ~ foto5_room = "player"
 */
 
+
+-> pen_enter
+
 -> dunkel_entziffer
 
 -> fabrik2
