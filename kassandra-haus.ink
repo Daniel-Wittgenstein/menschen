@@ -851,6 +851,48 @@ Du spürst etwas, das dein Handgelenk umschließt und festhält. "Bitte bring si
 
 -
 
+Du hast den Dolch. Aber du wirst aus der ganzen Sache nicht schlau. Natürlich fängt es mit der Sache an, dass Leute nicht einfach so unsichtbar sein sollten. Aber es ist mehr als das. Die Frau, die du in der Fabrik getroffen hast, war offensichtlich nicht ganz bei Sinnen, aber sie wollte dir etwas sagen. Du weißt nur nicht, was. Und wieso kannte sie Kassandra?
+
+Vielleicht findet sich die Antwort in dem Buch hier.
+Vielleicht willst du sie aber auch gar nicht wissen.
+
+Nicht, dass es noch eine Rolle spielt. Du hast jetzt den Dolch. Du kannst ...
+
++ ... ihn zerstören, damit niemand mehr damit getötet wird.
+
++ ... ihn deinem Stalker geben, damit er dich in Ruhe lässt.
+
++ ... du bist dir noch nicht sicher, was du mit dem Dolch tun wirst.
+
+-
+
++ Lies das Tagebuch
+
+    Dazu müsstest du das Schloss aufbrechen. Das Tagebuch ist ja eigentlich nur für Kassandra bestimmt. Willst du das wirklich tun?
+    
+    ++ Ja
+    
+    ++ Nein
+
++ Lass das Tagebuch bei Kassandra liegen und geh heim
+
+Du hast recht. Vielleicht spielt das alles keine Rolle.
+
+-
+
+
+
+
+
+
+
+
+Du sitzt im Krankenhaus. Jetzt, wo alles vorbei ist, fühlst du dich von einer unendlichen Traurigkeit übermannt.
+Das Tegbuch. fuck.
+Das blöde Scheißtagebuch. Bulle kommt usw.
+
+
+
 
 
 -> END
