@@ -26,6 +26,7 @@ let settings = {
     fg: "#404040",
     bg: "#fff3b8",
     override_colors: false,
+    no_animations: false,
 }
 
 let max_undo = 5 //tested: roughly 21 bytes for 13 undo states(?) seems really small.
@@ -272,9 +273,11 @@ function split_into_first_word_and_rest(str) {
                 ddur = DELAY_SETTINGS.animation_duration_from_inline_choice
             }
 
-            $(paragraphElement).css('animation-duration', ddur)
-            paragraphElement.classList.add('animate__animated')
-            paragraphElement.classList.add('animate__slideInUp')
+            if (!settings.no_animations) {
+                $(paragraphElement).css('animation-duration', ddur)
+                paragraphElement.classList.add('animate__animated')
+                paragraphElement.classList.add('animate__slideInUp')
+            }
 
             storyContainer.appendChild(paragraphElement);
 
@@ -284,7 +287,10 @@ function split_into_first_word_and_rest(str) {
 
             // Fade in paragraph after a short delay
             showAfter(delay, paragraphElement);
-            delay += DELAY_SETTINGS.paragraph
+            if (!settings.no_animations) {
+                delay += DELAY_SETTINGS.paragraph
+            }
+            
         }
 
         // Create HTML choices from ink choices
@@ -304,9 +310,8 @@ function split_into_first_word_and_rest(str) {
             displayed_choices.push({choice: choice, text: text})
         })
 
-
         let ch_index = -1
-        
+
         displayed_choices.forEach(function(el) {
             // Create paragraph with anchor element
             let choice = el.choice
@@ -485,6 +490,9 @@ function split_into_first_word_and_rest(str) {
 
     // Fades in an element after a specified delay
     function showAfter(delay, el) {
+        if (settings.no_animations) {
+            return
+        }
         el.classList.add("hide");
         setTimeout(function() { el.classList.remove("hide") }, delay);
     }
@@ -794,10 +802,35 @@ window.onload = () => {
     }
 
     $("body").on("keydown", (e) => {
-        if (e.key === "Escape") hide_sub_choice_selection()
+        if (e.key === "Escape") {
+            hide_sub_choice_selection()
+        }
+        process_key_presses(e)
     })
 }
 
+function process_key_presses(e) {
+    if (e.key.toLowerCase() === "a") {
+        settings.no_animations = !settings.no_animations
+        if (!settings.no_animations) {
+            Swal.fire({
+                title: 'Animationen AN',
+                text: `Drücke A, um Animationen wieder auszuschalten.`,
+                icon: 'success',
+                confirmButtonColor: confirm_button_color,
+            })
+        } else {
+            Swal.fire({
+                title: 'Animationen AUS',
+                text: `Drücke A, um Animationen wieder einzuschalten.`,
+                icon: 'error',
+                confirmButtonColor: confirm_button_color,
+            })
+        }
+        return
+    }
+    if (!settings.no_animations) return
+}
 
 function start_up() {
     $("#title-box1").fadeOut(500)
