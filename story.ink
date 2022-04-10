@@ -10,6 +10,7 @@ INCLUDE gespenster-party.ink
 INCLUDE kassandra.ink
 INCLUDE kassandra-laden.ink
 INCLUDE kassandra-haus.ink
+INCLUDE kassandra-buch.ink
 
 INCLUDE menschen.ink
 
