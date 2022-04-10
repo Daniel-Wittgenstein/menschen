@@ -352,13 +352,13 @@ VAR party_count = 0
 === party_jede_runde
     ~ party_count ++
     
-    ~ temp r = RANDOM (1, 2)
+    ~ temp r = RANDOM (1, 1)
     
     {r == 1:
         ~ party_count ++
     }
     
-    {party_count >= 2:
+    {party_count >= 1:
         ~ new_person_event()
     }
 
@@ -422,17 +422,17 @@ Ein festlich geschmückter Ballsaal. Im hinteren Teil des Saals ist ein Büffet 
         
         +++ Iss das Sandwich
             Du isst das Sandwich. Hat gut geschmeckt.
-            -> ballsaal        
+            -> party_jede_runde -> ballsaal      
             
         +++ Lass das mit dem Essen lieber
-            -> ballsaal
+            -> party_jede_runde -> ballsaal
     
     ++ Iss das Sandwich
         Du isst das Sandwich. Hat gut geschmeckt.
-        -> ballsaal
+        -> party_jede_runde -> ballsaal
         
     ++ Lass es lieber
-    -> ballsaal
+    -> party_jede_runde -> ballsaal
 
 + Geh rüber ins Foyer
     ~ player_just_moved = true
@@ -453,7 +453,12 @@ Ein festlich geschmückter Ballsaal. Im hinteren Teil des Saals ist ein Büffet 
     
     
 === treppenhaus
+    ~ spieler_raum = rtreppenhaus
+    ~ spieler_raum_actual_knot = -> treppenhaus
+    
     Du stehst im Treppenhaus. Die Treppe führt nach oben in den ersten Stock. Durch die Tür geht es zurück in den Ballsaal.
+    
+    <- people_actions
     
     + Gehe nach oben
         Du hast oben nichts zu schaffen.
@@ -464,7 +469,7 @@ Ein festlich geschmückter Ballsaal. Im hinteren Teil des Saals ist ein Büffet 
     -> ballsaal
     
     + Sieh dich um
-    Hier gibt es wenig zu sehen. Eine Büste von Sokrates, ein Rauchmelder an der Decke, ein Treppengeländer mit verschnörkelten Verzierungen.
+    Hier gibt es wenig zu sehen. Eine Büste von Sokrates, ein Rauchmelder an der Decke, ein Treppengeländer mit verschnörkelten Verzierungen. Und keine Menschen außer dir.
     -> treppenhaus
 
 === party_foyer
@@ -687,7 +692,7 @@ Sie geht ins Haus zurück / Party. Findet dort Dolch nicht.
 
 === alarm
 
-Du zündest eine Zigarette an. Nach nicht einmal einer Minute fängt der Rauchmelder an, laut zu piepen. Dann geht ein schriller Feueralarm los. Hinter der Tür hörst du aufgeregte Stimmen und Securitymenschen, die Anweisungen bellen. Nach einer Viertelstunde dann endlich vollkommen Stille.
+Du zündest eine Zigarette an. Nach nicht einmal einer Minute fängt der Rauchmelder an, laut zu piepen. Dann geht ein schriller Feueralarm los. Hinter der Tür hörst du aufgeregte Stimmen und Securitymenschen, die Anweisungen bellen. Nach einer Viertelstunde dann endlich vollkommene Stille.
 
 Du öffnest die Türe. Wow! Das ganze Gebäude wurde evakuiert.
 
@@ -695,7 +700,7 @@ Du öffnest die Türe. Wow! Das ganze Gebäude wurde evakuiert.
 
 -
 
-Du schleichst dich ins Foyer. Der Alarm hat aufgehört, aber es ist keine Menschenseele weit und breit zu sehen.
+Du schleichst dich ins Foyer. Der Alarm hat aufgehört zu läuten, aber es ist keine Menschenseele weit und breit zu sehen.
 
 + weiter
 -

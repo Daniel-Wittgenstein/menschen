@@ -177,7 +177,7 @@ Die Flasche vollführt eine Drehung und schenkt dunkelroten Wein in das Glas ein
     
 -
 
-Das Weinglas neigt sich. Wein fließt heraus und verschwindet, ohne auf den Boden zu fallen. "Aaah", macht die Stimme, "Echt guter Tropfen. Ich bin übrigens Kross. Mit K. Und du bist Hannah, ich weiß. Du hast mir immer noch nicht gesagt, warum du wiedergekommen bist. Wolltest du dich nicht bei mir bedanken, dass ich dich gerettet habe? Also, wenn du Lust hast, mir aus Dankbarkeit deine Titten zu zeigen, oder so, sage ich nicht nein."
+Das Weinglas neigt sich. Wein fließt heraus und verschwindet, ohne auf den Boden zu fallen. "Aaah", macht die Stimme, "Echt guter Tropfen. Ich bin übrigens Kross. Mit K. Und du bist Hannah, ich weiß. Du hast mir immer noch nicht gesagt, warum du wiedergekommen bist. Wolltest du dich vielleicht bei mir bedanken, dass ich dich gerettet habe? Also, wenn du Lust hast, mir aus Dankbarkeit deine Titten zu zeigen, oder so, sage ich nicht nein."
 
 + "Du bist ekelhaft."
     "Puuuh. Ja, vielleicht bin ich das.
@@ -281,14 +281,14 @@ Etwas fliegt plötzlich in deine Richtung. Automatisch fängst du es auf. Es ist
     "<>
 
 + "Ich rauche nicht."
-    "Jupp, deswegen ist sie auch leer.
+    "Jupp, deswegen ist sie auch leer. <>
 
 -
 ~ zigaretten2_room = "player"
 
-Ich schreib dir jetzt eine Adresse auf. Da kannst du dich mit allen weiteren Fragen hinwenden. Und das ist wirklich das letzte, was ich für dich tue. Hab nämlich echt keinen Bock mehr Babysitter zu spielen. So, das war's. Und meinetwegen nimm noch ne Flasche Wein mit, ist sowieso nicht meiner." Eine Flasche verlässt die Vitrine, fliegt auf dich zu und landet einen halben Meter vor deinen Füßen auf dem Boden. Du betrachtest stumm die Scherben.
+Ich schreib dir jetzt eine Adresse und einen Namen auf. Der Penner heißt <i>Von</i>. Da kannst du dich mit allen weiteren Fragen hinwenden. Und das ist wirklich das letzte, was ich für dich tue. Hab nämlich echt keinen Bock mehr Babysitter zu spielen. So, das war's. Und meinetwegen nimm noch ne Flasche Wein mit, ist sowieso nicht meiner." Eine Flasche verlässt die Vitrine, fliegt auf dich zu und landet einen halben Meter vor deinen Füßen auf dem Boden. Du betrachtest stumm die Scherben.
 
-"Fuck", murmelt Kross.
+"Fuck", murmelt Kross, "Muss zielen üben."
 
 + weiter
 -> uns_ende_gespr

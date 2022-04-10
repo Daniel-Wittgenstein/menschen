@@ -511,7 +511,7 @@ Das ist also der Grund. Er wollte dich töten, um übernatürliche Kräfte zu er
 
     ** "Aber Kross sagte, er hat den Dolch nicht."
     
-        "Er hat ihn <i>im Moment</i> nicht", sagt Kassandra, "Heißt aber nicht, dass er ihn nicht gemommen und weitergegeben hat. Ihm macht es Spaß, nur die halbe Wahrheit zu sagen. Er ist ein totales Arschloch."
+        "Er hat ihn <i>im Moment</i> nicht", sagt Kassandra, "Heißt aber nicht, dass er ihn nicht genommen und weitergegeben hat. Ihm macht es Spaß, nur die halbe Wahrheit zu sagen. Er ist ein totales Arschloch."
     
         --- (k_totales_arschloch)
     
