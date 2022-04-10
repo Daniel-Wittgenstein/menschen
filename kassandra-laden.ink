@@ -491,101 +491,26 @@ Das ist also der Grund. Er wollte dich töten, um übernatürliche Kräfte zu er
         
             "Unterschätz mich nicht", antwortet Kassandra pikiert.
 
-
         --
         
-        Von räuspert sich laut. "Dein Plan in allen Ehren, Cassie, aber wir wissen nicht einmal, wo der Dolch sich derzeit befindet. Wie {self_name} ja gesagt hat, er ist vom Tatort verschwunden."
+        Von räuspert sich laut. "Dein Plan in allen Ehren, Cassie, aber wir müssen den Dolch erst finden."
     
     * "Aber wir wissen noch nicht einmal, wo der Dolch ist."
-    
-        "Ja, das stimmt leider", murmelt Kassandra und zieht ihre Stirn in Falten.
-        
 
+        
 -
 
-* "Vielleicht hat ihn die Polizei vom Tatort mitgenommen."
 
-    "Als Beweisstück, ja", sagt Kassandra, "Außer Kross hat ihn sich vorher geschnappt."
+"Du hast doch gesagt, dass Kross ihn einem Bekannten gegeben hat", sagt Kassandra.
 
-    -- (k_kross_genommen)
+"Das schränkt die Auswahl nicht gerade ein", murmelt Von.
 
-    ** "Aber Kross sagte, er hat den Dolch nicht."
-    
-        "Er hat ihn <i>im Moment</i> nicht", sagt Kassandra, "Heißt aber nicht, dass er ihn nicht genommen und weitergegeben hat. Ihm macht es Spaß, nur die halbe Wahrheit zu sagen. Er ist ein totales Arschloch."
-    
-        --- (k_totales_arschloch)
-    
-        *** "Er hat mir immerhin das Leben gerettet."
-        
-            "Jaaa", sagt Kassandra lang gedehnt, "Sorry. Wollte nicht ...", sie beißt sich auf die Unterlippe, " ... ich wollte nicht sagen, dass es schlecht war, dass er dich gerettet hat, oder so. Jedenfalls. Wie finden wir diesen Dolch? Gibt es noch irgendeinen Hinweis? Irgendetwas, was Kross dir gesagt hat?"
-        
-        *** "Ja, das ist er."
-        
-            Kassandra wirft dir einen verwunderten Blick zu. Dann beißt sie sich auf die Unterlippe.
-            
-            "Na, gut", sagt sie schließlich, "Wie finden wir also diesen Dolch? Gibt es noch irgendeinen Hinweis? Irgendetwas, was Kross dir gesagt hat?"
-        
-        *** "Wie finden wir also diesen Dolch?"
-    
-            "Gibt es noch irgendeinen Hinweis?", fragt Kassandra, "Irgendetwas, was Kross dir gesagt hat?"
-    
-    ** "Vielleicht sollten wir in die Asservatenkammer der Polizei einbrechen."
-
-        Kassandra und Von starren dich entgeistert an.
-        
-        "Oder ... vielleicht auch nicht?", setzt du schnell hinzu.
-
-        "Das würde sich doch eher schwierig gestalten", sagt Von mit einem kleinen Lächeln, "Wir sind leider, anders als unser Freund Kross, nicht mit der Gabe der Unsichtbarkeit ausgestattet."
-
-        *** "Aber wir könnten Kross bitten ..."
-        
-            "Oh, nein, das können wir nicht", sagt Kassandra, "Er würde uns nicht helfen. Je mehr ich darüber nachdenke, desto mehr bin ich mir sicher, dass er den Dolch mitgenommen hat."
-            -> k_kross_genommen
-            
-        *** "Was dann?"
-        
-            "Wenn wir schon bei Kross sind", sagt Kassandra, "Ich tippe darauf, dass er den Dolch mitgenommen hat."
-            -> k_kross_genommen
-
-* "Jemand muss ihn vom Tatort mitgenommen haben."
-
-    "Wahrscheinlich Kross", sagt Kassandra.
-    -> k_kross_genommen
-
--
-
-* "Er hat mir diese Adresse gegeben."
-
-    "Er wollte, dass du mit uns sprichst", sagt Kassandra, "Typisch Kross. Immer Probleme auf andere abwälzen."
-
-    ** "Ich hoffe, dass ich euch nicht allzu große Probleme bereite."
-    
-        "Oh, nein, du nicht", Kassandra lächelt dir aufmunternd zu, "Es ist gut, dass du gekommen bist."
-    
-    
-    ** "Woher kennt ihr Kross eigentlich?"
-
-        "Lange Geschichte", sagt Kassandra, "Ein anderes Mal."
-        
-        
-
-* "Vielleicht hat er den Dolch verkauft."
-
-    "Ja, das würde ihm leider ähnlich sehen", sagt Kassandra.
-    
 -
 
 * "Warte! Er hat mir noch die Zigaretten mitgegeben."
 
-* "Warte! Er sagte noch etwas von einem Vergnügungspark."
+* "Vielleicht haben die Zigaretten eine Bedeutung?"
 
-    "Das ist nur seine Art sich auszudrücken", sagt Kassandra, "Noch etwas?"
-    
-    ** "Die Zigaretten, vielleicht?"
-    
-    ** "Er hat mir eine Packung Zigaretten mitgegeben."
-    
-    
 -
 
 Du holst die Zigarettenpackung aus der Tasche und reichst sie Kassandra.
