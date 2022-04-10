@@ -48,7 +48,6 @@ CONST Herr_name2 = "((@herr Der junge Mann mit der roten Krawatte))"
 VAR herr_name = herr_name1
 VAR Herr_name = Herr_name1
 
-
 CONST dame_name1 = "((@dame eine ältere Dame mit einer Turmfrisur))"
 CONST Dame_name1 = "((@dame Eine ältere Dame mit einer Turmfrisur))"
 

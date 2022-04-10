@@ -155,11 +155,116 @@ Er scheint nachzudenken. "Ok, Püppi", meint er schließlich, "Wir zwei machen j
 
 {kwohnst == false: "Wir sehen uns in drei Tagen wieder, Barbie. Und versuch nicht, unterzutauchen, ich finde dich und mache dir ein Loch in deinen hübschen Hals."}
 
-* ...
+* weiter
+
+-
+
+Einfach hinreißend. Wir rekapitulieren: du bist fast abgestochen worden, musstest dich von Polizisten demütigen lassen und bist jetzt nochmal fast abgestochen worden. Was ist falsch mit dieser Stadt? Bis gestern eigentlich gar nichts. Bis gestern hast du deinen Auslandsaufenthalt wirklich genossen. Und jetzt das.
+
+Du zitterst noch, vor Angst und Wut, während der Himmel über die sich langsam aufhellt, und schon musst du die nächste Entscheidung treffen.
+
++ Geh zurück zur Polizei und sage ihnen, dass du bedroht wurdest.
+    
+    Du bist schon auf dem Weg zurück zur Wache, als du plötzlich stehen bleibst. Sie werden dich sowieso nicht ernst nehmen. Und du willst nicht noch einmal von ihnen misshandelt werden. Nein, es muss einen anderen Weg geben.
+    
+
++ Nimm die Sache selbst in die Hand
+
++ Verzweifle
+    Nein, das ist keine Option. Du darfst dich nicht unterkriegen lassen.
+
+-
+Du musst die Sache selbst in die Hand nehmen. Es ist ja nur ein Dolch. Du musst nur zurück ins Haus, den Dolch holen und dem Stalker geben und du bist das Problem für immer los. Nach allem, was du schon überlebt hast, ist das nur noch ein Spaziergang. Es kann natürlich sein, denkst du, dass ...
+
++ ... der Tatort bewacht wird.
+
++ ... die Polizisten den Dolch schon weggeschafft haben.
+
+-
+Das wäre natürlich nicht gut. Du zögerst. Vielleicht doch kein guter Plan?
+
++ Du beschließt, später nochmal darüber nachzudenken.
+
+    Hört sich vernünftig an. Du brauchst erstmal Ruhe und Schlaf, bevor du etwas Neues starten kannst.
+    ~ den_dolch_holen = false
+
++ Du beschließt, dass es nicht schaden kann, zurück zum Haus zu gehen, und sich mal VORSICHTIG die Lage anzusehen.
+    
+    Ja, das hört sich vernünftig an. Aber erstmal brauchst du Schlaf. Es ist absolut ausgeschlossen, jetzt noch irgendwas Großes zu starten, dafür bist du viel zu müde.
+    ~ den_dolch_holen = true
+    
+-
++ weiter
+Du wankst nach Hause. Zum Glück ist es nicht weit zu deiner Wohnung.
+
+-
++ weiter
+
+Du sperrst die Tür zu deiner Wohnung auf, gehst in dein Zimmer und schlüpfst aus den Schuhen. Sonst ziehst du nichts aus. Du fällst auf dein Bett und in einen Schlaf voll merkwürdiger Träume.
+
+-
++ weiter
+
+Als du aufwachst, wird es allmählich wieder dunkel. <>
+
+{den_dolch_holen:
+    Du rappelst dich auf und weißt, dass es Zeit ist zu handeln.
+-else:
+    Du rappelst dich aus dem Bett auf und weißt plötzlich, dass du den Dolch holen willst.
+}
+
+
++ Dusche dich vorher noch.
+    Du duschst dich schnell und schlüpfst in neue Kleidung.
+    ~ duschen = true
+    
++ Gehe gleich los.
+    Du machst dich gleich auf den Weg, um keine Zeit zu verlieren.
+
+-
+
++ weiter
+
+Das ist merkwürdig. Du stehst im Park vor Mareks Haus. Es ist eine laue Sommernacht, der Himmel zeigt kaum Wolken. Doch das Haus ist nicht dunkel. Im Gegenteil, die Fenster im Erdgeschoss sind hell erleuchtet und du hörst in der Ferne Lachen und die Stimmen vieler Leute. Findet in dem Haus <i>eine Party statt?</i> Am Tag nachdem Marek gestorben ist? Skurril, um nicht zu sagen, makaber. Wie kann das überhaupt sein?
+
++ weiter
+
+-
+
+Du näherst dich dem Haus und siehst vor dem Eingang eine kleine Schlange Menschen in schicken Abendkleidern. Ein Türsteher winkt sie einen nach dem anderen durch.
+
+Es scheint sich um eine sehr gediegene Veranstaltung zu handeln. Du verfluchst die Tatsache, dass du <>
+
+{duschen:
+    dir nichts Vernünftiges angezogen hast.
+-else:
+    du nicht geduscht hast.
+}
+
+<> Aber wer konnte auch wissen, dass hier eine Feier im Gange ist? Oder eher eine Benefizveranstaltung oder Gala, wenn du dir die Gäste so ansiehst.
+
+{duschen:
+    Naja, wenigstens hast du geduscht. Vielleicht lässt dich der Türsteher ja rein, wenn du so tust, als ob du dazugehörst.
+-else:
+    Naja, vielleicht lässt dich der Türsteher ja trotzdem rein, wenn du so tust, als ob du dazugehörst.
+}
+
+Und es gibt noch eine gute Neuigkeit: wenn das Haus nur so vor Gästen wimmelt, müsste es doch eigentlich ganz leicht sein, sich in den Salon zu schleichen, oder? Wollen wir mal hoffen ...
+
+Jetzt musst du erstmal ins Haus kommen.
+
++ Rede mit dem Türsteher
+
++ Suche nach einem anderen Eingang
 
 -
 
 
-
 -> gespenster_party_start
+
+
+
+VAR den_dolch_holen = false
+VAR duschen = false
+
 
