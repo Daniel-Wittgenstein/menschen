@@ -145,15 +145,14 @@ VAR tuersteher_ende = ""
             
         - else:
             "Die Alte hier will rein", sagt er zu seinem grimmigen Kollegen auf Tschechisch, wohl in der Annahme, dass du ihn nicht verstehst, "Lass sie auf keinen Fall durch."
+            
             Der Bodybuilder nickt.
 
     }
 
 
 + "Das habe ich verstanden!"
-    Er wirft dir einen verwunderten Blick zu. Dann zuckt er mit den
-    Schultern: "Sie können nicht rein", nuschelt er verlegen,
-    "Strenge Sicherheitsauflagen." Er wendet sich ab.
+    Er wirft dir einen verwunderten Blick zu. Dann zuckt er mit den Schultern: "Sie können nicht rein", nuschelt er verlegen, "Strenge Sicherheitsauflagen." Er wendet sich ab.
 
 + Sage nichts.
 

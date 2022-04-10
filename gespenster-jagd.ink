@@ -200,6 +200,11 @@ Du wankst nach Hause. Zum Glück ist es nicht weit zu deiner Wohnung.
 -
 + weiter
 
+-> zuhausedazwischen
+
+
+=== zuhausedazwischen
+
 Du sperrst die Tür zu deiner Wohnung auf, gehst in dein Zimmer und schlüpfst aus den Schuhen. Sonst ziehst du nichts aus. Du fällst auf dein Bett und in einen Schlaf voll merkwürdiger Träume.
 
 -
@@ -213,6 +218,7 @@ Als du aufwachst, wird es allmählich wieder dunkel. <>
     Du rappelst dich aus dem Bett auf und weißt plötzlich, dass du den Dolch holen willst.
 }
 
+-
 
 + Dusche dich vorher noch.
     Du duschst dich schnell und schlüpfst in neue Kleidung.
@@ -226,6 +232,7 @@ Als du aufwachst, wird es allmählich wieder dunkel. <>
 + weiter
 
 Das ist merkwürdig. Du stehst im Park vor Mareks Haus. Es ist eine laue Sommernacht, der Himmel zeigt kaum Wolken. Doch das Haus ist nicht dunkel. Im Gegenteil, die Fenster im Erdgeschoss sind hell erleuchtet und du hörst in der Ferne Lachen und die Stimmen vieler Leute. Findet in dem Haus <i>eine Party statt?</i> Am Tag nachdem Marek gestorben ist? Skurril, um nicht zu sagen, makaber. Wie kann das überhaupt sein?
+-
 
 + weiter
 
@@ -270,23 +277,22 @@ VAR duschen = false
 
 Du schleichst um das Haus herum. Du siehst kein offenes Fenster, aber einen Balkon im ersten Stock.
 
-+ Klettere nach oben.
++ Klettere nach oben
 
     Du kletterst nach oben und erreichst tatsächlich unbemerkt den Balkon. Hinter einer Glastür siehst du ein dunkles, leeres Zimmer.
 -
 
-+ Schlage die Scheibe ein.
++ Schlage die Scheibe ein
 
     Jetzt gibt es kein Zurück mehr. Du schlägst die Glasscheibe ein und schleichst dich ins Zimmer. Du hörst die Geräusche der Party aus dem Erdgeschoss.
 
 - 
 
-+ Schleicht dich nach unten
++ Schleiche dich nach unten
 
 + Durchsuche erst das Zimmer
     
-    Du öffnest einen Kleiderschrank und findest darin ein paar Abendkleider für Frauen. Wow, was für ein Glück! Du ziehst ein schwarzes an und stellst mit Genugtuung fest, dass es fast perfekt sitzt. Okay, Zeit nach unten zu gehen.
-
+    Du öffnest einen Kleiderschrank und findest darin ein paar Abendkleider. Wow, was für ein Glück! Du ziehst ein schwarzes an und stellst mit Genugtuung fest, dass es fast perfekt sitzt. Okay, Zeit nach unten zu gehen.
 
 -
 
@@ -305,8 +311,9 @@ Du gehst durch die Tür und findest dich in einem Ballsaal wieder, in dem mindes
 Niemand scheint dich bemerkt zu haben, als du durch die Tür geschlichen bist. Grandios!
 
 -
+-> gespenster_party_start
 
-
+-> END
 
 
 
