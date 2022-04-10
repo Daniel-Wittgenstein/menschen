@@ -5,7 +5,7 @@ VAR current_room = ""
 
 /* fabrik 3: */
 
-VAR things = "kuehlschrank, brot, gabel, bleistift, pflaster, amulett, eisenstange, sense, foto1, foto2, foto3, foto4, foto5"
+VAR things = "kuehlschrank, brot, gabel, bleistift, pflaster, amulett, eisenstange, sense, foto1, foto2, foto3, foto4, foto5, zigaretten1, zigaretten2"
 
 VAR options_language = "German"
 
@@ -55,6 +55,12 @@ VAR amulett_inv_text = ""
 
 VAR sense_name = "die Sense"
 VAR sense_room = "nirwana"
+
+VAR zigaretten1_name = "die volle Packung Zigaretten samt Feuerzeug"
+VAR zigaretten1_room = "nirwana"
+
+VAR zigaretten2_name = "die leere Packung Zigaretten"
+VAR zigaretten2_room = "nirwana"
 
 
 === thing_actions(-> ret)

@@ -11,6 +11,7 @@ CONST rballsaal = "ballsaal"
 CONST rfoyer = "foyer"
 CONST rgarten = "garten"
 CONST rmusikzimmer = "musikzimmer"
+CONST rtreppenhaus = "treppenhaus"
 
 CONST spieler = 100
 
@@ -29,11 +30,11 @@ VAR dame_raum = rgarten
 
 VAR spieler_raum_actual_knot = -> ballsaal
 
-CONST frau_name1 = "((@frau eine platinblonde Frau in einem Minirock))"
-CONST Frau_name1 = "((@frau Eine platinblonde Frau in einem Minirock))"
+CONST frau_name1 = "((@frau eine wasserstoffblonde Frau in einem Minirock))"
+CONST Frau_name1 = "((@frau Eine wasserstoffblonde Frau in einem Minirock))"
 
-CONST frau_name2 = "((@frau die platinblonde Frau im Minirock))"
-CONST Frau_name2 = "((@frau Die platinblonde Frau im Minirock))"
+CONST frau_name2 = "((@frau die wasserstoffblonde Frau im Minirock))"
+CONST Frau_name2 = "((@frau Die wasserstoffblonde Frau im Minirock))"
 
 VAR frau_name = frau_name1
 VAR Frau_name = Frau_name1
@@ -374,7 +375,7 @@ VAR party_count = 0
 
     {frau_mentioned and get_location_of_person(frau) == spieler_raum and jci != frau:
 
-        {~((@frau Die Frau)) mit dem platinblonden Haaren steht alleine da und scheint sich zu langweilen.|((@frau Die Frau)) mit den platinblonden Haaren nippt an ihrem Martini.|((@frau Die Blonde)) mit dem Minirock gähnt gelangweilt.|((@frau Die blonde Frau)) mit dem Minirock wirft einen ratlosen Blick um sich.}
+        {~((@frau Die Frau)) mit dem wasserstoffblonden Haaren steht alleine da und scheint sich zu langweilen.|((@frau Die Frau)) mit den wasserstoffblonden Haaren nippt an ihrem Martini.|((@frau Die Blonde)) mit dem Minirock gähnt gelangweilt.|((@frau Die blonde Frau)) mit dem Minirock wirft einen ratlosen Blick um sich.}
 
 
     }
@@ -463,7 +464,7 @@ Ein festlich geschmückter Ballsaal. Im hinteren Teil des Saals ist ein Büffet 
     -> ballsaal
     
     + Sieh dich um
-    Hier gibt es wenig zu sehen. Ein Treppenhaus, sonst nichts.
+    Hier gibt es wenig zu sehen. Eine Büste von Sokrates, ein Rauchmelder an der Decke, ein Treppengeländer mit verschnörkelten Verzierungen.
     -> treppenhaus
 
 === party_foyer
@@ -483,6 +484,39 @@ Das Foyer. Du erinnerst dich. Hier warst du, als Marek dich ins Haus gebracht ha
 + Geh rüber in den Ballsaal
     ~ player_just_moved = true
     -> ballsaal
+
+* Gehe in den Salon
+
+    Ein Securitytyp hält dich auf: "Kein Zutritt!"
+ 
+    + "Sie wissen schon, dass hier ein Mord stattgefunden hat?"
+    
+        Er blickt hektisch um sich. "Das ... ist eine Lüge. Von politischen Gegnern gestreut, um den Wahlkampf von Herrn Němec zu sabotieren. In seinem Haus würde sich so etwas nie zutragen."
+        
+        ++ "Ich dachte, hier wohnt Marek Nedostal, der Filmemacher?"
+            
+            "Was?! Nein, das hier ist das Haus unseres künftigen Präsidenten Jirka Němec. Berichte, dass er Freunden sein Haus überlässt, um junge Frauen zu ... äääh ... verführen, sind Fake News."
+            
+            +++ "Alles klar."
+
+                "Entfernen Sie sich jetzt bitte von der Tür."
+    
+            +++ "Darf ich jetzt in den Salon? Ich habe meinen Regenschirm dort vergessen."
+            
+                Er schüttelt den Kopf.
+    
+        ++ "Darf ich jetzt in den Salon? Ich habe meinen Regenschirm dort vergessen."
+        
+            Er schüttelt den Kopf.
+    
+    + "Darf ich jetzt in den Salon? Ich habe meinen Regenschirm dort vergessen."
+    
+        Er schüttelt den Kopf.
+    
+-
+
+Mist! Wie sollst du jetzt in den Salon kommen und den Dolch holen?
+-> party_foyer    
 
 + Geh auf Toilette
     -> toilette
@@ -616,7 +650,7 @@ Sie geht ins Haus zurück / Party. Findet dort Dolch nicht.
     Du betrachtest die Frau.
     -> finish_people_interaction
     
-+ {frau_raum == spieler_raum} @frau rede mit ihr
+* {frau_raum == spieler_raum} @frau rede mit ihr
     -> frau_talk
 
 + {herr_raum == spieler_raum} @herr betrachte ihn
@@ -632,23 +666,91 @@ Sie geht ins Haus zurück / Party. Findet dort Dolch nicht.
     
 + {dame_raum == spieler_raum} @dame rede mit ihr
     -> dame_talk
+
++ {zigaretten1_room == "player"} rauche eine Zigarette
+    {
+    - spieler_raum == rtreppenhaus:
+        -> alarm
     
+    - spieler_raum == rgarten:    
+        Du zündest eine Zigarette an und ziehst einmal. Angewidert wirfst du sie auf den Boden und trittst sie aus.
+    
+    - else:
+        Du hast die Zigarette noch nicht einmal ganz aus der Packung geholt, geschweige denn angezündet, da steht schon ein Securitytyp neben dir: "Rauchen ist hier nicht erlaubt."
+    }
+    -> finish_people_interaction
+
 -
 -> DONE
 
 
+=== alarm
+
+Du zündest eine Zigarette an. Nach nicht einmal einer Minute fängt der Rauchmelder an, laut zu piepen. Dann geht ein schriller Feueralarm los. Hinter der Tür hörst du aufgeregte Stimmen und Securitymenschen, die Anweisungen bellen. Nach einer Viertelstunde dann endlich vollkommen Stille.
+
+Du öffnest die Türe. Wow! Das ganze Gebäude wurde evakuiert.
+
++ weiter
+
+-
+
+Du schleichst dich ins Foyer. Der Alarm hat aufgehört, aber es ist keine Menschenseele weit und breit zu sehen.
+
++ weiter
+-
+
+Du betrittst den Salon. Das Licht brennt. Du wirfst einen Blick um dich, aber siehst keinen Dolch.
+
+-> uns_start
+
 
 === frau_talk
 
+    Du näherst dich der Dame mit den wasserstoffblonden Haaren.
+
+    "Ufff!", stöhnt sie und mustert dich von unten bis oben, "Endlich mal jemand, der sich traut, beschissen gekleidet rumzulaufen." Sie senkt ihre Stimme: "Ich halt's hier echt nicht mehr aus zwischen diesen Trantüten." Sie reicht dir die Hand. "Ich bin Ava."
+
+    + "Hannah."
+        "Ah, auch ein Palindrom. Nicht schlecht.
+        
+    + "SOOO schlecht sehe ich auch nicht aus."
+        
+        "Aber nein, du siehst fantastisch aus, Süße! Nur mit so einem Gesicht kann man sich leisten, so rumzulaufen, das weiß ich doch. Modelst du?"
+        
+        ++ "Ähm ... danke für das Kompliment, aber leider nein.
+            "Nix leider. Sei froh. Es ist eine einzige Scheiße.
+        
+        ++ "Nein."
+            "Sei froh. Es ist eine einzige Scheiße.
+    
+    -
+    Rauchst du?"
+    
+    + Lüge: "Ja."
+        "Wunderbar." Sie drückt dir eine Packung Zigaretten in die Hand. <>
+    
+    + Sage: "Nein."
+        "Ah, umso besser. Dann habe ich kein schlechtes Gewissen, wenn ich dir die hier gebe." Sie drückt dir eine Packung Zigaretten in die Hand. <>
+    
+    -
+    "Ich muss unbedingt aufhören und ich suche schon den ganzen Abend jemanden, der sie mir abnimmt. Vielen Dank, du bist ein echter Schatz!"
+    
+    Sie wirft einen nervösen Blick um sich. "Hör mal, ich muss weg, ja? Vielleicht sehen wir uns ja bald wieder?" Sie lächelt dich noch einmal an und verschwindet in der Menge.
+    ~ zigaretten1_room = "player"
+    
 -> finish_people_interaction
 
 
 === herr_talk
 
+    Du traust dich nicht.
+
 -> finish_people_interaction
 
 
 === dame_talk
+
+    Du traust dich nicht.
 
 -> finish_people_interaction
 

@@ -9,13 +9,19 @@ VAR uns_info_dolch = 0
 VAR uns_info_dolch_holen = 0
 VAR uns_info_wiedersehen = 0
 
+=== uns_start
+
+-> uns_talkstart
+
 === uns_talkstart
 
+"Ach, du schon wieder", sagt eine Stimme. Du fährst herum, aber hinter dir ist niemand. Im ganzen Zimmer ist niemand. "Was zum Geier treibt dich her?"
+
 + "Wer ist da?"
-    Die Stimme lacht: "Komm mal runter." Eine Männerstimme. Sie spricht Englisch mit einem tschechischen Akzent und klingt tief und kratzig. Außerdem lallt sie leicht. "Ich versuch dir nur zu helfen, ja?"
+    Die Stimme lacht: "Komm mal runter." Eine Männerstimme. Sie spricht Englisch mit einem tschechischen Akzent und klingt tief und kratzig. Außerdem lallt sie leicht. "Ich versuch dir hier nur zu helfen, ja?"
 
 + "Hilfe!"
-    "Hey, hör auf rumzuschreien!", sagt die Stimme. Eine Männerstimme. Sie spricht Englisch mit einem tschechischen Akzent und klingt tief und kratzig.  Außerdem lallt sie leicht. "Ich versuch dir nur zu helfen, ja?"
+    "Hey, hör auf rumzuschreien!", sagt die Stimme. Eine Männerstimme. Sie spricht Englisch mit einem tschechischen Akzent und klingt tief und kratzig.  Außerdem lallt sie leicht. "Ich versuch dir hier nur zu helfen, ja?"
 
 -
 
@@ -278,6 +284,8 @@ Etwas fliegt plötzlich in deine Richtung. Automatisch fängst du es auf. Es ist
     "Jupp, deswegen ist sie auch leer.
 
 -
+~ zigaretten2_room = "player"
+
 Ich schreib dir jetzt eine Adresse auf. Da kannst du dich mit allen weiteren Fragen hinwenden. Und das ist wirklich das letzte, was ich für dich tue. Hab nämlich echt keinen Bock mehr Babysitter zu spielen. So, das war's. Und meinetwegen nimm noch ne Flasche Wein mit, ist sowieso nicht meiner." Eine Flasche verlässt die Vitrine, fliegt auf dich zu und landet einen halben Meter vor deinen Füßen auf dem Boden. Du betrachtest stumm die Scherben.
 
 "Fuck", murmelt Kross.
@@ -288,7 +296,7 @@ Ich schreib dir jetzt eine Adresse auf. Da kannst du dich mit allen weiteren Fra
 
 === uns_ende_gespr
 
-...
+-> kassandra_start_laden
 
 -> END
 

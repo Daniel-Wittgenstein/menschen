@@ -588,11 +588,15 @@ Aber deine Augen sind sperrangelweit offen. Und mit deinen offenen Augen siehst 
 
 Das Licht ist grell und surrt. Das feine, nervtötende Surren von Neonröhren. Wie lange sitzt du schon in diesem gottverdammten Verhörraum?
 
+<img src="assets/cop1.jpeg" class="story-image">
+
 Der junge Polizist starrt dich mit blauen, durchdringenden Augen an. "In diesem Moment bewegte sich die Flasche, laut ihrer Angabe, zum ersten Mal?", fragt er auf Englisch, "Ist das korrekt?"
 
 * "Nein."
     "Nein?", wiederholt der alte Polizist.
     
+    <img src="assets/cop2.jpeg" class="story-image">
+
     ** "Nein."
     
         Sie warten einen Augenblick, ob noch mehr kommt.
@@ -619,6 +623,8 @@ Der junge Polizist starrt dich mit blauen, durchdringenden Augen an. "In diesem 
 === pol_anti
 
     "Reißen Sie sich zusammen", fährt der alte Polizist dir über den Mund.
+
+    <img src="assets/cop2.jpeg" class="story-image">
 
     "Also, nochmal", sagt der junge Polizist ruhig, "Die Flasche. Was passierte mit ihr?"
     -> pol_weiter
