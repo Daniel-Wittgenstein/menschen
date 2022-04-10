@@ -6,6 +6,8 @@ INCLUDE regen.ink
 INCLUDE gespenster.ink
 INCLUDE gespenster-jagd.ink
 INCLUDE gespenster-party.ink
+INCLUDE gespenster-treffen.ink
+
 
 INCLUDE kassandra.ink
 INCLUDE kassandra-laden.ink
@@ -30,6 +32,7 @@ INCLUDE menschen.ink
 ~ foto5_room = "player"
 */
 
+-> uns_talkstart
 -> k_haus_ende
 
 -> pen_enter
