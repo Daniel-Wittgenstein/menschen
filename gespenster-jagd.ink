@@ -293,6 +293,7 @@ Du schleichst um das Haus herum. Du siehst kein offenes Fenster, aber einen Balk
 + Durchsuche erst das Zimmer
     
     Du öffnest einen Kleiderschrank und findest darin ein paar Abendkleider. Wow, was für ein Glück! Du ziehst ein schwarzes an und stellst mit Genugtuung fest, dass es fast perfekt sitzt. Okay, Zeit nach unten zu gehen.
+    ~ abendkleid = true
 
 -
 
@@ -315,7 +316,7 @@ Niemand scheint dich bemerkt zu haben, als du durch die Tür geschlichen bist. G
 
 -> END
 
-
+VAR abendkleid = false
 
 
 

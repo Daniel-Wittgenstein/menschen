@@ -484,8 +484,65 @@ Das Foyer. Du erinnerst dich. Hier warst du, als Marek dich ins Haus gebracht ha
     ~ player_just_moved = true
     -> ballsaal
 
++ Geh auf Toilette
+    -> toilette
+    
+    
+=== toilette
+
+Du betrittst das Bad. Zwei Frauen um die Ende dreißig in Abendroben stehen vor dem Spiegel.
+
+"Schätzchen, hast du vielleicht ein bisschen Gras?", fragt dich die mit der blonden Dauerwelle.
+
+    + "Leider nein."
+    
+    + "Ääääh ..."
+    
+- 
+"Schade", seufzt sie, "Hätte jetzt echt was vertragen können."
+
+"Ach, komm", sagt die andere, "Auf der Toilette rauchen? Du bist keine siebzehn mehr."
+
+"Oh, wenn es nach mir ginge, würde ich auch draußen rauchen", sagt die mit der blonden Dauerwelle, "Habe ich beim letzten Empfang hier probiert. Der Rauchmelder ist losgegangen und das ganze Haus musste evakuiert werden. Was glaubst du, was mein Mann für Ärger bekommen hat."
+
+"<i>Er</i> hat Ärger bekommen und nicht <i>du</i>?"
+
+"Pfff ... Er kann nicht sauer auf mich sein, dazu ist er ein zu großer Schlappschwanz." Sie wirft dir unvermittelt ein freundliches Lächeln zu: <>
 
 
+{abendkleid:
+    "Liebchen, dieses Kleid steht dir <i>wirklich</i> nicht."
+-else:
+    "Ich <i>liebe</i> deinen Stil. Einfach so nonchalant."
+    
+    Sie lässt den Blick an deinem Outfit mit dem Schlabbershirt und der ausgeblichenen Jeans herabgleiten.
+    
+    "In dem Alter und mit der Figur steht einem aber auch wirklich alles", sagt die andere mit einer Mischung aus Bewunderung und Neid.
+}
+
+Bevor du etwas antworten kannst, verlassen sie das Bad, als würde es sie gar nicht interessieren, was du dazu zu sagen hast. Hmmmm ... wahrscheinlich interessiert es sie <i>wirklich</i> nicht.
+
+-> toilette2.toilette2b
+
+=== toilette2
+
+Du befindest dich im Badezimmer.
+
+- (toilette2b)
+
++ Gehe auf Toilette
+    Du musst gerade nicht.
+
++ Wasch dir die Hände
+    Du wäschst dir die Hände, warum auch immer.
+
++ Geh wieder nach draußen.
+    -> foyer
+
+-
+
+-> toilette2
+    
 
 === musikzimmer
 ~ spieler_raum = rmusikzimmer
