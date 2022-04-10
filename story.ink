@@ -7,7 +7,7 @@ INCLUDE gespenster.ink
 INCLUDE gespenster-jagd.ink
 INCLUDE gespenster-party.ink
 INCLUDE gespenster-treffen.ink
-
+INCLUDE gespenster-tuersteher.ink
 
 INCLUDE kassandra.ink
 INCLUDE kassandra-laden.ink

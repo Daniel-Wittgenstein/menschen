@@ -231,7 +231,7 @@ Das ist merkwürdig. Du stehst im Park vor Mareks Haus. Es ist eine laue Sommern
 
 -
 
-Du näherst dich dem Haus und siehst vor dem Eingang eine kleine Schlange Menschen in schicken Abendkleidern. Ein Türsteher winkt sie einen nach dem anderen durch.
+Du näherst dich dem Haus und siehst vor dem Eingang eine kleine Schlange Menschen in schicken Abendkleidern. Ein halbes Dutzend Türsteher winken sie einen nach dem anderen durch.
 
 Es scheint sich um eine sehr gediegene Veranstaltung zu handeln. Du verfluchst die Tatsache, dass du <>
 
@@ -253,18 +253,62 @@ Und es gibt noch eine gute Neuigkeit: wenn das Haus nur so vor Gästen wimmelt, 
 
 Jetzt musst du erstmal ins Haus kommen.
 
-+ Rede mit dem Türsteher
++ Gehe durch den Haupteingang
+
+    Du näherst dich dem Eingang. Ein junger Türsteher mit einem Ziegenbärtchen stellt sich dir in den Weg. "Haben Sie eine Einladung?", fragt er auf Englisch.
+    -> tuersteher_gespraech
 
 + Suche nach einem anderen Eingang
+    -> party_suche_eingang
+    
+VAR den_dolch_holen = false
+VAR duschen = false
+
+
+
+=== party_suche_eingang
+
+Du schleichst um das Haus herum. Du siehst kein offenes Fenster, aber einen Balkon im ersten Stock.
+
++ Klettere nach oben.
+
+    Du kletterst nach oben und erreichst tatsächlich unbemerkt den Balkon. Hinter einer Glastür siehst du ein dunkles, leeres Zimmer.
+-
+
++ Schlage die Scheibe ein.
+
+    Jetzt gibt es kein Zurück mehr. Du schlägst die Glasscheibe ein und schleichst dich ins Zimmer. Du hörst die Geräusche der Party aus dem Erdgeschoss.
+
+- 
+
++ Schleicht dich nach unten
+
++ Durchsuche erst das Zimmer
+    
+    Du öffnest einen Kleiderschrank und findest darin ein paar Abendkleider für Frauen. Wow, was für ein Glück! Du ziehst ein schwarzes an und stellst mit Genugtuung fest, dass es fast perfekt sitzt. Okay, Zeit nach unten zu gehen.
+
+
+-
+
+Du schleichst dich ins Erdgeschoss und erreichst einen kleinen Zwischenflur am Ende des Treppenhauses. Hinter einer geschlossenen Tür hörst du Stimmen.
+
++ Gehe durch die Tür
+    
++ Warte und lausche
+    Du lauschst. Du hörst Partygespräche. Sonst nichts Auffälliges.
+
+    ++ Gehe durch die Tür
+    
+-
+Du gehst durch die Tür und findest dich in einem Ballsaal wieder, in dem mindestens vierzig Menschen herumstehen und sich angeregt unterhalten. Ein paar Pärchen tanzen auch tatsächlich.
+
+Niemand scheint dich bemerkt zu haben, als du durch die Tür geschlichen bist. Grandios!
 
 -
 
 
--> gespenster_party_start
 
 
 
-VAR den_dolch_holen = false
-VAR duschen = false
 
 
