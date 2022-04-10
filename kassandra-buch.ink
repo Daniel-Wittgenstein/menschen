@@ -124,6 +124,8 @@ Er seufzt. "Scheiß drauf. Dann erzähle ich es eben. Nichts, worauf man Stolz s
 Kross schweigt. Eine Krankenschwester läuft an euch vorbei. Hinter ihr weht der Geruch von Desinfektionsmittel  her. Die Krankenschwester verschwindet in einem Aufzug und ihr seid wieder alleine.
 
 "Wir haben jemanden umgebracht, Hannah", sagt Kross unvermittelt, "Wir waren jung. Gerade erst achtzehn geworden. Ja. Das ist die ganze Geschichte."
+-
+
 
 + "Wie - die ganze Geschichte? Kommt da nicht noch mehr?"
 
@@ -155,7 +157,7 @@ Er seufzt. "Benson kam aus England. Penelope aus Belgien. Niemand wusste, ob sie
 
 + "Wer ist SIE?"
 
-    "Was? Irgendwer. Ein Mädchen. Sie war. Ein Jahr jünger als wir, oder so. 
+    "Was? Irgendwer. Ein Mädchen. Sie war ein Jahr jünger als wir, oder so. 
 
 + Schweige.
     "<>
@@ -183,7 +185,7 @@ Wir haben sie gefesselt und den Mund zugebunden, damit die anderen im Hostel nic
     
 -
 
-diese arabischen oder lateinischen oder was auch immer Beschwörungsformeln gesprochen und dann hat er gesagt, dass es jetzt begonnen hat und dass wir es zu enden führen müssen und dass wir sie töten müssen. Dann ist es total ausgeartet. Benson hat versucht, ihm den Dolch wegzunehmen, und Penelope ist auf einmal total paranoid geworden und hat geschrien, hier ist was im Zimmer, hier ist was im Zimmer, merkt ihr das nicht, und ich wollte nicht, dass Benson irgendeine Scheiße macht und Jirka absticht, also hab ich ihm den Dolch weggerissen und ...", er atmet schwer, "Ich war besoffen, okay? Ich wollte irgendwie ... einen Spaß machen oder dem ganzen eine witzige Wendung geben, keine Ahnung, damit die anderen aufhören zu streiten, dann hab ich dem Mädchen, hab ihr das Höschen aufgeschnitten."
+<> diese arabischen oder lateinischen oder was auch immer Beschwörungsformeln gesprochen und dann hat er gesagt, dass es jetzt begonnen hat und dass wir es zu enden führen müssen und dass wir sie töten müssen. Dann ist es total ausgeartet. Benson hat versucht, ihm den Dolch wegzunehmen, und Penelope ist auf einmal total paranoid geworden und hat geschrien, hier ist was im Zimmer, hier ist was im Zimmer, merkt ihr das nicht, und ich wollte nicht, dass Benson irgendeine Scheiße macht und Jirka absticht, also hab ich ihm den Dolch weggerissen und ...", er atmet schwer, "Ich war besoffen, okay? Ich wollte irgendwie ... einen Spaß machen oder dem ganzen eine witzige Wendung geben, keine Ahnung, damit die anderen aufhören zu streiten, dann hab ich dem Mädchen, hab ihr das Höschen aufgeschnitten."
 
 + "WAS?!"
 
@@ -215,7 +217,7 @@ diese arabischen oder lateinischen oder was auch immer Beschwörungsformeln gesp
     "<>
 
 -
-Jirka hat meinen Arm ... ER hat auf meinen Arm geschlagen und der Dolch ist ... in sie rein. Und sie war ja schon am Verbluten, also mussten wir sie ..."
+<> Jirka hat meinen Arm ... ER hat auf meinen Arm geschlagen und der Dolch ist ... in sie rein. Und sie war ja schon am Verbluten, also mussten wir sie ..."
 
 + "... ganz umbringen."
     Er hustet nur, wie um <i>ja<i> zu sagen.
@@ -230,7 +232,7 @@ Jirka hat meinen Arm ... ER hat auf meinen Arm geschlagen und der Dolch ist ... 
 + "Erwartest du jetzt von mir so etwas wie Vergebung?"
     -> k_kross_vergebung
     
-+ "Ich habe <<Arschloch>> gesagt, nicht Monster."
++ "Ich habe Arschloch gesagt, nicht Monster."
 
     "So ist das also." Er lacht trocken. "Tja. Ich schätze, von dir darf ich also kein Verstädnis erwarten."
     -> k_kross_verstaendnis
@@ -315,14 +317,14 @@ Jedenfalls: jetzt weißt du Bescheid, was die Geschichte angeht.
     "Hmmmja. Das habe ich noch nicht erzählt, was?
 
 -
-Wir sind eben unsichtbar geworden.
+<> Wir sind eben unsichtbar geworden.
 
 -> kross_uns_weiter_gesc
 
 
 === kross_uns_weiter_gesc
 
-Wir alle. Bis auf Jirka."
+<> Wir alle. Bis auf Jirka."
 
 + "Benson, Penelope und du."
     "Ja. Benson, Penelope und ich. Penelope hat es wahrscheinlich am meisten abgefuckt.
@@ -412,9 +414,8 @@ Oh, verdammt.
 
 Es ist noch lange nicht vorbei.
 
-+ weiter
--> menschen_start
 
+<h1>Ende von Episode 1<h1>
 
 -> END
 

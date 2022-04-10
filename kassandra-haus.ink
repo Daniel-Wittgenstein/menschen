@@ -613,7 +613,7 @@ Da ist niemand, der gesprochen haben könnte. Und es ist auch nicht Kross' Stimm
     "Benson. Du kennst Benson? Merkwürdig."
 
 -
-<> Es ist die Stimme einer Frau. "Ich hatte die Fotos aus einem Grund versteckt, weißt du. Nicht damit du anfängst, sie alle wieder rauszuzerren. Vor allem das da."
+<> Es ist die Stimme einer Frau. "Ich hatte die Fotos aus einem Grund versteckt, weißt du. Nicht, damit du anfängst, sie alle wieder rauszuzerren. Vor allem das da."
 
 - (penback1)
 
@@ -702,7 +702,7 @@ VAR k_p_dolch = false
 
 {
     - k_p_geist:
-        "Helfen? Aber du bist doch ein Geist, wie soll ich dir das helfen? Oder bist du doch kein Geist? Ich bin verwirrt. "
+        "Helfen? Aber du bist doch ein Geist, wie soll ich dir da helfen? Oder bist du doch kein Geist? Ich bin verwirrt. "
     - k_p_dolch:
         "Du bekommst ihn aber nicht. Nein, nein. Wir sind sowieso nicht da."
     - else:
@@ -807,7 +807,7 @@ Ihr Puls ist gut. Der Schnitt ist nicht tief. Nur das Gift. Benson mit seinen bl
     --
         "Sie muss ins Krankenhaus. Also, nachdem ich dir das Zeug mitgebe. Was aber nicht so wichtig ist. Ich wollte es ihr schon länger geben. Kannst du sie bitte ins Krankenhaus bringen? Das wäre dann doch wichtig."
 
-
+-
 
 Du spürst etwas, das dein Handgelenk umschließt und festhält. "Bitte bring sie hin, ja?"
 
