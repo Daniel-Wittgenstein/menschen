@@ -65,6 +65,8 @@ INCLUDE menschen.ink
 
 === start
 
+<h1>Warnung: dieses Spiel enthält erwachsene Themen. Es sollte nicht von Minderjährigen gespielt werden.</h1>
+
     + Neues Spiel
         -> regen_start
    

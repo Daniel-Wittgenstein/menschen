@@ -21,6 +21,9 @@
         //this will get called with name = "story_event"
         name = name.trim().toLowerCase()
         console.log("STORY EVENT TRIGGERED:", name)
+
+                            return
+                            
         switch (name) {
             case "start_story":
                 rain_sound1 = new Howl({ 
