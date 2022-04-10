@@ -485,31 +485,34 @@ Das Foyer. Du erinnerst dich. Hier warst du, als Marek dich ins Haus gebracht ha
     ~ player_just_moved = true
     -> ballsaal
 
+* Geh auf Toilette
+    -> toilette
+    
 * Gehe in den Salon
 
     Ein Securitytyp hält dich auf: "Kein Zutritt!"
  
-    + "Sie wissen schon, dass hier ein Mord stattgefunden hat?"
+    ++ "Sie wissen schon, dass hier ein Mord stattgefunden hat?"
     
         Er blickt hektisch um sich. "Das ... ist eine Lüge. Von politischen Gegnern gestreut, um den Wahlkampf von Herrn Němec zu sabotieren. In seinem Haus würde sich so etwas nie zutragen."
         
-        ++ "Ich dachte, hier wohnt Marek Nedostal, der Filmemacher?"
+        +++ "Ich dachte, hier wohnt Marek Nedostal, der Filmemacher?"
             
             "Was?! Nein, das hier ist das Haus unseres künftigen Präsidenten Jirka Němec. Berichte, dass er Freunden sein Haus überlässt, um junge Frauen zu ... äääh ... verführen, sind Fake News."
             
-            +++ "Alles klar."
+            ++++ "Alles klar."
 
                 "Entfernen Sie sich jetzt bitte von der Tür."
     
-            +++ "Darf ich jetzt in den Salon? Ich habe meinen Regenschirm dort vergessen."
+            ++++ "Darf ich jetzt in den Salon? Ich habe meinen Regenschirm dort vergessen."
             
                 Er schüttelt den Kopf.
     
-        ++ "Darf ich jetzt in den Salon? Ich habe meinen Regenschirm dort vergessen."
+        +++ "Darf ich jetzt in den Salon? Ich habe meinen Regenschirm dort vergessen."
         
             Er schüttelt den Kopf.
     
-    + "Darf ich jetzt in den Salon? Ich habe meinen Regenschirm dort vergessen."
+    ++ "Darf ich jetzt in den Salon? Ich habe meinen Regenschirm dort vergessen."
     
         Er schüttelt den Kopf.
     
@@ -518,9 +521,7 @@ Das Foyer. Du erinnerst dich. Hier warst du, als Marek dich ins Haus gebracht ha
 Mist! Wie sollst du jetzt in den Salon kommen und den Dolch holen?
 -> party_foyer    
 
-+ Geh auf Toilette
-    -> toilette
-    
+
     
 === toilette
 
@@ -571,7 +572,7 @@ Du befindest dich im Badezimmer.
     Du wäschst dir die Hände, warum auch immer.
 
 + Geh wieder nach draußen.
-    -> foyer
+    -> party_foyer
 
 -
 

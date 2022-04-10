@@ -94,18 +94,18 @@ Der Mann nähert sich dir. Als er nur noch wenige Schritte entfernt ist, zückt 
     -- (marek_wirklich_tot)
 
     ** "Ja."
-        "Dann hat Kross keinen Scheiß erzählt."
+        "Dann hat Samuel keinen Scheiß erzählt."
     
     ** "Wer ist Marek?"
     
-        "Marek Nedostal. Du weißt ganz genau, von wem ich spreche. Kross hat mir alles erzählt."
+        "Marek Nedostal. Du weißt ganz genau, von wem ich spreche. Samuel hat mir alles erzählt."
     --
     
-    ** "Ich kenne keinen Kross."
+    ** "Ich kenne keinen Samuel."
         
         "Mir fuckegal", sagt er, "Der Dolch, mit dem Marek versucht hat, dich abzustechen. Hast du ihn mitgenommen?"
     
-    ** "Wer ist Kross?"
+    ** "Wer ist Samuel?"
                 
         "Kann dir scheißegal sein", sagt er, "Der Dolch, mit dem Marek versucht hat, dich abzustechen. Hast du ihn mitgenommen?"
         
@@ -133,11 +133,11 @@ Er scheint nachzudenken. "Ok, Püppi", meint er schließlich, "Wir zwei machen j
 
 * "Aber ich habe ihn nicht!"
 
-    "Ja, das ist mir schon klar, dass du ihn nicht hast. Du gehst in das Scheißhaus zurück und holst ihn, klar? Ich würde ja selber gehen, aber momentan ist das ein fucking Tatort und es wimmelt da nur so vor Bullen. Und Kross zeigt sich nicht gerade kooperativ. Deswegen gehst du, Blondie."
+    "Ja, das ist mir schon klar, dass du ihn nicht hast. Du gehst in das Scheißhaus zurück und holst ihn, klar? Ich würde ja selber gehen, aber momentan ist das ein fucking Tatort und es wimmelt da nur so vor Bullen. Deswegen gehst du, Blondie."
 
 * "Wie soll ich das machen?"
 
-    "Wie du das machen sollst? Du spazierst einfach zurück zum gottverfickten Haus und holst mir den Dolch, klar? Ich würde ja selber gehen, aber momentan ist das ein fucking Tatort und es wimmelt da nur so vor Bullen. Und Kross zeigt sich nicht gerade kooperativ. Deswegen gehst du, Blondie."
+    "Wie du das machen sollst? Du spazierst einfach zurück zum gottverfickten Haus und holst mir den Dolch, klar? Ich würde ja selber gehen, aber momentan ist das ein fucking Tatort und es wimmelt da nur so vor Bullen. Deswegen gehst du, Blondie."
 
 -
 
@@ -213,7 +213,7 @@ Du sperrst die Tür zu deiner Wohnung auf, gehst in dein Zimmer und schlüpfst a
 Als du aufwachst, wird es allmählich wieder dunkel. <>
 
 {den_dolch_holen:
-    Du rappelst dich auf und weißt, dass es Zeit ist zu handeln.
+    Du rappelst dich auf und weißt, dass es Zeit ist zu handeln. Du wirst dir diesen Dolch holen.
 -else:
     Du rappelst dich aus dem Bett auf und weißt plötzlich, dass du den Dolch holen willst.
 }

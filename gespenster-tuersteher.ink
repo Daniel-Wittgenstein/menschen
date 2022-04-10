@@ -108,7 +108,7 @@ VAR tuersteher_ende = ""
 + Danke, dass Sie fragen. Ich wurde überfallen.
     -> tuersteher_gespraech.tuersteher_ueberfallen
 
-+ Wissen Sie, meine Verlobter ist da drinnen.
++ Wissen Sie, mein Verlobter ist da drinnen.
     -> tuersteher_gespraech.tuersteher_verlobter
 
 

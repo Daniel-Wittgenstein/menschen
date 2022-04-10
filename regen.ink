@@ -446,9 +446,7 @@ Er blickt dich verdutzt an.
     "Doch, die Kerzen sind wichtig."
 
 * "Zieh du dich zuerst aus."
-    "Was? Nein, nein", er schüttelt den Kopf, "Das wird nicht nötig sein.
-    Nur du musst ..." Er fuchtelt mit der Hand in
-    der Luft. "Also, runter damit."
+    "Was? Nein, nein", er schüttelt den Kopf, "Das wird nicht nötig sein. Nur du musst ..." Er fuchtelt mit der Hand in der Luft. "Also, runter damit."
     
 -
     
@@ -770,7 +768,7 @@ Wie darf ich mir das vorstellen? Die Flasche schlug zu, wie ... eine Flasche zus
 
 -
 
-"Bekloppt, bekloppt, bekloppt", murmelt der alte Polizist auf Tschechisch, weil er glaubt, dass du ihn nicht verstehst. "Sie sagen also, Marek Nedostal", fährt er dann in scharfem Ton auf Englisch fort, "Prager Regisseur, bekannt für seine Experimentalfilme, wurde von einer zum Leben erwachten, fliegenden Whiskeyflasche erschlagen. Während er versuchte, sie zu vergewaltigen?"
+"Bekloppt, bekloppt, bekloppt", murmelt der alte Polizist auf Tschechisch im Glauben, dass du kein Wort verstehst. "Sie sagen also, Marek Nedostal", fährt er dann in scharfem Ton auf Englisch fort, "Prager Regisseur, bekannt für seine Experimentalfilme, wurde von einer zum Leben erwachten, fliegenden Whiskeyflasche erschlagen. Während er versuchte, sie zu vergewaltigen?"
 
 
 * "Er versuchte, mich zu ERMORDEN."
@@ -789,7 +787,7 @@ Wie darf ich mir das vorstellen? Die Flasche schlug zu, wie ... eine Flasche zus
     
     ** "Das geht Sie überhaupt nichts an."
         
-        "Das wird dem Richter gefallen, wenn Sie ihm sagen, dass ihn das nichts angeht", antwortet der alte Polizist mit einem höhnischen Grinsen, "Wussten Sie, dass unsere glorreiche Regierung gerade die Haftstrafe für vorsätzlichen Mord nach oben gesetzt hat, Frau Kavka?"
+        "Das wird dem Richter gefallen, wenn Sie ihm sagen, dass ihn das nichts angeht", antwortet der alte Polizist mit einem höhnischen Grinsen, "Wussten Sie, dass unsere glorreiche Regierung gerade erwägt, die Todesstrafe für Mörder wieder einzuführen, Frau Kavka?"
         
             ~ geht_sie_nichts_an = true
         

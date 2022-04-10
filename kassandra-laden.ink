@@ -127,6 +127,7 @@ Hmmm ... laut deiner Karten-App müsste es hier in der Nähe sein.
 
 Du betrittst den Laden. Sie hat rote Haare. Sie sieht dich ernst, stumm und fragend an.
 
+<img src="assets/kas.jpeg" class="story-image">
 
 * "Dobrý den!"
     Sie mustert dich den Bruchteil einer Sekunde lang enigmatisch und fängt dann sofort an, Englisch zu sprechen: "Suchst du Reiseführer?"
@@ -198,6 +199,9 @@ Du betrittst den Laden. Sie hat rote Haare. Sie sieht dich ernst, stumm und frag
     "Bitte unseren Gast doch, noch kurz zu bleiben", hörst du die Stimme eines Mannes.
     
 -
+
+<img src="assets/von.jpeg" class="story-image">
+
 Ein kleiner, alter Mann kommt aus einer Seitentür geschlurft und stellt sich neben die rothaarige Frau hinter den Tresen: "Sie suchen mich?" Sein Akzent ist britisch.
 
 * "Sind Sie Von?"

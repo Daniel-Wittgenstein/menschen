@@ -17,6 +17,8 @@ INCLUDE kassandra-buch.ink
 INCLUDE menschen.ink
 
 
+-> ballsaal
+
 /* testing redirects: */
 
 
@@ -32,6 +34,7 @@ INCLUDE menschen.ink
 ~ foto5_room = "player"
 */
 
+/*
 -> zuhausedazwischen
 
 -> ballsaal
@@ -49,6 +52,7 @@ INCLUDE menschen.ink
 
 -> fabrik2
 
+
 -> kassandra_start_haus
 
 -> kassandra_start_laden
@@ -58,6 +62,7 @@ INCLUDE menschen.ink
 
 -> gespenster_party_start
 
+*/
 
 /* testing redirects, end */
 
@@ -65,7 +70,7 @@ INCLUDE menschen.ink
 
 === start
 
-<h1>Warnung: dieses Spiel enthält erwachsene Themen. Es sollte nicht von Minderjährigen gespielt werden.</h1>
+Dieses Spiel enthält erwachsene Themen. Es sollte nicht von Minderjährigen gespielt werden.
 
     + Neues Spiel
         -> regen_start
