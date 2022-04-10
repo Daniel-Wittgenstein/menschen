@@ -422,11 +422,29 @@ Du bist im Ballsaal.
     ~ player_just_moved = true
     -> musikzimmer
 
-
 + Geh raus in den  Garten
     ~ player_just_moved = true
     -> garten
 
++ Geh zurück ins Treppenhaus
+    Du gehst zurück ins Treppenhaus, aus dem du gekommen bist.
+    -> treppenhaus
+    
+    
+=== treppenhaus
+    Du stehst im Treppenhaus. Die Treppe führt nach oben in den ersten Stock. Durch die Tür geht es zurück in den Ballsaal.
+    
+    + Gehe nach oben
+        Du hast oben nichts zu schaffen.
+    -> treppenhaus
+    
+    + Gehe zurück in den Ballsaal
+        Du gehst zurück in den Ballsaal.
+    -> ballsaal
+    
+    + Sieh dich um
+    Hier gibt es wenig zu sehen. Ein Treppenhaus, sonst nichts.
+    -> treppenhaus
 
 === party_foyer
 ~ spieler_raum = rfoyer
