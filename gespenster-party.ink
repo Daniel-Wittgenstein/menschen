@@ -403,7 +403,7 @@ VAR party_count = 0
 ~ spieler_raum = rballsaal
 ~ spieler_raum_actual_knot = -> ballsaal
 
-Du bist im Ballsaal.
+Ein festlich geschmückter Ballsaal. Im hinteren Teil des Saals ist ein Büffet aufgebaut.
 
 -> raum_leute ->
 
@@ -412,6 +412,26 @@ Du bist im Ballsaal.
 + Warte
     Du wartest.
     -> party_jede_runde -> ballsaal
+
+* Guck dir das Büffet an
+    Du siehst einen Salat und ein Auberginensandwich, die vielleicht vegan sein könnten.
+
+    ++ Iss was vom Salat
+        Du nimmst dir einen Teller und ein wenig Salat, bevor du siehst, dass er Hühnchenstücke enthält. Angewidert stellst du den Teller zurück auf den Tisch.
+        
+        +++ Iss das Sandwich
+            Du isst das Sandwich. Hat gut geschmeckt.
+            -> ballsaal        
+            
+        +++ Lass das mit dem Essen lieber
+            -> ballsaal
+    
+    ++ Iss das Sandwich
+        Du isst das Sandwich. Hat gut geschmeckt.
+        -> ballsaal
+        
+    ++ Lass es lieber
+    -> ballsaal
 
 + Geh rüber ins Foyer
     ~ player_just_moved = true
@@ -450,7 +470,7 @@ Du bist im Ballsaal.
 ~ spieler_raum = rfoyer
 ~ spieler_raum_actual_knot = -> party_foyer
 
-Das Foyer.
+Das Foyer. Du erinnerst dich. Hier warst du, als Marek dich ins Haus gebracht hat. Und da drüben ist die Tür, die in den Salon führt. Sie ist verschlossen. Außerdem siehst du eine Tür, die mit "Damen" beschriftet ist, die dir letztes Mal, als du hier warst, nicht aufgefallen ist.
 
 -> raum_leute ->
 
@@ -465,11 +485,13 @@ Das Foyer.
     -> ballsaal
 
 
+
+
 === musikzimmer
 ~ spieler_raum = rmusikzimmer
 ~ spieler_raum_actual_knot = -> musikzimmer
 
-Das Musikzimmer.
+Das Musikzimmer. Hier steht ein Klavier. Der Pianist spielt {~die Mondscheinsonate|"Memories" aus dem Musical "Cats"|die Titelmelodie aus "Amelie"|den Türkischen Marsch|"Una Mattina" von Ludovico Eunaudi|etwas, was von Erik Satie sein dürfte, wenn du dich nicht täuschst|"Für Elise"|"Clair de Lune" von Debussy|etwas, was sich nach Chopin anhört, und dessen Titel dir nicht mehr einfällt|etwas, was sich nach Tschaikowski anhört|den weltbekannten Kanon in D-Dur von Pachelbel|das "Air" aus Suite Nr. 5 ... ne, es war Nr. 3, in D-Dur von Bach|die Kleine Nachtmelodie}.
 
 -> raum_leute ->
 
