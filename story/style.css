@@ -606,8 +606,8 @@ body.dark {
 }
 
 .story-image {
-    width: 95vw;
-    max-width: 480px;
+    width: 400px;
     height: auto;
+    border-radius: 12px;
 }
 

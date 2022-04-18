@@ -16,6 +16,7 @@ VAR geht_sie_nichts_an = false
 
 #story_event: start_story
 
+<img src="assets/mar.jpeg" class="story-image">
 
 Schwarze Pappeln am Wegrand.
 
