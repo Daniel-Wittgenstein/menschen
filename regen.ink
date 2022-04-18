@@ -16,7 +16,7 @@ VAR geht_sie_nichts_an = false
 
 #story_event: start_story
 
-<img src="assets/mar.jpeg" class="story-image">
+<img src="assets/moon.png" class="story-image">
 
 Schwarze Pappeln am Wegrand.
 
@@ -49,9 +49,38 @@ Und das unablässige Trommeln der Tropfen auf dem Regenschirm.
     * Du gehst schweigend weiter.
         Schweigend geht ihr weiter.
 
+
 -
 
-Der Pfad macht einen Schlenker. Die Pappeln ducken sich weg und geben den Blick auf die schwarze Silhouette einer Villa frei ... eher ein Palast als eine Villa. Und kein einziges Fenster ist erleuchtet.
+* Wirf Marek einen heimlichen Seitenblick zu
+
+    Du kannst immer noch nicht ganz glauben, dass neben dir Marek Nedostal, der berühmte Experimental-Film-Regisseur geht. Du wirfst ihm einen heimlichen Seitenblick zu.
+
+* Denke darüber nach, wie verrückt diese Situation ist
+
+    Du kannst immer noch nicht ganz glauben, dass neben dir Marek Nedostal, der berühmte Experimental-Film-Regisseur geht. Du wirfst ihm einen kurzen Seitenblick zu, wie um dich zu vergewissern, dass er auch wirklich da ist.
+    
+-
+
+<img src="assets/mar2.jpeg" class="story-image">
+
+    Er bemerkt es sofort. Er wendet dir seinen Kopf zu und seine Mundwinkel heben sich. Aber sein Lächeln wirkt gezwungen.
+
+* Wende dich ab.
+    
+    Du wendest dich ab, aber sein Gesicht schwebt weiter vor deinem Inneren Auge, das eingefrorene Lächeln, die Augen, die aus zwei tiefen, schwarzen Höhlen hervorstarren.
+
+* Sage: "Grins nicht so blöd."
+
+    Kurz blitzt in seinen Augen etwas, was Ärger sein könnte. Dann lacht er und wendet sich ab.
+
+* Sage: "Du siehst gruslig aus."
+
+    "Kein Grund zur Angst", sagt er und wendet sich wieder ab.
+
+-
+
+Ihr geht schweigend weiter. Der Pfad macht einen Schlenker. Die Pappeln ducken sich weg und geben den Blick auf die schwarze Silhouette einer Villa frei ... eher ein Palast als eine Villa. Und kein einziges Fenster ist erleuchtet.
 
 * "Gehört das alles hier dir?"
 
@@ -520,7 +549,7 @@ die Whiskeyflasche, die Marek auf dem Eichentisch abgestellt hat, anfängt, zu s
 
 <i>Es funktioniert wirklich.</i>
 
-Marek. Hat Marek gerade eben einen Geist beschwört?
+Nein, das kann nicht sein. Hat Marek gerade eben <i>einen Geist beschwört?</i>
 
 * Schreie.
     Du versuchst zu schreien, aber kein Laut entweicht deinem Mund.

@@ -3,6 +3,14 @@
 
 Es ist noch dunkel, als du die Polizeiwache verlässt, aber im Osten zeichnet sich schon das zaghafte Blau eines neuen Tages ab.
 
+
+
+
+
+
+-
+
+
 Du machst dich auf den Weg nach Hause. Eine Gruppe betrunkener Franzosen kreuzt <i>Bella Ciao</i> singend deinen Weg, ein Obdachloser liegt am Rand der Straße und schnarcht, die gelben Augen einer Katze starren dich aus einer dunklen Seitengasse an. Dann plötzlich niemand mehr. Du läufst eine menschenleere Straße entlang und erreichst den Altstädter Ring, ebenfalls menschenleer um diese Uhrzeit.
 
 Kurz bleibst du stehen und siehst dich um. Niemand. Nur du. Du und der ausgestorbene Platz, das alte Rathaus, die Teynskirche. Und die Dächer der Kirche, die in den langsam aufhellenden Himmel ragen, schwarze Stacheln, aus denen weitere, kleinere Stacheln sprießen, eine groteske Architektur wie aus einem Groschenroman.
