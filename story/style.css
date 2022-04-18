@@ -397,11 +397,11 @@ body.dark {
 }
 
 .auto-first-choice {
-    border-radius: var(--choice-radius) var(--choice-radius) 0px 0px;    
+    /*border-radius: var(--choice-radius) var(--choice-radius) 0px 0px;    */
 }
 
 .auto-last-choice {
-    border-radius: 0px 0px var(--choice-radius) var(--choice-radius);
+    /*border-radius: 0px 0px var(--choice-radius) var(--choice-radius); */
     margin-bottom: 40px;
     border-bottom: none;
 }
