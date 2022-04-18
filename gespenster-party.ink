@@ -30,8 +30,8 @@ VAR dame_raum = rgarten
 
 VAR spieler_raum_actual_knot = -> ballsaal
 
-CONST frau_name1 = "((@frau eine wasserstoffblonde Frau in einem Minirock))"
-CONST Frau_name1 = "((@frau Eine wasserstoffblonde Frau in einem Minirock))"
+CONST frau_name1 = "<span class='npc-first-mention'>((@frau eine wasserstoffblonde Frau in einem Minirock))</span>"
+CONST Frau_name1 = "<span class='npc-first-mention'>((@frau Eine wasserstoffblonde Frau in einem Minirock))</span>"
 
 CONST frau_name2 = "((@frau die wasserstoffblonde Frau im Minirock))"
 CONST Frau_name2 = "((@frau Die wasserstoffblonde Frau im Minirock))"
@@ -40,8 +40,8 @@ VAR frau_name = frau_name1
 VAR Frau_name = Frau_name1
 
 
-CONST herr_name1 = "((@herr ein junger Mann mit einer roten Krawatte))"
-CONST Herr_name1 = "((@herr Ein junger Mann mit einer roten Krawatte))"
+CONST herr_name1 = "<span class='npc-first-mention'>((@herr ein junger Mann mit einer roten Krawatte))</span>"
+CONST Herr_name1 = "<span class='npc-first-mention'>((@herr Ein junger Mann mit einer roten Krawatte))</span>"
 
 CONST herr_name2 = "((@herr der junge Mann mit der roten Krawatte))"
 CONST Herr_name2 = "((@herr Der junge Mann mit der roten Krawatte))"
@@ -49,8 +49,8 @@ CONST Herr_name2 = "((@herr Der junge Mann mit der roten Krawatte))"
 VAR herr_name = herr_name1
 VAR Herr_name = Herr_name1
 
-CONST dame_name1 = "((@dame eine ältere Dame mit einer Turmfrisur))"
-CONST Dame_name1 = "((@dame Eine ältere Dame mit einer Turmfrisur))"
+CONST dame_name1 = "<span class='npc-first-mention'>((@dame eine ältere Dame mit einer Turmfrisur))</span>"
+CONST Dame_name1 = "<span class='npc-first-mention'>((@dame Eine ältere Dame mit einer Turmfrisur))</span>"
 
 CONST dame_name2 = "((@dame die ältere Dame mit der Turmfrisur))"
 CONST Dame_name2 = "((@dame Die ältere Dame mit der Turmfrisur))"
@@ -543,7 +543,7 @@ Du betrittst das Bad. Zwei Frauen um die Ende dreißig in Abendroben stehen vor 
 
 "Ach, komm", sagt die andere, "Auf der Toilette rauchen? Du bist keine siebzehn mehr."
 
-"Oh, wenn es nach mir ginge, würde ich auch draußen rauchen", sagt die mit der blonden Dauerwelle, "Habe ich beim letzten Empfang hier probiert. Der Rauchmelder ist losgegangen und das ganze Haus musste evakuiert werden. Was glaubst du, was mein Mann für Ärger bekommen hat."
+"Oh, wenn es nach mir ginge, würde ich lieber draußen rauchen", sagt die mit der blonden Dauerwelle, "Habe ich beim letzten Empfang hier probiert. Der Rauchmelder ist losgegangen und das ganze Haus musste evakuiert werden. Was glaubst du, was mein Mann für Ärger bekommen hat."
 
 "<i>Er</i> hat Ärger bekommen und nicht <i>du</i>?"
 
@@ -560,7 +560,7 @@ Du betrittst das Bad. Zwei Frauen um die Ende dreißig in Abendroben stehen vor 
     "In dem Alter und mit der Figur steht einem aber auch wirklich alles", sagt die andere mit einer Mischung aus Bewunderung und Neid.
 }
 
-Bevor du etwas antworten kannst, verlassen sie das Bad, als würde es sie gar nicht interessieren, was du dazu zu sagen hast. Hmmmm ... wahrscheinlich interessiert es sie <i>wirklich</i> nicht.
+Bevor du etwas antworten kannst, verlassen die zwei Frauen das Bad, als würde es sie gar nicht interessieren, was du dazu zu sagen hast. Hmmmm ... wahrscheinlich interessiert es sie <i>wirklich</i> nicht.
 
 -> toilette2.toilette2b
 
@@ -730,7 +730,7 @@ Du betrittst den Salon. Das Licht brennt. Du wirfst einen Blick um dich, aber si
             "Sei froh. Es ist eine einzige Scheiße.
     
     -
-    Rauchst du?"
+    <> Rauchst du?"
     
     + Lüge: "Ja."
         "Wunderbar." Sie drückt dir eine Packung Zigaretten in die Hand. <>
@@ -743,6 +743,7 @@ Du betrittst den Salon. Das Licht brennt. Du wirfst einen Blick um dich, aber si
     
     Sie wirft einen nervösen Blick um sich. "Hör mal, ich muss weg, ja? Vielleicht sehen wir uns ja bald wieder?" Sie lächelt dich noch einmal an und verschwindet in der Menge.
     ~ zigaretten1_room = "player"
+    ~ frau_raum = "nirwana"
     
 -> finish_people_interaction
 

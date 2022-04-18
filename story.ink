@@ -70,6 +70,7 @@ INCLUDE menschen.ink
 
 /* testing redirects, end */
 
+-> gespenster_party_start
 -> party_vor_start
 -> gespenster_start
 -> verhoer

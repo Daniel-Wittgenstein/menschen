@@ -611,3 +611,12 @@ body.dark {
     border-radius: 12px;
 }
 
+.npc-first-mention {
+    /* name of party guest on first mention:
+    <Eine blonde Frau> verlässt den Garten.
+    Span can contain a link (if person is still here) or not (if person just left).
+    Link gets styled separately, anyway.
+    */
+    font-weight: bold;
+    font-size: 18pt;
+}
