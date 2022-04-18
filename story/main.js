@@ -1,7 +1,7 @@
 
 
 let debug = {
-    quick_start: 0,
+    quick_start: 1,
     disable_auto_loading_game: 1, //very important for development,
         //because if you change the story, Ink will then try to restore
         //from a broken save state and sometimes throw a

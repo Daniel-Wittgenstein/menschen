@@ -370,16 +370,18 @@ body.dark {
     border: 1px #CCC;
     width: 400px;
     max-width: 60vw;
-    height: 62px;
-    max-height: 15vh;
+    min-height: 62px;
     cursor: pointer;
     margin-bottom: 0px;
     margin-top: 0px;
-    background: #444;
-    color: white;
+    background: rgba(0,0,0,0);
     font-size: 12pt;
     border-bottom: 1px solid #222;
     margin-bottom: 0px;
+}
+
+.dark .story-choice {
+    color: #FFF;
 }
 
 .story-choice:hover {
@@ -391,6 +393,7 @@ body.dark {
     border-radius: var(--choice-radius);
     margin-bottom: 40px;
     border-bottom: none;
+    border: 1px solid #CCC;
 }
 
 .auto-first-choice {

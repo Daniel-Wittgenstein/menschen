@@ -17,9 +17,6 @@ INCLUDE kassandra-buch.ink
 INCLUDE menschen.ink
 
 
--> k_p_choice_next
-
--> gespenster_party_start
 
 /* testing redirects: */
 
@@ -37,6 +34,11 @@ INCLUDE menschen.ink
 */
 
 /*
+
+-> k_p_choice_next
+
+-> gespenster_party_start
+
 -> zuhausedazwischen
 
 -> ballsaal
