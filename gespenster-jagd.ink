@@ -3,6 +3,7 @@
 
 Es ist noch dunkel, als du die Polizeiwache verlässt, aber im Osten zeichnet sich schon das zaghafte Blau eines neuen Tages ab.
 
+<img src="assets/prag1.png" class="story-image">
 
 
 
@@ -28,7 +29,12 @@ Kurz bleibst du stehen und siehst dich um. Niemand. Nur du. Du und der ausgestor
 
 -
 
-Auch der Mann, der am anderen Ende des Platzes steht, raucht und dich beobachtet. Jetzt wirft er seine Zigarette auf den Boden und kommt auf dich zu. 
+Auch der Mann, der am anderen Ende des Platzes steht, raucht und dich beobachtet. Jetzt wirft er seine Zigarette auf den Boden und kommt auf dich zu.
+
+
+    <img src="assets/creep.jpeg" class="story-image">
+
+    Als er näher kommt, siehst du, dass er blonde Haare, ein gebräuntes Gesicht und ein eckiges Kinn hat. Er sieht aus wie ein  Chippendale. Fast hübsch, möchte man sagen, wenn da nicht der vollkommen irre Ausdruck in seinen Augen wäre.
 ~ temp das_ein = "ein"
 
 * Laufe weg
@@ -38,7 +44,7 @@ Auch der Mann, der am anderen Ende des Platzes steht, raucht und dich beobachtet
 
 -
 
-Der Mann nähert sich dir. Als er nur noch wenige Schritte entfernt ist, zückt er ein Butterflymesser und lässt die Klinge aufspringen.
+Der Mann nähert sich dir. Als er nur noch wenige Schritte von dir entfernt ist, zückt er ein Butterflymesser und lässt die Klinge aufspringen.
 ~ das_ein = "das"
 
 * Schreie
@@ -164,12 +170,58 @@ Er scheint nachzudenken. "Ok, Püppi", meint er schließlich, "Wir zwei machen j
 {kwohnst == false: "Wir sehen uns in drei Tagen wieder, Barbie. Und versuch nicht, unterzutauchen, ich finde dich und mache dir ein Loch in deinen hübschen Hals."}
 
 * weiter
-
 -
 
-Einfach hinreißend. Wir rekapitulieren: du bist fast abgestochen worden, musstest dich von Polizisten demütigen lassen und bist jetzt nochmal fast abgestochen worden. Was ist falsch mit dieser Stadt? Bis gestern eigentlich gar nichts. Bis gestern hast du deinen Auslandsaufenthalt wirklich genossen. Und jetzt das.
+Mit diesen Worten geht er.
 
-Du zitterst noch, vor Angst und Wut, während der Himmel über die sich langsam aufhellt, und schon musst du die nächste Entscheidung treffen.
+* weiter
+-
+
+Ist er gegangen.
+
+* weiter
+-
+
+Ist er schon weg?
+
+* weiter
+-
+
+
+Ja, doch.
+
+* weiter
+-
+
+Wie lange ...?
+
+* weiter
+-
+
+Du siehst dich um. Plötzlich sind da Fußgänger und der Himmel über dir leuchtet schon in einem mitteldunklen Indigoblau. Wie lange standest du hier auf der Straße rum wie eine Statue? Du betrachtest deine Hände und merkst, dass sie zittern. Oder <i>noch</i> zittern, keine Ahnung.
+
+* Gehe nach Hause
+
+    Du machst dich auf den Weg nach Hause, bleibst aber nach einem Schritt stehen. Die Straße. Der Bürgersteig. Die Fußgänger. Alles fühlt sich wieder so <i>unwirklich</i> an. Was ist nur los mit dir, verdammt? 
+
+* Denke nach
+    Das Nachdenken ist nicht leicht, dein Kopf liegt hinter einer schweren Eisentür, die du erst mühselig aufstemmen musst. Als du sie endlich einen Spalt breit geöffnet hast, droht sie schon wieder zuzufallen.
+    
+    ** Zwicke dich in den Arm
+    
+        Du zwickst dich in den Arm. <>
+        
+    ** Atme tief ein und aus
+        Du atmest tief ein und aus. <>
+        
+    --
+    Was ist nur los mit dir, verdammt? Du fühlst dich wieder so ... <i>unwirklich</i>.
+    
+-
+
+Und was ist falsch mit dieser Stadt? Bis gestern eigentlich gar nichts. Bis gestern hast du deinen Auslandsaufenthalt wirklich genossen. Und jetzt bist du im Lauf kürzester Zeit zweimal fast abgestochen worden. Drehst du deswegen gerade so am Rad? Oder fing das schon vorher an, als du angefangen hast, fliegende Flaschen zu sehen?
+
+Egal. Du musst dich zusammenreißen. Du musst dich jetzt wirklich zusammenreißen und die nächste Entscheidung treffen.
 
 + Geh zurück zur Polizei und sage ihnen, dass du bedroht wurdest.
     
@@ -203,7 +255,9 @@ Das wäre natürlich nicht gut. Du zögerst. Vielleicht doch kein guter Plan?
     
 -
 + weiter
-Du wankst nach Hause. Zum Glück ist es nicht weit zu deiner Wohnung.
+Du trippelst mit kleinen, langsamen, müden Schritten nach Hause. Das Gefühl der Unwirklichkeit ist jetzt verschwunden. Dafür kommt es dir jetzt so vor, als ob die Passanten dich beobachten. Was natürlich vollkommener Schwachsinn ist. Jesus, du packst diesen Shit nicht mehr. Du brauchst echt eine Runde Schlaf, um ... dein Gehirn zu rebooten, oder so.
+
+Zum Glück ist es nicht weit zu deiner Wohnung.
 
 -
 + weiter
@@ -213,15 +267,15 @@ Du wankst nach Hause. Zum Glück ist es nicht weit zu deiner Wohnung.
 
 === zuhausedazwischen
 
-Du sperrst die Tür zu deiner Wohnung auf, gehst in dein Zimmer und schlüpfst aus den Schuhen. Sonst ziehst du nichts aus. Du fällst auf dein Bett und in einen Schlaf voll merkwürdiger Träume.
+Du sperrst die Tür zu deiner Wohnung auf, gehst in dein Zimmer und schlüpfst aus den Schuhen. Sonst ziehst du nichts aus. Du fällst auf dein Bett und auch sofort in einen Schlaf voll merkwürdiger Träume.
 
 -
 + weiter
 
-Als du aufwachst, wird es allmählich wieder dunkel. <>
+Als du aufwachst, wird es allmählich wieder dunkel. Du fühlst dich besser.
 
 {den_dolch_holen:
-    Du rappelst dich auf und weißt, dass es Zeit ist zu handeln. Du wirst dir diesen Dolch holen.
+    Du rappelst dich aus dem Bett auf und weißt, dass es Zeit ist zu handeln. Du wirst dir diesen Dolch holen.
 -else:
     Du rappelst dich aus dem Bett auf und weißt plötzlich, dass du den Dolch holen willst.
 }
@@ -229,7 +283,7 @@ Als du aufwachst, wird es allmählich wieder dunkel. <>
 -
 
 + Dusche dich vorher noch.
-    Du duschst dich schnell und schlüpfst in neue Kleidung.
+    Du duschst dich schnell und schlüpfst in neue Kleidung. Dann machst du dich auf den Weg.
     ~ duschen = true
     
 + Gehe gleich los.
@@ -238,8 +292,12 @@ Als du aufwachst, wird es allmählich wieder dunkel. <>
 -
 
 + weiter
+-> party_vor_start
 
-Das ist merkwürdig. Du stehst im Park vor Mareks Haus. Es ist eine laue Sommernacht, der Himmel zeigt kaum Wolken. Doch das Haus ist nicht dunkel. Im Gegenteil, die Fenster im Erdgeschoss sind hell erleuchtet und du hörst in der Ferne Lachen und die Stimmen vieler Leute. Findet in dem Haus <i>eine Party statt?</i> Am Tag nachdem Marek gestorben ist? Skurril, um nicht zu sagen, makaber. Wie kann das überhaupt sein?
+
+=== party_vor_start
+
+Das ist merkwürdig. Du stehst wieder im Park vor Mareks Haus. Es ist eine laue Sommernacht, der Himmel zeigt kaum Wolken. Doch das Haus ist nicht dunkel. Im Gegenteil, die Fenster im Erdgeschoss sind hell erleuchtet und du hörst in der Ferne Lachen und die Stimmen vieler Leute. Findet in dem Haus <i>eine Party statt?</i> Am Tag nachdem Marek gestorben ist? Skurril, um nicht zu sagen, makaber. Wie kann das überhaupt sein?
 -
 
 + weiter
@@ -264,13 +322,18 @@ Es scheint sich um eine sehr gediegene Veranstaltung zu handeln. Du verfluchst d
     Naja, vielleicht lässt dich der Türsteher ja trotzdem rein, wenn du so tust, als ob du dazugehörst.
 }
 
-Und es gibt noch eine gute Neuigkeit: wenn das Haus nur so vor Gästen wimmelt, müsste es doch eigentlich ganz leicht sein, sich in den Salon zu schleichen, oder? Wollen wir mal hoffen ...
+Und es gibt noch eine gute Neuigkeit: wenn das Haus nur so vor Gästen wimmelt, müsste es doch eigentlich ganz leicht sein, sich in den Salon zu schleichen und den Dolch zu holen, oder? Wollen wir mal hoffen ...
 
 Jetzt musst du erstmal ins Haus kommen.
 
 + Gehe durch den Haupteingang
 
-    Du näherst dich dem Eingang. Ein junger Türsteher mit einem Ziegenbärtchen stellt sich dir in den Weg. "Haben Sie eine Einladung?", fragt er auf Englisch.
+    Du näherst dich dem Eingang. Ein junger Türsteher mit einem Ziegenbärtchen stellt sich dir in den Weg.
+    
+    <img src="assets/bouncer.jpeg" class="story-image">
+
+
+    "Haben Sie eine Einladung?", fragt er auf Englisch.
     -> tuersteher_gespraech
 
 + Suche nach einem anderen Eingang

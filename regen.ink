@@ -945,36 +945,139 @@ Nach ein paar Minuten kommt der junge Polizist zurück.
 
 * Du starrst ihn überrascht und sprachlos an.
 
-    Sein Lächeln wird etwas breiter. "Überrascht?", fragt er, "Machen Sie sich keine Sorgen. Wir haben alle Anklagepunkte gegen Sie fallen gelassen.  Was den Mörder von Marek Nedostal angeht ... wir haben zumindest eine Tatwaffe. Mal sehen, was das Labor an DNA hergibt."
+    Sein Lächeln wird etwas breiter. "Überrascht?", fragt er, <>
     
 * Du sagst: "Und wie geht es weiter?"
-    Sein Lächeln wird etwas breiter. "Wie es mit Ihnen weiter geht?", fragt er, "Machen Sie sich keine Sorgen. Wir haben alle Anklagepunkte gegen Sie fallen gelassen. Was den Mörder von Marek Nedostal angeht ... wir haben zumindest eine Tatwaffe. Mal sehen, was das Labor an DNA hergibt."
+
+    Sein Lächeln wird etwas breiter. "Wie es mit Ihnen weiter geht?", fragt er, <>
+    
+-
+"Machen Sie sich keine Sorgen. Wir haben alle Anklagepunkte gegen Sie fallen gelassen."
+
+
+* "Wieso das?"
+
+    "Weil uns Ihr Gesicht gefällt, Frau Kavka", sagt er mit einem ironischen Schmunzeln, "Vielleicht sollten Sie es mal mit Modeln probieren. <>
+
+* "Das heißt, Sie glauben meine Geschichte?"
+    
+    "So weit würde ich nicht gehen." Ein kleines Lächeln erscheint auf seinem Gesicht: "<>
+
+* "Sie glauben mir nicht."
+
+    "Doch, natürlich tue ich das. Ich glaube, dass <i>Sie glauben</i>, eine fliegende Flasche gesehen zu haben." Ein kleines Lächeln erscheint auf seinem Gesicht: "<>
+
+* Sage nichts.
+
+     Ein kleines Lächeln erscheint auf seinem Gesicht: "<>
+
+-
+<>Ach, eine Sache noch."
+
+<img src="assets/cop1.jpeg" class="story-image">
+
+Er schiebt ein Dokument über den Tisch: "Nur eine Kleinigkeit. Wenn Sie bitte das hier unterschreiben, bevor Sie gehen."
+
++ weiter
 
 -
 
-<i>Mal sehen, was das Labor an DNA hergibt?</i>
+Du überfliegst den Text des Dokuments. Es ist deine Aussage, aber sie wurde <i>vollkommen verändert!</i> Penibel wie du bist, fällt dir als erstes auf, dass die Adresse deines Treffens mit Marek geändert wurde. Aber das ist noch das Geringste. Weiter heißt es im Text, dass ein unbekannter Mann <i>südländischen Aussehens</i> das Haus durch ein offenes Fenster betrat und Marek mit einem Hammer erschlug.
 
-Ist das hier eine Folge CSI? Du verstehst nicht, warum er mit dir Details der Ermittlungen bespricht. Und schon gar nicht verstehst du, warum Sie dir eben noch einen Mord anhängen wollten und dich jetzt auf einmal gehen lassen.
++ "Wo soll ich unterschreiben?"
+	"Hier unten", er klopft auf das Blatt.
 
-* "Sie glauben also, dass jemand Marek erschlagen hat?"
+	++ "Werde ich auch sicher keine Probleme bekommen, wenn ich das unterschreibe?"
+	
+		Er schüttelt den Kopf: "Das bleibt zwischen uns. Versprochen."
+		-> verhoerende
 
-    "Ja, natürlich. Irgendein Fremder ist in das Haus eingedrungen, während Sie sich dort mit Herrn Nedostal aufhielten. Dass Sie sich nicht an den Angreifer erinnern, ist ein ganz normales Symptom von posttraumatischem Stress. Lassen Sie sich von einem Arzt, untersuchen, ja?"
+	** Unterschreibe, ohne etwas zu sagen.
+		-> verhoerunterschreibestumm
+		
+	
++ "Diese Aussage enthält Fehler."
+	"Ja", sagt der Polizist, "Aber machen Sie sich darum keine Gedanken. Niemand wird ins Gefängnis wandern. Am allerwenigsten Sie. Unterschreiben Sie einfach und wir legen die Sache ad acta."
+
+	++ "Sie können nicht einfach so das Recht brechen!"
+		--- (verhoerrechtbrechen)
+		"Kann ich nicht?", fragt er mit einem süffisanten Lächeln.
+
+		+++ "Wir sind hier immer noch in der Europäischen Union!"
+		
+			"Aber sicher doch", sagt er, "Und wie in jedem Rechtsstaat, der etwas auf sich hält, darf niemand ohne Beweise eingesperrt werden, richtig? Also, was haben <i>Sie</i> gegen <i>mich</i> in der Hand? Irgendwelche Zeugen, die Ihre bizarre Aussage bezeugen können, ich hätte Ihre Aussage verändert? Irgendein verstecktes Aufnahmegerät in Ihrem BH? Nein? Dachte ich mir."
+			
+			Er stützt seine Ellbogen auf den Tisch und legt sein Kinn auf den Händen ab: "Frau Kavka, Ich versichere Ihnen aufrichtig, dass es besser für Sie und für mich ist, wenn Sie jetzt unterschreiben."
+
+			++++ "Drohen Sie mir etwa?"
+				"Nein", sagt er, "<>
+
+			++++ "Ich will jetzt sofort einen Anwalt sprechen!"
+				"Nein", entgegnet er knapp, "Das werden Sie nicht. <>
+
+			----
+			Hören Sie, Frau Kavka: ich lasse Sie hier raus, ob Sie diese Aussage unterschreiben oder nicht. Aber wenn Sie unterschreiben, sparen Sie sich und mir jede Menge Arbeit. Wenn Sie nicht unterschreiben ...", er hebt die Schultern, "... dann erzählen Sie eben weiter Ihre Geschichte mit fliegenden Gegenständen herum. Aber glauben Sie nicht, dass Sie sich damit viele Freunde machen werden."
+
+			++++ Unterschreibe.
+				-> verhoerunterschreibestumm
+		
+			++++ "Ich unterschreibe nicht."
+				Er seufzt. "Ich sehe, dass <>
+				-> verhoerfinalnein
+
+			++++ "Sie sind ein Faschist."
+
+				"Ach, wenn Sie wüssten." Er lächelt schwach. "Aber ich sehe schon, dass <>
+				
+				----- (verhoerfinalnein)
+				
+				mit Ihnen nichts zu machen ist. Dann kann ich Ihnen nur noch einen Rat geben: halten Sie sich mit Geschichten über schwebende Objekte zurück. Das dürfte besser für Sie sein."
+				
+				Er deutet auf den Ausgang: "Auf Hoffentlich-nicht-Wiedersehen, Frau Kavka."
+				-> verhoerende2		
+
+		+++ Unterschreibe schweigend.
+			-> verhoerunterschreibestumm
+	
+	++ "Haben Sie noch alle Tassen im Schrank?!"
+		-> verhoerhoelle
+
+	++ Unterschreibe, ohne etwas zu sagen.
+		-> verhoerunterschreibestumm
+	
++ "Was zur Hölle ist das hier für eine Scheiße?!"
+	-- (verhoerhoelle)
+	Er lächelt, nicht im Mindesten von deinem Wutanfall beunruhigt: "Ich versichere Ihnen, dass es besser für Sie ist, wenn Sie das unterschreiben. Danach können Sie gehen und wir alle vergessen die ganze Sache einfach. Wie hört sich das an?"
+
+    ++ "Sie können nicht einfach so das Recht brechen!"
+        -> verhoerrechtbrechen
+    
+    ++ Beuge dich und unterschreibe.
+        -> verhoerunterschreibestumm
 
 
-* "Ich verstehe nicht ..."
+=== verhoerende
 
-    "Das müssen Sie auch nicht, Frau Kavka. Sie stehen ganz offensichtlich noch unter Schock. Ihre Zeugenaussage mit dem unsichtbaren Angreifer deutet ganz klar darauf hin. Lassen Sie sich von einem Arzt untersuchen, ja?"
+	+ weiter
+	-
+	Du kannst nicht glauben, dass dich dieser verdammte Polizist diese komplett erstunkene und erlogene Erklärung hat unterschreiben lassen!
+	-> nachverhoer
 
-Er deutet dir mit einer ungeduldigen Handbewegung an, den Raum zu verlassen.
 
--
+=== verhoerende2
 
-* Weiter
+	+ weiter
+	-
+	Du kannst nicht glauben, dass dich dieser verdammte Polizist diese komplett erstunkene und erlogene Erklärung unterschreiben lassen wollte. Zum Glück hast du dich nicht einschüchtern lassen!	
+	-> nachverhoer
+
+=== nachverhoer
+
+	Als du das Polizeigebäude verlässt, fühlst du dich vollkommen verwirrt und angespannt. Wieso will die Polizei die Tatsachen verdrehen? Was haben sie davon? Und könnten diese Bastarde damit wirklich davonkommen? Aber vor allem und am allerwichtigsten: hast du wirklich einen fliegenden Gegenstand gesehen oder wirst du verrückt?
+
++ weiter
     -> gespenster_start
 
-
-
--> DONE
 
 === pol_anti2
 
@@ -982,5 +1085,8 @@ Der junge Polizist räuspert sich: "Sie sind nicht gerade kooperativ, Frau Kavka
     -> pol_und_landete
 
 
+=== verhoerunterschreibestumm
+	Du unterschreibst das Dokument.
+	-> verhoerende
 
 
