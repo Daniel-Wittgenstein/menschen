@@ -24,9 +24,9 @@ VAR herr_mentioned = false
 VAR dame_mentioned = false
 
 VAR spieler_raum = rballsaal
-VAR frau_raum = rballsaal
-VAR herr_raum = rfoyer
-VAR dame_raum = rgarten
+VAR frau_raum = "nirwana"
+VAR herr_raum = "nirwana"
+VAR dame_raum = "nirwana"
 
 VAR spieler_raum_actual_knot = -> ballsaal
 
@@ -57,6 +57,20 @@ CONST Dame_name2 = "((@dame Die ältere Dame mit der Turmfrisur))"
 
 VAR dame_name = dame_name1
 VAR Dame_name = Dame_name1
+
+=== function first_description_person(t_person) 
+    { t_person:
+        - frau: 
+            ((@frau Eine wasserstoffblonde Frau)) in einem Minirock läuft an dir vorbei.
+        - herr:
+            ((@herr Ein junger Mann)) mit einer roten Krawatte rempelt dich im Vorbeigehen an. "Verzeihung", murmelt er und trottet weiter.
+        
+        - dame:
+           ((@dame Eine ältere Dame)) mit einer Turmfrisur schreitet an dir vorbei.
+    }    
+    
+
+
 
 === function get_location_of_person(t_person) 
     { t_person:
@@ -128,7 +142,7 @@ VAR Dame_name = Dame_name1
         
     {o == rmusikzimmer and n == rballsaal: {Frau_name} verlässt das Musikzimmer Richtung Saal.}
         
-    {n == rballsaal: {Frau_name} verlässt das Foyer Richtung Saal.}
+    {o == rfoyer and n == rballsaal: {Frau_name} verlässt das Foyer Richtung Saal.}
                 
     {n == rmusikzimmer: {Frau_name} verlässt den Saal Richtung Musikzimmer.}
         
@@ -148,7 +162,7 @@ VAR Dame_name = Dame_name1
         
     {o == rmusikzimmer and n == rballsaal: {Herr_name} verlässt das Musikzimmer Richtung Saal.}
         
-    {n == rballsaal: {Herr_name} verlässt das Foyer Richtung Saal.}
+    {o == rfoyer and n == rballsaal: {Herr_name} verlässt das Foyer Richtung Saal.}
                     
     {n == rmusikzimmer: {Herr_name} verlässt den Saal Richtung Musikzimmer.}
 
@@ -168,7 +182,7 @@ VAR Dame_name = Dame_name1
         
     {o == rmusikzimmer and n == rballsaal: {Dame_name} verlässt das Musikzimmer Richtung Saal.}
         
-    {n == rballsaal: {Dame_name} verlässt das Foyer Richtung Saal.}
+    {o == rfoyer and n == rballsaal: {Dame_name} verlässt das Foyer Richtung Saal.}
         
     {n == rmusikzimmer: {Dame_name} verlässt den Saal Richtung Musikzimmer.}
 
@@ -222,12 +236,21 @@ VAR just_came_in = -666
             ~ dame_name = dame_name2
             ~ Dame_name = Dame_name2
             ~ dame_mentioned = true
-
     }    
    
+=== function is_mentioned(t_person)
+    { t_person:
+        - frau: 
+            ~ return frau_mentioned
+        - herr: 
+            ~ return herr_mentioned
+        - dame: 
+            ~ return dame_mentioned
+    }    
+       
     
 
-=== function move_to_room(t_person, t_raum)
+=== function move_to_room(t_person, t_raum, silent)
 
     ~ temp original_room = get_location_of_person(t_person) 
 
@@ -241,7 +264,9 @@ VAR just_came_in = -666
 <span class='debug'>DIAGNOSTICS: {t_person} moves from {original_room} to {t_raum}</span>
 
 
-    ~ notify_movement (t_person, original_room, t_raum)
+    { silent != "silent":
+        ~ notify_movement (t_person, original_room, t_raum)
+    }
 
 
 VAR next_person_counter = 0
@@ -259,6 +284,7 @@ VAR next_person_counter = 0
             ~ return dame
     }
 
+VAR just_introduced_new_person = false
 
 === function new_person_event()
 
@@ -273,6 +299,16 @@ VAR next_person_counter = 0
 
     ~ temp action = RANDOM(1, 100)
     
+
+    { not is_mentioned(person): 
+        ~ move_to_room(person, spieler_raum, "silent")
+        ~ action = 2000
+        ~ first_description_person(person)
+        ~ mentioned(person)
+        ~ just_introduced_new_person = true
+    }
+
+
     { action <= 100:
         ~ new_event_walk(person)
     }
@@ -344,7 +380,7 @@ VAR next_person_counter = 0
         ~ return
     }
 
-    ~ move_to_room(person, dest)
+    ~ move_to_room(person, dest, "")
     
     
 VAR party_count = 0
@@ -370,7 +406,16 @@ VAR party_count = 0
 
 === raum_leute
 
+/*
+    {just_introduced_new_person:
+        ~ just_introduced_new_person = false
+        ->->
+    }
+*/
+
     ~ temp jci = just_came_in
+
+    
     ~ just_came_in = -666
 
     {frau_mentioned and get_location_of_person(frau) == spieler_raum and jci != frau:
