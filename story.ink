@@ -16,6 +16,8 @@ INCLUDE kassandra-buch.ink
 
 INCLUDE menschen.ink
 
+INCLUDE 2start.ink
+
 
 
 /* testing redirects: */
@@ -70,6 +72,11 @@ INCLUDE menschen.ink
 
 /* testing redirects, end */
 
+-> regen_start
+
+-> start_episode2
+
+
 -> gespenster_party_start
 -> party_vor_start
 -> gespenster_start
@@ -83,7 +90,7 @@ Dieses Spiel enthält erwachsene Themen. Es sollte nicht von Minderjährigen ges
 
     + Neues Spiel
         -> regen_start
-   
+    
     + Danksagungen
         ...
         -> start

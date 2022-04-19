@@ -6,10 +6,14 @@ VAR geht_sie_nichts_an = false
 
 === regen_start
 
-<h1>TEIL 1</h1>
-<h2>Regen</h2>
+<img src="assets/title.jpg" class="story-image">
 
-* ...
+<h1>Episode 1 - Menschen, die verschwinden</h1>
+
+<h2>TEIL 1</h1>
+<h3>Regen</h2>
+
+* weiter
     -> regen_start_ok
 
 === regen_start_ok
@@ -62,7 +66,7 @@ Und das unablässige Trommeln der Tropfen auf dem Regenschirm.
     
 -
 
-<img src="assets/mar2.jpeg" class="story-image">
+<img src="assets/mar.jpeg" class="story-image">
 
     Er bemerkt es sofort. Er wendet dir seinen Kopf zu und seine Mundwinkel heben sich. Aber sein Lächeln wirkt gezwungen.
 
